@@ -1,8 +1,8 @@
 <header class="header-style8 fixedHeader">
-    <div id="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
+    <div id="top-bar" class="top-bar-style2">
+        <div class="justify-center mx-4">
+            <div class="row ">
+                <div class="col-md-7">
                     <div class="top-bar-info">
                         <ul class="ps-0">
                             <li><i class="fas fa-mobile-alt"></i>(+123) 456 7890</li>
@@ -10,14 +10,16 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-3 d-none d-md-block">
+                <div class="col-md-4 d-none d-md-block">
                     <ul class="top-social-icon ps-0">
-                        <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#!">Partners</a></li>
+                        <li><a href="#!">Docs</a></li>
+                        <li><a href="#!">Support</a></li>
+                        <li><a href="#!">Sales</a></li>
+                        <li><a href="#!">Careers</a></li>
                     </ul>
                 </div>
+                <div class="col-md-1" style=" border-left: 3px solid #c5c0c0; height: 30px;"></div>
             </div>
         </div>
     </div>
@@ -55,12 +57,12 @@
                             <div class="navbar-toggler"></div>
 
                             <!-- menu area -->
-                            <ul class="navbar-nav ms-auto" id="nav" style="">
-                                <li class="current"><span class="submenu-button"></span><a href="{{route('home')}}}">Ana Sayfa</a></li>
-                                <li class=""><span class="submenu-button"></span><a href="#!">Kategoriler</a></li>
-                                <li class=""><span class="submenu-button"></span><a href="{{route('services')}}">Ürünler</a></li>
-                                <li class=""><span class="submenu-button"></span><a href="{{route('aboutus')}}">Hakkımızda</a></li>
-                                <li class=""><span class="submenu-button"></span><a href="{{route('contactus')}}">İletişim</a></li>
+                            <ul class="navbar-nav nav ms-auto" id="nav" style="display: none;">
+                                <li class="nav-item"><span class="submenu-button"></span><a class="nav-link active" href="{{route('home')}}">Ana Sayfa</a></li>
+                                <li class="nav-item"><span class="submenu-button"></span><a class="nav-link" href="#!">Kategoriler</a></li>
+                                <li class="nav-item"><span class="submenu-button"></span><a class="nav-link" href="{{route('services')}}">Ürünler</a></li>
+                                <li class="nav-item"><span class="submenu-button"></span><a class="nav-link" href="{{route('aboutus')}}">Hakkımızda</a></li>
+                                <li class="nav-item"><span class="submenu-button"></span><a class="nav-link" href="{{route('contactus')}}">İletişim</a></li>
                                 <li class="has-sub"><span class="submenu-button"></span><a href="#!">Shop</a>
                                     <ul class="sub-menu">
                                         <li><a href="shop-product-grid.html">Product Grid</a></li>
@@ -72,7 +74,7 @@
                                         <li><a href="shop-checkout.html">Shop Checkout</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-sub"><span class="submenu-button"></span><a href="#!">Elements</a>
+                                <li class="has-sub"><span class="submenu-button"></span><a href="#!">Menü</a>
                                     <ul class="row megamenu sub-menu">
                                         <li class="col-lg-3 has-sub"><span class="submenu-button"></span>
                                             <span class="d-block m-0 mb-lg-3 py-2 py-lg-0 px-1-9 px-lg-0 text-uppercase sub-title">Elements 01</span>
@@ -136,22 +138,6 @@
                                         </li>
                                     </ul>
                                 </li>
-                                @auth
-                                    <li class="has-sub"><a href="#!" class="butn primary mt-2"><span>{{strtok(Auth::user()->name,' ')}}</span></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="">Profilim</a></li>
-                                            <li><a href="">Yorumlar</a></li>
-                                            <li><a href="">Sparişlerim</a></li>
-                                            <li><a href="">Product Four Coulmns</a></li>
-                                            <li><a href="{{route('logoutuser')}}">Çikiş</a></li>
-
-                                        </ul>
-                                    </li>
-                                @endauth
-                                @guest
-                                    <li class=""><a href="{{route('register')}}" class="butn primary mt-2">Giriş</a></li>
-                                @endguest
-
                             </ul>
                             <!-- end menu area -->
 

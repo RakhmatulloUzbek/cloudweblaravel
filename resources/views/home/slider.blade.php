@@ -48,7 +48,7 @@
                      data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="2800"
                      data-splitin="none" data-splitout="none" data-responsive_offset="on"
                      style="z-index: 5; white-space: nowrap; line-height: 22px;"><a href="#!"
-                                                                                    class="butn primary"><span>Giriş Yap</span></a>
+                                                                                    class="butn primary"><span>Daha fazla</span></a>
                 </div>
             </li>
             <li data-transition="parallaxtoright">
@@ -95,7 +95,7 @@
                      data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="2800"
                      data-splitin="none" data-splitout="none" data-responsive_offset="on"
                      style="z-index: 5; white-space: nowrap; line-height: 22px;"><a href="#!"
-                                                                                    class="butn primary"><span>Giriş Yap</span></a>
+                                                                                    class="butn primary"><span>Daha fazla</span></a>
                 </div>
             </li>
             <li data-transition="parallaxtoright">
@@ -143,7 +143,7 @@
                      data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="2800"
                      data-splitin="none" data-splitout="none" data-responsive_offset="on"
                      style="z-index: 5; white-space: nowrap; line-height: 22px;"><a href="#!"
-                                                                                    class="butn primary"><span>Giriş Yap</span></a>
+                                                                                    class="butn primary"><span>Daha fazla</span></a>
                 </div>
             </li>
         </ul>

@@ -58,10 +58,6 @@
 </div>
 
 
-<!-- BUY TEMPLATE
-================================================== -->
-<div class="all-demo alt-font d-none d-lg-inline-block"><a href="https://www.chitrakootweb.com/contact.html" target="_blank"><i class="far fa-envelope"></i><span>Quick Question?</span></a></div>
-
 <!-- SCROLL TO TOP
 ================================================== -->
 <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
