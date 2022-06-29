@@ -9,13 +9,13 @@
     <div class="page-sidebar-inner">
         <div class="page-sidebar-menu">
             <ul class="accordion-menu">
-                <li class="active">
-                    <a href="{{route('admin.index')}}">
+                <li class="">
+                    <a href="{{route('admin.index')}}" :active="request()->routeIs('admin.index')">
                         <i class="menu-icon icon-home4"></i><span>Home</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('admin.category.index')}}">
+                    <a href="{{route('admin.category.index')}}" :active="request()->routeIs('category')">
                         <i class="fas fa-layer-group menu-icon"></i><span>Category</span>
                     </a>
                 </li>

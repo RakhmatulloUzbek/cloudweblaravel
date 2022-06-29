@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminHomeController extends Controller
 {
@@ -81,5 +82,8 @@ class AdminHomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function profile(){
+        return view('admin.profile');
     }
 }
