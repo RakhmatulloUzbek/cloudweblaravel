@@ -2,20 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Image;
 use App\Models\Message;
+use App\Models\Post;
+use App\Models\Service;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public static function maincategorylist(){
+        return Category::where('parent_id', '=', 0)->with('children')->get();
+    }
+    public static function recentpostslist(){
+        return  Post::orderBy('id', 'desc')->limit(4)->get();
+    }
+    public static function getsettings(){
+        return  Setting::first();
+    }
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        return view('home.index');
+        //$recentPosts = Post::orderBy('id', 'desc')->limit(3)->get();;
+        $setting = Setting::first();
+        return view('home.index',[
+            'setting'=>$setting
+        ]);
     }
     /**
      * Show the form for creating a new resource.
@@ -67,28 +86,57 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function services()
-    {
-        return view('home.post');
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function posts()
     {
-        return view('home.service');
+        $title = 'Postlar';
+        $posts = Post::orderBy('id', 'desc')->get();
+        return view('home.posts',['posts'=>$posts,'title'=>$title]);
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function post_detail($id)
+    {
+        $post = Post::find($id);
+        $images=DB::table('images')->where('service_id',$id)->get();
+        return view('home.post_detail',[
+            'post'=>$post,
+            'images'=>$images
+        ]);
+    }
+    public function getservices(Request $request)
+    {
+        $data = Post::where('title',$request->input('search'))->first();
+        if(!$data){
+            $data = Service::where('title',$request->input('search'))->first();
+        }
+        return redirect()->route('post_detail',['id'=>$data->id]);
     }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function post_detail()
+    public function services()
     {
-        return view('home.post_detail');
+        return view('home.services');
     }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function categoryservices($id)
+    {
+        $title = DB::table('categories')->where('id','=', $id)->value('title');
+        //$title =DB::table('categories')->select('title')->where('id','=',$id)->get();
+        $posts = Post::where('category_id','=',$id)->orderBy('id', 'desc')->get();
+        return view('home.posts',['posts'=>$posts,'title'=>$title]);
+    }
+
     public function storemessage(Request $request){
         $data = new Message();
         $data->name=$request->input('name');

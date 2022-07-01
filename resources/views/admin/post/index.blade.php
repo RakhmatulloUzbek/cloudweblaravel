@@ -42,10 +42,8 @@
                                     <thead>
                                     <tr>
                                         <th style="width: 25px;">id</th>
-                                        <th>Parent</th>
-                                        <th style="width: 100px">Title</th>
-                                        <th>Keywords</th>
-                                        <th>Description</th>
+                                        <th>Category</th>
+                                        <th>Title</th>
                                         <th style="width: 25px;">Gallery</th>
                                         <th style="width: 32px">Status</th>
                                         <th style="width: 25px">Edit</th>
@@ -57,10 +55,8 @@
                                     @foreach($data as $rs)
                                         <tr>
                                             <td>{{$rs->id}}</td>
-                                            <td>{{\App\Http\Controllers\admin\CategoryController::getParentsTree($rs,$rs->title)}}</td>
+                                            <td>{{$rs->category->title}}</td>
                                             <td>{{$rs->title}}</td>
-                                            <td>{{$rs->keyword}}</td>
-                                            <td>{{$rs->description}}</td>
                                             <td style="width: 25px;"><a href="{{route('admin.image.index',['pid'=>$rs->id])}}" class="btn btn-outline-primary"
                                                    onclick="return !window.open(this.href,'','top=100 left=200 width=800 height=650')">
                                                     <i class="fas fa-images"></i>
@@ -75,10 +71,8 @@
                                     <tfoot>
                                     <tr>
                                         <th style="width: 25px;">id</th>
-                                        <th>Parent</th>
-                                        <th style="width: 100px">Title</th>
-                                        <th>Keywords</th>
-                                        <th>Description</th>
+                                        <th>Category</th>
+                                        <th>Title</th>
                                         <th style="width: 80px;">Gallery</th>
                                         <th style="width: 32px">Status</th>
                                         <th style="width: 25px">Edit</th>

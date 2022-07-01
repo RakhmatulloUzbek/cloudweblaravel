@@ -405,6 +405,9 @@
 
 <!-- BLOG
 ================================================== -->
+@php
+    $recentPosts = \App\Http\Controllers\HomeController::recentpostslist();
+@endphp
 <section class="md">
     <div class="container">
         <div class="section-heading">
@@ -412,51 +415,22 @@
             <p class="w-95 w-md-75 w-lg-55">Business consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation consequat.</p>
         </div>
         <div class="row mt-n4">
-            <div class="col-md-6 col-lg-4 mt-4">
-                <article class="card card-style1">
-                    <div class="card-img"><img alt="..." src="{{asset('assets')}}/home/img/blog/blog-1.jpg">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="display-29 mb-1"><a href="#!">High Quality Support</a></h3>
-                        <span>Business</span>
-                        <div class="card-date">
-                            <h5>09</h5>
-                            <p>July</p>
+            @foreach($recentPosts as $post)
+                <div class="col-md-6 col-lg-3 mt-4">
+                    <article class="card card-style1">
+                        <div class="card-img"><img alt="..." src="{{Storage::url($post->image)}}">
                         </div>
-                        <p class="m-0 card-text">Exercitation ullamco laboris nisi ut aliquip ex ea commodo. cillum dolore eu fugiat nulla pariatur commodo consequat.cillum dolore eu fugiat pariatur.</p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-6 col-lg-4 mt-4">
-                <article class="card card-style1">
-                    <div class="card-img"><img alt="..." src="{{asset('assets')}}/home/img/blog/blog-2.jpg">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="display-29 mb-1"><a href="#!">Research Financial</a></h3>
-                        <span>Finance</span>
-                        <div class="card-date">
-                            <h5>08</h5>
-                            <p>May</p>
+                        <div class="card-body">
+                            <h3 class="display-29 mb-1"><a href="{{route('post_detail',['id'=>$post->id])}}">{{$post->title}}</a></h3>
+                            <span><a href="{{route('categoryservices',['id'=>$post->category->id])}}">{{$post->category->title}}</a></span>
+                            <div class="card-date">
+                                {{date_format($post->created_at,"d/M/Y")}}
+                            </div>
+                            <p class="m-0 card-text">{{$post->description}}</p>
                         </div>
-                        <p class="m-0 card-text">Exercitation ullamco laboris nisi ut aliquip ex ea commodo. cillum dolore eu fugiat nulla pariatur commodo consequat.cillum dolore eu fugiat pariatur.</p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-6 col-lg-4 mt-4">
-                <article class="card card-style1">
-                    <div class="card-img"><img alt="..." src="{{asset('assets')}}/home/img/blog/blog-3.jpg">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="display-29 mb-1"><a href="#!">Intelligent Task Solve</a></h3>
-                        <span>Consulting</span>
-                        <div class="card-date">
-                            <h5>04</h5>
-                            <p>Feb</p>
-                        </div>
-                        <p class="m-0 card-text">Exercitation ullamco laboris nisi ut aliquip ex ea commodo. cillum dolore eu fugiat nulla pariatur commodo consequat.cillum dolore eu fugiat pariatur.</p>
-                    </div>
-                </article>
-            </div>
+                    </article>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>

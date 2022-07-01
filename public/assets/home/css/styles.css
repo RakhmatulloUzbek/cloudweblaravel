@@ -16,7 +16,7 @@
     content: "";
     width: 80px;
     height: 80px;
-    border: 3px solid #86bc42;
+    border: 3px solid red;
     display: block;
     border-radius: 50%;
     position: absolute;
@@ -34,7 +34,7 @@
     content: "";
     width: 80px;
     height: 80px;
-    border: 3px solid #86bc42;
+    border: 3px solid red; /*#86bc42*/
     display: block;
     border-radius: 50%;
     position: absolute;
@@ -73,12 +73,12 @@
 }
 
 a:hover, a:active {
-    color: #86bc42;
+    color: red;
     text-decoration: none
 }
 
 .bg-primary {
-    background-color: #86bc42 !important
+    background-color: red; !important
 }
 
 .bg-primary-90 {
@@ -90,11 +90,11 @@ a:hover, a:active {
 }
 
 .theme-overlay[data-overlay-dark]:before, .theme-overlay[data-overlay-light]:before {
-    background: #86bc42
+    background: red;
 }
 
 .text-primary {
-    color: #86bc42 !important
+    color: red; !important
 }
 
 .text-content-big p {
@@ -136,7 +136,7 @@ a:hover, a:active {
 }
 
 .readmore:hover {
-    color: #86bc42
+    color: red;
 }
 
 .left-title {
@@ -145,7 +145,7 @@ a:hover, a:active {
 
 .left-title:before {
     content: "";
-    background: #86bc42;
+    background: red;
     width: 15px;
     height: 2px;
     display: inline-block;
@@ -205,7 +205,7 @@ a:hover, a:active {
 }
 
 .primary-list li i {
-    color: #86bc42;
+    color: red;
     padding-right: 10px
 }
 
@@ -222,12 +222,12 @@ a:hover, a:active {
 }
 
 .white-list li i {
-    color: #86bc42;
+    color: red;
     padding-right: 15px
 }
 
 .list-style-16 li:after {
-    color: #86bc42
+    color: red;
 }
 
 .white-list {
@@ -243,7 +243,7 @@ a:hover, a:active {
 }
 
 .white-list li i {
-    color: #86bc42;
+    color: red;
     padding-right: 15px
 }
 
@@ -325,7 +325,7 @@ a:hover, a:active {
     -o-transition: width .4s;
     transition: width .4s;
     width: 0;
-    background: #86bc42;
+    background: red;
     height: 100%;
     top: 0;
     z-index: 1
@@ -352,7 +352,7 @@ a:hover, a:active {
 }
 
 .butn.primary {
-    background: #86bc42;
+    background: red;
     color: #fff
 }
 
@@ -409,16 +409,16 @@ a:hover, a:active {
 }
 
 .btn-style2:hover, .btn-style2:active, .btn-style2:focus {
-    background: #86bc42;
+    background: red;
     color: #fff;
-    border-color: #86bc42
+    border-color: red;
 }
 
 .btn-style2:focus {
-    background: #86bc42;
+    background: red;
     color: #fff;
     box-shadow: none;
-    border-color: #86bc42
+    border-color: red;
 }
 
 .btn-style2.white {
@@ -427,7 +427,7 @@ a:hover, a:active {
 }
 
 .btn-style2.white:hover, .btn-style2.white:active, .btn-style2.white:focus {
-    border-color: #86bc42
+    border-color: red;
 }
 
 .btn-style2 span {
@@ -442,10 +442,10 @@ a:hover, a:active {
     padding: 9px 22px;
     min-width: 150px;
     background: transparent;
-    border: 2px solid #86bc42;
+    border: 2px solid red;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 1px !important;
-    color: #86bc42;
+    color: red;
     letter-spacing: .5px;
     line-height: inherit;
     width: auto;
@@ -456,13 +456,13 @@ a:hover, a:active {
 }
 
 .butn-style3:hover, .butn-style3:active, .butn-style3:focus {
-    background: #86bc42;
+    background: red;
     color: #fff
 }
 
 .butn-style3.primary {
-    background: #86bc42;
-    border: 2px solid #86bc42;
+    background: red;
+    border: 2px solid red;
     color: #fff
 }
 
@@ -479,9 +479,9 @@ a:hover, a:active {
 }
 
 .butn-style3:hover, .butn-style3:active, .butn-style3:focus {
-    background: #86bc42;
+    background: red;
     color: #fff;
-    border-color: #86bc42
+    border-color: red;
 }
 
 .btn-style4 {
@@ -498,7 +498,7 @@ a:hover, a:active {
     border: none;
     letter-spacing: .5px;
     font-family: "Montserrat", sans-serif;
-    background-color: #86bc42;
+    background-color: red;
     display: inline-block;
     font-size: 14px;
     line-height: 26px;
@@ -581,7 +581,7 @@ a:hover, a:active {
 }
 
 .btn-style4.btn-primary:hover, .btn-style4.btn-primary:active, .btn-style4.btn-primary:focus {
-    background-color: #86bc42 !important;
+    background-color: red; !important;
     color: #fff !important;
     box-shadow: none !important;
     border: none !important
@@ -1096,7 +1096,7 @@ a:hover, a:active {
     display: block;
     width: 100px;
     height: 2px;
-    background: #86bc42;
+    background: red;
     margin: 0 auto;
     position: absolute;
     left: 0;
@@ -1148,7 +1148,7 @@ a:hover, a:active {
     position: relative;
     font-size: 15px;
     font-weight: 500;
-    color: #86bc42;
+    color: red;
     line-height: 200%;
     margin-bottom: 10px
 }
@@ -1171,8 +1171,8 @@ a:hover, a:active {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 14px;
-    color: #86bc42;
-    border: 1px solid #86bc42;
+    color: red;
+    border: 1px solid red;
     background: transparent;
     text-transform: uppercase;
     letter-spacing: .075em
@@ -1188,7 +1188,7 @@ a:hover, a:active {
     content: '';
     width: 60px;
     height: 2px;
-    background: #86bc42;
+    background: red;
     position: absolute;
     bottom: 0;
     left: calc(50% - 30px)
@@ -1227,7 +1227,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .section-heading .title-style2.white:after {
-    background: #86bc42
+    background: red;
 }
 
 .section-heading .title-style2.white:before {
@@ -1269,7 +1269,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .section-heading.title-style4 span {
-    color: #86bc42;
+    color: red;
     font-size: 32px;
     font-weight: 700;
     text-transform: uppercase
@@ -1315,7 +1315,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     background-color: transparent;
     border-width: 1px;
     border-style: solid;
-    border-color: #86bc42;
+    border-color: red;
     display: inline-block;
     vertical-align: text-bottom;
     position: relative
@@ -1367,7 +1367,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     display: block;
     width: 50px;
     height: 1px;
-    background: #86bc42;
+    background: red;
     margin: 0 auto;
     position: absolute;
     left: 0;
@@ -1425,7 +1425,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     display: block;
     width: 40px;
     height: 2px;
-    background: #86bc42;
+    background: red;
     margin: 0;
     position: absolute;
     left: 0;
@@ -1487,7 +1487,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 .top-bar-info li i {
     font-size: 16px;
-    color: #86bc42;
+    color: red;
     margin-right: 8px;
     margin-top: 0;
     display: inline-block;
@@ -1526,7 +1526,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .top-social-icon li a:hover {
-    color: #86bc42
+    color: red;
 }
 
 #top-bar.top-bar-style2 {
@@ -1551,11 +1551,11 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .navbar-nav li.current > a, .navbar-nav li.active > a {
-    color: #86bc42
+    color: red;
 }
 
 .navbar > ul > li.current > a:after {
-    border-color: transparent #86bc42 #86bc42 transparent
+    border-color: transparent red; red; transparent
 }
 
 .search-form i {
@@ -1569,19 +1569,19 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 @media screen and (min-width: 992px) {
     .header-style1 .navbar-nav li.current > a, .header-style2 .navbar-nav li.current > a, .header-style1 .navbar-nav li.active > a, .header-style2 .navbar-nav li.active > a {
-        color: #86bc42
+        color: red;
     }
 
     .header-style1 .navbar > ul > li.current > a:after, .header-style2 .navbar > ul > li.current > a:after {
-        border-color: transparent #86bc42 #86bc42 transparent
+        border-color: transparent red; red; transparent
     }
 
     .header-style1.scrollHeader .navbar-nav li.current > a, .header-style2.scrollHeader .navbar-nav li.current > a, .header-style1.scrollHeader .navbar-nav li.active > a, .header-style2.scrollHeader .navbar-nav li.active > a, .header-style1.scrollHeader .navbar-nav li.current > a:hover, .header-style2.scrollHeader .navbar-nav li.current > a:hover, .header-style1.scrollHeader .navbar-nav li.active > a:hover, .header-style2.scrollHeader .navbar-nav li.active > a:hover {
-        color: #86bc42
+        color: red;
     }
 
     .header-style1.scrollHeader .navbar > ul > li.current > a:after, .header-style2.scrollHeader .navbar > ul > li.current > a:after {
-        border-color: transparent #86bc42 #86bc42 transparent
+        border-color: transparent red; red; transparent
     }
 
     .header-style1.scrollHeader .butn.primary.white-hover:after {
@@ -1597,19 +1597,19 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     }
 
     .header-style4 .navbar-nav li.current > a {
-        color: #86bc42
+        color: red;
     }
 
     .header-style4 .navbar > ul > li.current > a:after {
-        border-color: transparent #86bc42 #86bc42 transparent
+        border-color: transparent red; red; transparent
     }
 
     .header-style4 .navbar-nav li.active > a {
-        color: #86bc42
+        color: red;
     }
 
     .header-style5 #top-bar {
-        background: #86bc42
+        background: red;
     }
 
     .header-style6 .navbar-default {
@@ -1617,71 +1617,71 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     }
 
     .header-style6.scrollHeader .navbar-default {
-        background: #86bc42
+        background: red;
     }
 
     .header-style8 .navbar ul ul li.active > a {
-        color: #86bc42
+        color: red;
     }
 
     .header-style8 .navbar-nav li.current > a, .header-style8 .navbar-nav li.active > a {
-        color: #86bc42
+        color: red;
     }
 
     .header-style8 .navbar > ul > li.current > a:after {
-        border-color: transparent #86bc42 #86bc42 transparent
+        border-color: transparent red; red; transparent
     }
 
     .header-style8.scrollHeader .navbar-nav > li.has-sub > a:hover {
-        color: #86bc42
+        color: red;
     }
 
     .header-style8.scrollHeader .navbar-nav li.current > a {
-        color: #86bc42
+        color: red;
     }
 
     .header-style8.scrollHeader .navbar-nav li.current > a:hover {
-        color: #86bc42
+        color: red;
     }
 
     .header-style8.scrollHeader .navbar > ul > li.current > a:after {
-        border-color: transparent #86bc42 #86bc42 transparent
+        border-color: transparent red; red; transparent
     }
 
     .header-style8.scrollHeader .navbar-nav li.active > a {
-        color: #86bc42
+        color: red;
     }
 
     .header-style8.scrollHeader .navbar-nav li.active > a:hover {
-        color: #86bc42
+        color: red;
     }
 
     .menu_area-light .navbar-nav li.current > a, .menu_area-light .navbar-nav li.active > a {
-        color: #86bc42
+        color: red;
     }
 
     .menu_area-light .navbar > ul > li.current > a:after {
-        border-color: transparent #86bc42 #86bc42 transparent
+        border-color: transparent red; red; transparent
     }
 
     .menu_area-light.scrollHeader .navbar-nav li.current > a {
-        color: #86bc42
+        color: red;
     }
 
     .menu_area-light.scrollHeader .navbar-nav li.current > a:hover {
-        color: #86bc42
+        color: red;
     }
 
     .menu_area-light.scrollHeader .navbar > ul > li.current > a:after {
-        border-color: transparent #86bc42 #86bc42 transparent
+        border-color: transparent red; red; transparent
     }
 
     .menu_area-light.scrollHeader .navbar-nav li.active > a {
-        color: #86bc42
+        color: red;
     }
 
     .menu_area-light.scrollHeader .navbar-nav li.active > a:hover {
-        color: #86bc42
+        color: red;
     }
 }
 
@@ -1699,7 +1699,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     }
 
     .header-style5 #top-bar, .header-style5 .navbar-toggler {
-        background: #86bc42
+        background: red;
     }
 
     .header-style6 .navbar-default {
@@ -1707,7 +1707,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     }
 
     .header-style8 .navbar ul ul li.active > a {
-        color: #86bc42
+        color: red;
     }
 }
 
@@ -1737,7 +1737,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .page-title-section ul li:last-child a {
-    color: #86bc42
+    color: red;
 }
 
 .page-title-section ul li:after {
@@ -1814,7 +1814,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .page-title-section2 ul li:last-child a {
-    color: #86bc42
+    color: red;
 }
 
 .page-title-section2 ul li:after {
@@ -1931,7 +1931,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .page-title-section.small ul li:last-child a {
-    color: #86bc42
+    color: red;
 }
 
 .page-title-section.small ul li:after {
@@ -1992,7 +1992,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .vertical-header-text:after {
-    background: #86bc42;
+    background: red;
     content: "";
     display: inline-block;
     height: 1px;
@@ -2004,7 +2004,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .vertical-header-text:before {
-    background: #86bc42;
+    background: red;
     content: "";
     display: inline-block;
     height: 1px;
@@ -2163,7 +2163,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .rev_slider_wrapper .tp-caption span {
-    color: #86bc42
+    color: red;
 }
 
 .rev_slider_wrapper .butn span {
@@ -2292,11 +2292,11 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 .feature-box-01:hover {
     background: #ffffff;
-    border: 5px solid #86bc42
+    border: 5px solid red;
 }
 
 .feature-box-01:hover .icon-tools {
-    color: #86bc42
+    color: red;
 }
 
 .feature-box-02 {
@@ -2311,7 +2311,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .feature-box-02:before {
-    background: #86bc42;
+    background: red;
     content: "";
     height: 0;
     left: 0px;
@@ -2341,8 +2341,8 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .feature-box-03:hover {
-    background: #86bc42;
-    border: 2px solid #86bc42
+    background: red;
+    border: 2px solid red;
 }
 
 .feature-box-03:hover p {
@@ -2501,7 +2501,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .feature-box-06 i {
-    color: #86bc42
+    color: red;
 }
 
 .feature-box-06 p {
@@ -2548,7 +2548,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .feature-box-07 .feature-textbox:before {
-    border-top: 5px solid #86bc42;
+    border-top: 5px solid red;
     content: "";
     width: 100%;
     position: absolute;
@@ -2562,11 +2562,11 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .feature-box-07 .feature-textbox a {
-    color: #86bc42
+    color: red;
 }
 
 .feature-box-07:hover .feature-textbox {
-    background-color: #86bc42
+    background-color: red;
 }
 
 .feature-box-07:hover .feature-textbox .title, .feature-box-07:hover .feature-textbox .feature-desc, .feature-box-07:hover .feature-textbox a.read-more {
@@ -2648,7 +2648,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .feature-box9:after {
-    background: #86bc42;
+    background: red;
     position: absolute;
     content: "";
     right: -2px;
@@ -2671,7 +2671,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .feature-box9:hover i {
-    color: #86bc42
+    color: red;
 }
 
 .feature-box9:hover:after {
@@ -2701,7 +2701,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .feature-flex-square-icon i {
-    color: #86bc42;
+    color: red;
     border-radius: 10px;
     font-size: 32px;
     -webkit-transition-duration: .3s;
@@ -2757,11 +2757,11 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .feature-flex-square-content-button:hover {
-    color: #86bc42
+    color: red;
 }
 
 .feature-flex-square-content-button:hover:after {
-    color: #86bc42
+    color: red;
 }
 
 @media screen and (max-width: 991px) {
@@ -2833,7 +2833,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     display: block;
     width: 80px;
     height: 2px;
-    background: #86bc42;
+    background: red;
     margin-top: 10px;
     margin-bottom: 15px;
     -webkit-transition-duration: .4s;
@@ -2847,7 +2847,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 .case-block-inner a {
     font-size: 15px;
     font-weight: 500;
-    color: #86bc42
+    color: red;
 }
 
 .case-block-inner a:after {
@@ -2855,7 +2855,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     font-size: 15px;
     font-weight: 700;
     font-family: Font Awesome\ 5 Free;
-    color: #86bc42;
+    color: red;
     margin-left: 10px;
     -webkit-transition-duration: .3s;
     transition-duration: .3s;
@@ -2889,7 +2889,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .partner-text span {
-    color: #86bc42;
+    color: red;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 3px;
@@ -2913,7 +2913,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     display: block;
     width: 40px;
     height: 2px;
-    background: #86bc42;
+    background: red;
     margin-top: 10px;
     -webkit-transition-duration: .4s;
     transition-duration: 0.4s
@@ -3081,7 +3081,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .service-box i {
-    color: #86bc42;
+    color: red;
     font-size: 28px;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s
@@ -3133,7 +3133,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .services-block-two h3 a:hover {
-    color: #86bc42
+    color: red;
 }
 
 .services-block-two h2 {
@@ -3147,7 +3147,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .services-block-two .icon-box {
-    color: #86bc42;
+    color: red;
     font-size: 36px;
     left: 35px;
     position: absolute;
@@ -3222,8 +3222,8 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     position: absolute;
     bottom: -3px;
     right: -3px;
-    border-bottom: 3px solid #86bc42;
-    border-right: 3px solid #86bc42;
+    border-bottom: 3px solid red;
+    border-right: 3px solid red;
     transition: all 0.5s ease 0s;
     -webkit-transition: all 0.5s ease 0s
 }
@@ -3236,8 +3236,8 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     position: absolute;
     top: -3px;
     left: -3px;
-    border-top: 3px solid #86bc42;
-    border-left: 3px solid #86bc42;
+    border-top: 3px solid red;
+    border-left: 3px solid red;
     transition: all 0.5s ease 0s;
     -webkit-transition: all 0.5s ease 0s
 }
@@ -3284,7 +3284,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .service-grids .service-block .number {
-    background-color: #86bc42;
+    background-color: red;
     border-radius: 75px;
     color: #fff;
     height: 75px;
@@ -3298,14 +3298,14 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .service-grids .service-block .details h4 {
-    color: #86bc42;
+    color: red;
     font-size: 20px;
     margin: 10px 0 15px 0;
     line-height: normal
 }
 
 .service-grids .service-block .details .read-more {
-    color: #86bc42;
+    color: red;
     font-weight: 600
 }
 
@@ -3400,7 +3400,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .service-block5:after {
-    background: #86bc42 none repeat scroll 0 0;
+    background: red; none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 0;
@@ -3427,7 +3427,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .service-block5 .service-desc h5 {
-    color: #86bc42;
+    color: red;
     font-size: 13px;
     letter-spacing: 1px;
     font-weight: 600;
@@ -3519,7 +3519,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 .service-block6 .service-icons > i {
     font-size: 42px;
-    color: #86bc42;
+    color: red;
     margin-top: 40px
 }
 
@@ -3536,8 +3536,8 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .services-single-menu li.active a {
-    border-left-color: #86bc42;
-    color: #86bc42
+    border-left-color: red;
+    color: red;
 }
 
 .services-single-menu li.active a:after {
@@ -3554,7 +3554,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 .services-single-menu li a:after {
     content: "";
-    background: #86bc42;
+    background: red;
     display: inline-block;
     height: 1px;
     width: 0;
@@ -3600,12 +3600,12 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .downloads li {
-    border: 1px solid #86bc42;
+    border: 1px solid red;
     border-radius: 5px
 }
 
 .downloads i {
-    background: #86bc42;
+    background: red;
     padding: 10px 12px;
     color: #fff;
     vertical-align: top
@@ -3628,7 +3628,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .process-step-xs .process-step-icon i {
-    color: #86bc42;
+    color: red;
     font-size: 47px
 }
 
@@ -3916,7 +3916,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .callto-action-imgbox:before {
-    border: 2px solid #86bc42;
+    border: 2px solid red;
     bottom: 40px;
     content: "";
     left: 0;
@@ -3951,7 +3951,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     position: relative;
     height: 80px;
     width: 80px;
-    background: #86bc42;
+    background: red;
     text-align: center;
     display: inline-block;
     line-height: 85px;
@@ -4177,7 +4177,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     left: 0;
     width: 100%;
     height: 100%;
-    background: #86bc42;
+    background: red;
     opacity: .92;
     content: "";
     z-index: -1
@@ -4311,7 +4311,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     text-align: center;
     font-size: 48px;
     font-weight: 700;
-    color: #86bc42;
+    color: red;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 5px;
     margin-bottom: 10px
@@ -4331,7 +4331,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     background: #fff;
     padding: 25px;
     text-align: center;
-    border: 8px solid #86bc42
+    border: 8px solid red;
 }
 
 .timeline {
@@ -4455,7 +4455,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .timeline-badge.success {
-    background-color: #3f903f !important
+    background-color: red !important
 }
 
 .timeline-badge.warning {
@@ -4529,7 +4529,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 .custom-bar {
     height: 100%;
-    background-color: #86bc42;
+    background-color: red;
     box-shadow: none
 }
 
@@ -4572,7 +4572,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     content: "\f10d";
     font-weight: 700;
     font-family: Font Awesome\ 5 Free;
-    color: #86bc42;
+    color: red;
     font-size: 23px;
     display: block
 }
@@ -4720,7 +4720,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     right: -62px;
     margin-top: -8px;
     font-size: 21px;
-    color: #86bc42
+    color: red;
 }
 
 .testimonial-style3 .testimonial-separator:before {
@@ -4830,7 +4830,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .testimonial-style4:after {
-    background: #86bc42;
+    background: red;
     position: absolute;
     content: "";
     right: -2px;
@@ -4914,7 +4914,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 .testmonials-style5 span {
     font-size: 13px;
-    color: #86bc42
+    color: red;
 }
 
 .testmonials-style5 span:before {
@@ -4972,7 +4972,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-    background-color: #86bc42
+    background-color: red;
 }
 
 .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
@@ -5027,7 +5027,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     content: "\f10d";
     font-weight: 700;
     font-family: Font Awesome\ 5 Free;
-    color: #86bc42;
+    color: red;
     font-size: 23px;
     display: block
 }
@@ -5173,7 +5173,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     right: -62px;
     margin-top: -8px;
     font-size: 21px;
-    color: #86bc42
+    color: red;
 }
 
 .testimonial-style3 .testimonial-separator:before {
@@ -5283,7 +5283,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .testimonial-style4:after {
-    background: #86bc42;
+    background: red;
     position: absolute;
     content: "";
     right: -2px;
@@ -5367,7 +5367,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 .testmonials-style5 span {
     font-size: 13px;
-    color: #86bc42
+    color: red;
 }
 
 .testmonials-style5 span:before {
@@ -5504,7 +5504,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .team-member:hover .team-member-text h4 {
-    color: #86bc42
+    color: red;
 }
 
 .team-member-text h4 a {
@@ -5512,7 +5512,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .team-member-text span {
-    color: #86bc42;
+    color: red;
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 2px
@@ -5552,7 +5552,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .team-single-text span {
-    color: #86bc42;
+    color: red;
     font-weight: 600
 }
 
@@ -5582,9 +5582,9 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 .team-single-icons ul li {
     display: inline-block;
-    border: 1px solid #86bc42;
+    border: 1px solid red;
     border-radius: 50%;
-    color: #86bc42;
+    color: red;
     margin-right: 8px;
     margin-bottom: 5px;
     -webkit-transition-duration: .3s;
@@ -5592,7 +5592,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .team-single-icons ul li a {
-    color: #86bc42;
+    color: red;
     display: block;
     font-size: 14px;
     height: 25px;
@@ -5602,8 +5602,8 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .team-single-icons ul li:hover {
-    background: #86bc42;
-    border-color: #86bc42
+    background: red;
+    border-color: red;
 }
 
 .team-single-icons ul li:hover a {
@@ -5744,7 +5744,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .team-style3 .social-links:after {
-    background: #86bc42;
+    background: red;
     bottom: -12px;
     content: "";
     height: 1px;
@@ -5851,7 +5851,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .team-style4 .social-links:after {
-    background: #86bc42;
+    background: red;
     bottom: -12px;
     content: "";
     height: 1px;
@@ -5970,7 +5970,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .card-style1 .card-body > span {
-    color: #86bc42;
+    color: red;
     font-size: 13px;
     padding-right: 5px
 }
@@ -5987,7 +5987,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .card-style1 .card-body ul li i {
-    color: #86bc42;
+    color: red;
     font-size: 14px;
     font-weight: 500;
     margin-right: 10px
@@ -6091,8 +6091,8 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .filtering .active {
-    border-color: #86bc42;
-    color: #86bc42
+    border-color: red;
+    color: red;
 }
 
 @media screen and (max-width: 767px) {
@@ -6162,7 +6162,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .project-grid-overlay h4 a:hover {
-    color: #86bc42
+    color: red;
 }
 
 .project-grid-overlay h4 a:after {
@@ -6170,7 +6170,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     display: block;
     width: 70px;
     height: 1px;
-    background: #86bc42;
+    background: red;
     margin: 15px auto
 }
 
@@ -6308,11 +6308,11 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .project-grid-style2:hover .portfolio-icon a:hover {
-    color: #86bc42
+    color: red;
 }
 
 .portfolio-post-border {
-    border: 1px solid #86bc42;
+    border: 1px solid red;
     bottom: 20px;
     left: 20px;
     position: absolute;
@@ -6327,13 +6327,13 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 .project-carousel h4:after {
     content: " ";
-    background: #86bc42;
+    background: red;
     height: 2px
 }
 
 .project-single-text h4:after {
     content: " ";
-    background: #86bc42;
+    background: red;
     height: 2px
 }
 
@@ -6355,7 +6355,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     width: 70px;
     margin-top: 8px;
     content: " ";
-    background: #86bc42;
+    background: red;
     height: 2px
 }
 
@@ -6366,7 +6366,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .project-single-text ul li i {
-    color: #86bc42;
+    color: red;
     font-weight: 500;
     font-size: 15px;
     padding-right: 10px
@@ -6574,7 +6574,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .project-grid-style3 .inner-box .project-desc .category {
-    color: #86bc42;
+    color: red;
     letter-spacing: 1px;
     font-size: 13px;
     font-weight: 700;
@@ -6607,7 +6607,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 
 .project-grid-style3 .inner-box:hover .project-desc .category:after {
     width: 100%;
-    background: #86bc42
+    background: red;
 }
 
 .project-grid-style3 .inner-box .project-desc a {
@@ -6621,7 +6621,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .project-grid-style3 .inner-box .project-desc a:hover {
-    color: #86bc42
+    color: red;
 }
 
 @media screen and (max-width: 767px) {
@@ -6713,7 +6713,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     }
 
     .project-grid-style4 .portfolio-sub-title:after {
-        background: #86bc42;
+        background: red;
         bottom: 10px;
         content: "";
         height: 1px;
@@ -6723,7 +6723,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
     }
 
     .project-grid-style4 .portfolio-sub-title:before {
-        background: #86bc42;
+        background: red;
         bottom: 10px;
         content: "";
         height: 1px;
@@ -6811,7 +6811,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .accordion-style .btn-link {
-    background: #86bc42 !important;
+    background: red; !important;
     color: #fff;
     position: relative;
     border: none;
@@ -6826,7 +6826,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .accordion-style .btn-link:hover {
-    background: #86bc42 !important;
+    background: red; !important;
     border: none;
     text-decoration: none
 }
@@ -6946,7 +6946,7 @@ h1.title-style2.white, h2.title-style2.white, h3.title-style2.white, h4.title-st
 }
 
 .services-single-menu ul li.services-active {
-    background: #86bc42
+    background: red;
 }
 
 .services-single-menu ul li.services-active a {
@@ -7208,16 +7208,16 @@ ul.resp-tabs-list {
 }
 
 .resp-tabs-list li.resp-tab-active {
-    border: 1px solid #86bc42;
+    border: 1px solid red;
     border-bottom: none;
-    border-color: #86bc42 !important;
+    border-color: red; !important;
     margin-bottom: -1px;
     padding: 12px 14px 14px 14px;
-    border-top: 4px solid #86bc42 !important;
+    border-top: 4px solid red; !important;
     border-bottom: 0px #fff solid;
     border-bottom: none;
     background-color: #fff;
-    color: #86bc42
+    color: red;
 }
 
 .resp-content-active, .resp-accordion-active {
@@ -7245,7 +7245,7 @@ h2.resp-accordion {
 
 h2.resp-tab-active {
     border-bottom: 0px solid #c1c1c1 !important;
-    background-color: #86bc42 !important;
+    background-color: red; !important;
     color: #fff
 }
 
@@ -7270,7 +7270,7 @@ h2.resp-tab-title:last-child {
 .resp-vtabs .resp-tabs-container {
     padding: 0px;
     background-color: #fff;
-    border: 1px solid #86bc42 !important;
+    border: 1px solid red; !important;
     float: left;
     width: 70%;
     min-height: 250px;
@@ -7288,8 +7288,8 @@ h2.resp-tab-title:last-child {
     margin-right: -1px !important;
     padding: 14px 15px 15px 11px !important;
     border-top: 1px solid;
-    border: 1px solid #86bc42 !important;
-    border-left: 4px solid #86bc42 !important;
+    border: 1px solid red; !important;
+    border-left: 4px solid red; !important;
     margin-bottom: 4px !important;
     border-right: 1px #FFF solid !important
 }
@@ -7337,7 +7337,7 @@ h2.resp-tab-active span.resp-arrow {
 
 .resp-tab-content-active {
     display: block;
-    border-color: #86bc42 !important
+    border-color: red; !important
 }
 
 h2.resp-accordion:first-child {
@@ -7345,11 +7345,11 @@ h2.resp-accordion:first-child {
 }
 
 h2.resp-accordion.resp-tab-active {
-    border-color: #86bc42 !important
+    border-color: red; !important
 }
 
 .tab-style4 .resp-tabs-list li.resp-tab-active, .tab-style4 .resp-tab-content-active {
-    background: #86bc42 !important;
+    background: red; !important;
     color: #fff
 }
 
@@ -7367,14 +7367,14 @@ h2.resp-accordion.resp-tab-active {
     }
 
     .tab-style5 ul.resp-tabs-list li.resp-tab-active {
-        border-bottom-color: #86bc42;
-        color: #86bc42
+        border-bottom-color: red;
+        color: red;
     }
 
     .tab-style5 .resp-tab-content {
         border: 1px solid #e6e6e6;
         border-width: 1px 0 0 0;
-        border-color: #86bc42
+        border-color: red;
     }
 }
 
@@ -7390,8 +7390,8 @@ h2.resp-accordion.resp-tab-active {
     }
 
     .tab-style6 ul.resp-tabs-list li.resp-tab-active {
-        border-bottom-color: #86bc42;
-        color: #86bc42
+        border-bottom-color: red;
+        color: red;
     }
 
     .tab-style6 .resp-tab-content {
@@ -7407,7 +7407,7 @@ h2.resp-accordion.resp-tab-active {
     }
 
     .tab-style6 .resp-tabs-list li.resp-tab-active h6 {
-        color: #86bc42
+        color: red;
     }
 
     .tab-style6 .resp-tabs-list .tab-box h6 {
@@ -7434,7 +7434,7 @@ h2.resp-accordion.resp-tab-active {
 
     .tab-style6 .resp-tabs-list li.resp-tab-active {
         border-width: 0 0 2px 0 !important;
-        border-color: #86bc42 !important
+        border-color: red; !important
     }
 
     .tab-style6 ul.resp-tabs-list i {
@@ -7450,8 +7450,8 @@ h2.resp-accordion.resp-tab-active {
     }
 
     .tab-style6 ul.resp-tabs-list li.resp-tab-active i {
-        background: #86bc42;
-        border-color: #86bc42;
+        background: red;
+        border-color: red;
         color: #fff
     }
 }
@@ -7547,15 +7547,15 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .tab-style7 .resp-tabs-list li.resp-tab-active {
-    border: 1px solid #86bc42;
+    border: 1px solid red;
     border-bottom: none;
-    border-color: #86bc42 !important;
+    border-color: red; !important;
     margin-bottom: -1px;
-    border-top: 4px solid #86bc42 !important;
+    border-top: 4px solid red; !important;
     border-bottom: 0px #fff solid;
     border-bottom: none;
     background-color: #fff;
-    color: #86bc42;
+    color: red;
     color: #5e2ced;
     -ms-border-top-left-radius: 5px;
     -webkit-border-top-left-radius: 5px;
@@ -7582,7 +7582,7 @@ h2.resp-accordion.resp-tab-active {
 
 .tab-style7 .resp-tabs-list li.resp-tab-active:after {
     content: "";
-    background: #86bc42;
+    background: red;
     height: 1px;
     width: 100%;
     position: absolute;
@@ -7614,7 +7614,7 @@ h2.resp-accordion.resp-tab-active {
     }
 
     .tab-style7 ul.resp-tabs-list li.resp-tab-active {
-        color: #86bc42
+        color: red;
     }
 
     .tab-style7 .resp-tab-content {
@@ -7675,7 +7675,7 @@ h2.resp-accordion.resp-tab-active {
     margin-bottom: -1px;
     color: #fff;
     padding: 5px 15px;
-    background-color: #86bc42 !important;
+    background-color: red; !important;
     border: none !important
 }
 
@@ -7733,7 +7733,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .price-table-header {
-    background: #86bc42;
+    background: red;
     text-align: center;
     padding: 30px
 }
@@ -7748,7 +7748,7 @@ h2.resp-accordion.resp-tab-active {
     background: #ffffff;
     border: 1px solid #dddddd;
     border-radius: 100%;
-    color: #86bc42;
+    color: red;
     display: inline-block;
     font-size: 30px;
     height: 80px;
@@ -7810,7 +7810,7 @@ h2.resp-accordion.resp-tab-active {
     font-weight: 700;
     font-family: Font Awesome\ 5 Free;
     display: inline-block;
-    color: #86bc42;
+    color: red;
     margin-right: 12px
 }
 
@@ -7820,7 +7820,7 @@ h2.resp-accordion.resp-tab-active {
 
 .price-table-content a {
     display: inline-block;
-    border: 2px solid #86bc42;
+    border: 2px solid red;
     background: #fff;
     font-family: "Montserrat", sans-serif;
     color: #232323;
@@ -7833,7 +7833,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .price-table-content a:hover {
-    background: #86bc42;
+    background: red;
     color: #fff
 }
 
@@ -7850,7 +7850,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .pricing-list.highlight {
-    background: #86bc42;
+    background: red;
     border-color: transparent
 }
 
@@ -7864,12 +7864,12 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .pricing-list.highlight .pricing-list-button:hover {
-    background: #86bc42
+    background: red;
 }
 
 .pricing-list.highlight .pricing-list-button a {
     display: block;
-    color: #86bc42;
+    color: red;
     font-size: 16px;
     font-weight: 500;
     padding: 8px;
@@ -7904,7 +7904,7 @@ h2.resp-accordion.resp-tab-active {
 
 .pricing-list span {
     display: inline-block;
-    color: #86bc42;
+    color: red;
     font-weight: 500
 }
 
@@ -7930,9 +7930,9 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .pricing-list-button {
-    background: #86bc42;
+    background: red;
     margin: 20px 15px 0;
-    border: 2px solid #86bc42;
+    border: 2px solid red;
     border-radius: 5px;
     -webkit-transition-duration: .3s;
     transition-duration: .3s
@@ -7953,7 +7953,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .pricing-list-button:hover a {
-    color: #86bc42
+    color: red;
 }
 
 .price-table-style2 .price-table-header {
@@ -8063,7 +8063,7 @@ h2.resp-accordion.resp-tab-active {
     right: 0;
     margin: 0 auto;
     z-index: 99;
-    background: #86bc42
+    background: red;
 }
 
 .footer-plan {
@@ -8377,7 +8377,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .image_blog > a:after {
-    background: #86bc42 none repeat scroll 0 0;
+    background: red; none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 0;
@@ -8430,7 +8430,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .text_blog:hover {
-    background: #86bc42
+    background: red;
 }
 
 .text_blog h5 {
@@ -8488,7 +8488,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .text_blog .blog_user h4 a {
-    color: #86bc42;
+    color: red;
     transition: all 300ms linear 0s
 }
 
@@ -8659,7 +8659,7 @@ h2.resp-accordion.resp-tab-active {
     border-radius: 2px;
     overflow: hidden;
     color: #fff;
-    background-color: #86bc42
+    background-color: red;
 }
 
 .blog-style6 .date-day {
@@ -8814,7 +8814,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .blog-grid-text > span {
-    color: #86bc42;
+    color: red;
     font-size: 13px;
     padding-right: 5px
 }
@@ -8832,7 +8832,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .blog-grid-text ul li i {
-    color: #86bc42;
+    color: red;
     font-size: 14px;
     font-weight: 500;
     margin-right: 10px
@@ -8878,7 +8878,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .blog-grid-simple h3 a:hover {
-    color: #86bc42
+    color: red;
 }
 
 .blog-grid-simple-date i {
@@ -8906,7 +8906,7 @@ h2.resp-accordion.resp-tab-active {
 
 .blog-grid-simple-content a {
     display: inline-block;
-    color: #86bc42;
+    color: red;
     font-weight: 600;
     font-size: 14px;
     margin-top: 2px
@@ -8917,7 +8917,7 @@ h2.resp-accordion.resp-tab-active {
     font-size: 14px;
     font-weight: 700;
     font-family: Font Awesome\ 5 Free;
-    color: #86bc42;
+    color: red;
     margin-left: 10px;
     -webkit-transition-duration: .3s;
     transition-duration: .3s
@@ -8950,7 +8950,7 @@ h2.resp-accordion.resp-tab-active {
     display: block;
     float: right;
     position: absolute;
-    background: #86bc42;
+    background: red;
     left: 20px;
     top: 5px;
     padding: 5px;
@@ -8959,7 +8959,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .blog-list-simple-text > span {
-    color: #86bc42;
+    color: red;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -9033,7 +9033,7 @@ h2.resp-accordion.resp-tab-active {
 }
 
 .blogs .post .content .post-title h5 a:hover {
-    color: #F24259
+    color: red;
 }
 
 .blogs .post .content .meta {
@@ -9063,7 +9063,7 @@ h2.resp-accordion.resp-tab-active {
 
 .blogs .post .content .btn:hover {
     color: #fff;
-    border-color: #F24259
+    border-color: red;
 }
 
 .blogs .post .share-post {
@@ -9198,7 +9198,7 @@ h2.resp-accordion.resp-tab-active {
 
 .blockquote {
     background: #f1f1f1;
-    border-left: 4px solid #86bc42;
+    border-left: 4px solid red;
     font-size: 16px;
     font-weight: 500;
     margin: 25px 0;
@@ -9239,7 +9239,7 @@ h2.resp-accordion.resp-tab-active {
     content: '';
     width: 30px;
     height: 1px;
-    background: #86bc42;
+    background: red;
     position: absolute;
     bottom: 0;
     left: 0
@@ -9348,7 +9348,7 @@ h2.resp-accordion.resp-tab-active {
 
 .error-box-text h1 {
     font-size: 200px;
-    color: #86bc42;
+    color: red;
     line-height: 1
 }
 
@@ -9437,8 +9437,8 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
 }
 
 .social-icon-style1 li a {
-    background: #86bc42;
-    border: 1px solid #86bc42;
+    background: red;
+    border: 1px solid red;
     color: #fff;
     border-radius: 35px;
     height: 35px;
@@ -9449,7 +9449,7 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
 
 .social-icon-style1 li a:hover {
     background: #fff;
-    color: #86bc42
+    color: red;
 }
 
 .social-icon-style2 {
@@ -9468,8 +9468,8 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
 
 .social-icon-style2 li a {
     background: #f9f9f9;
-    border: 1px solid #86bc42;
-    color: #86bc42;
+    border: 1px solid red;
+    color: red;
     border-radius: 35px;
     height: 35px;
     width: 35px;
@@ -9478,7 +9478,7 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
 }
 
 .social-icon-style2 li a:hover {
-    background: #86bc42;
+    background: red;
     color: #fff
 }
 
@@ -9499,7 +9499,7 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
 }
 
 .social-icon-style3 li a:hover {
-    color: #86bc42
+    color: red;
 }
 
 .social-icon-style4 {
@@ -9592,7 +9592,7 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
     height: 25px;
     padding-top: 7px;
     border-radius: 50%;
-    background: #86bc42;
+    background: red;
     color: #fff;
     font-size: 12px;
     margin-right: 5px;
@@ -9620,7 +9620,7 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
 }
 
 .contact-box i {
-    background: #86bc42;
+    background: red;
     color: #fff;
     font-size: 35px;
     margin: 10px 0 20px;
@@ -9660,7 +9660,7 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
 
 .newsletter-form button {
     display: inline-block;
-    background: #86bc42;
+    background: red;
     cursor: pointer;
     color: #fff;
     border: none;
@@ -9936,12 +9936,12 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
 }
 
 .form-control:focus {
-    border-color: #86bc42
+    border-color: red;
 }
 
 .form-check-input:checked {
-    border-color: #86bc42;
-    background-color: #86bc42
+    border-color: red;
+    background-color: red;
 }
 
 .form-check-input:focus {
@@ -9998,7 +9998,7 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
     background: none;
     border: none;
     float: none;
-    color: #f5543f;
+    color: red;
     font-size: 11px;
     line-height: normal;
     letter-spacing: normal
@@ -10009,7 +10009,7 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
     background: none;
     border: none;
     float: none;
-    color: #f5543f;
+    color: red;
     font-size: 11px;
     line-height: normal;
     letter-spacing: normal
@@ -10020,7 +10020,7 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
 }
 
 .quform-has-error input, .quform-has-error textarea, .quform-has-error select, .quform-has-error input[type=file], .quform-has-error .custom-file-label {
-    border-color: #f5543f
+    border-color: red;
 }
 
 .quform-success-message {
@@ -10064,7 +10064,7 @@ ul.countdown li p.timeRefDays, ul.countdown li p.timeRefHours, ul.countdown li p
     display: block;
     margin-bottom: 15px;
     font-size: 28px;
-    color: #86bc42
+    color: red;
 }
 
 .modal-backdrop {
@@ -10149,7 +10149,7 @@ pre[class*="language-"] {
 }
 
 .copy-element > a:hover, .source-element > a:hover {
-    background: #86bc42;
+    background: red;
     color: #fff !important
 }
 
@@ -10230,7 +10230,7 @@ footer h3:after {
     display: block;
     width: 70px;
     height: 2px;
-    background: #86bc42;
+    background: red;
     margin-top: 12px
 }
 
@@ -10260,8 +10260,8 @@ footer h3:after {
 }
 
 .footer-social-icons ul li:hover {
-    background: #86bc42;
-    border-color: #86bc42
+    background: red;
+    border-color: red;
 }
 
 .footer-social-icons ul li:hover i {
@@ -10305,8 +10305,8 @@ footer h3:after {
 }
 
 .footer-social-icons2 ul li:hover {
-    background: #86bc42;
-    border-color: #86bc42
+    background: red;
+    border-color: red;
 }
 
 .footer-social-icons2 ul li:hover i {
@@ -10481,11 +10481,11 @@ footer h3:after {
 }
 
 .footer-list li a:hover {
-    color: #86bc42
+    color: red
 }
 
 .footer-list li a:hover:before {
-    color: #86bc42
+    color: red
 }
 
 .footer-list-style2 {
@@ -10592,7 +10592,7 @@ footer h3:after {
 }
 
 .footer-recent-post-content a:hover, .footer-recent-post-content a:active, .footer-recent-post-content a:focus {
-    color: #86bc42
+    color: red
 }
 
 .footer-recent-post-content span {
@@ -10640,7 +10640,7 @@ h3.footer-title-style2:after {
     content: '';
     width: 60px;
     height: 2px;
-    background: #86bc42;
+    background: red
     position: absolute;
     bottom: 0;
     left: 20px
@@ -10700,7 +10700,7 @@ footer h3.footer-title-style7:after {
     margin: 0 0 0;
     width: 70px;
     margin: 10px 0;
-    background-color: #86bc42
+    background-color: red
 }
 
 footer h3.footer-title-style7:before {
@@ -10711,7 +10711,7 @@ footer h3.footer-title-style7:before {
     display: inline-block;
     width: 10px;
     height: 10px;
-    border: 1px solid #86bc42;
+    border: 1px solid red;
     margin-bottom: 10px
 }
 

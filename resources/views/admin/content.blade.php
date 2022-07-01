@@ -1,7 +1,7 @@
 <!-- start page inner -->
 <div class="page-inner">
     <div class="page-title">
-        <h3 class="breadcrumb-header">Dashboard</h3>
+        <h3 class="breadcrumb-header">Home</h3>
     </div>
     <!-- start page main wrapper -->
     <div id="main-wrapper">

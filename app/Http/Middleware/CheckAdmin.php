@@ -17,9 +17,9 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        $userRole = Auth::user()->roles->pluck('name');
+        $userRole = Auth::user()->role;
         //dd($userRole);
-        if (!$userRole->contains('admin')){
+        if (!$userRole){
             return  redirect(route('page_404'));
         }
         return $next($request);

@@ -1,10 +1,13 @@
 <footer>
+    @php
+        $recentPosts = \App\Http\Controllers\HomeController::recentpostslist();
+    @endphp
     <div class="container">
         <div class="row mt-n1-9">
 
             <div class="col-lg-4 col-md-6 mt-1-9">
 
-                <img alt="footer-logo" src="{{asset('assets')}}/home/img/logos/logo-footer.png">
+                <img style="width: 160px; height: 85px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/mikrologo.png">
                 <p class="mt-4 text-light-gray">Nemo enim enim voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
                 <div class="mt-4 footer-social-icons">
                     <ul class="ps-0 mb-0">
@@ -32,20 +35,12 @@
 
             <div class="col-lg-3 col-md-6 mt-1-9">
                 <h3 class="text-white">Recent Posts</h3>
-
-                <div class="clearfix footer-recent-post mt-0">
-                    <div class="footer-recent-post-thumb"><img alt="..." src="{{asset('assets')}}/home/img/thumbs/t-1.jpg"></div>
-                    <div class="footer-recent-post-content"><a href="#!">Your Consultant Business</a><span>March 25, 2022</span></div>
-                </div>
-                <div class="clearfix footer-recent-post">
-                    <div class="footer-recent-post-thumb"><img alt="..." src="{{asset('assets')}}/home/img/thumbs/t-2.jpg"></div>
-                    <div class="footer-recent-post-content"><a href="#!">Always Look On The Glorious.</a> <span>Jan 5, 2022</span></div>
-                </div>
-                <div class="clearfix footer-recent-post">
-                    <div class="footer-recent-post-thumb"><img alt="..." src="{{asset('assets')}}/home/img/thumbs/t-3.jpg"></div>
-                    <div class="footer-recent-post-content"><a href="#!">Markets Research Financial.</a> <span>Feb 12, 2022</span></div>
-                </div>
-
+                @foreach($recentPosts as $post)
+                    <div class="clearfix footer-recent-post mt-0">
+                        <div class="footer-recent-post-thumb"><img alt="..." src="{{Storage::url($post->image)}}"></div>
+                        <div class="footer-recent-post-content"><a href="{{route('post_detail',['id'=>$post->id])}}">{{$post->title}}</a><span>{{date_format($post->created_at,"d,M,Y")}}</span></div>
+                    </div>
+                @endforeach
             </div>
             <div class="col-lg-3 col-md-6 mt-1-9">
                 <h3 class="text-white">Newsletter</h3>
@@ -65,7 +60,16 @@
                                 </div>
                             </div>
                             <!-- End Text input element -->
+                            <div class="col-md-12 mt-1-9">
+                                    <div class="clearfix footer-recent-post mt-0">
+                                        <div class="row">
+                                            <div style="width: 90px; height: 90px" class="mt-3"><img style="height: 35px" alt="" src="{{asset('assets')}}/home/img/logos/yerli.png"></div>
+                                            <div style="width: 100px; height: 65px" class=""><img style="height: 60px" alt="" src="{{asset('assets')}}/home/img/logos/mikrorunner1.png"></div>
+                                            <div style="width: 100px; height: 65px" class=""><img style="height: 60px" alt="" src="{{asset('assets')}}/home/img/logos/mikrojumper1.png"></div>
+                                        </div>
 
+                                    </div>
+                            </div>
                             <!-- Begin Submit button -->
                             <div class="col-md-12">
                                 <div class="quform-submit-inner">

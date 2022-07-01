@@ -52,7 +52,7 @@
                                         <th style="width: 25px;">id</th>
                                         <th>Name</th>
                                         <th>Phone</th>
-                                        <th style="width: 120px">Email</th>
+                                        <th>Email</th>
                                         <th>Subject</th>
                                         <th style="width: 35px">Status</th>
                                         <th style="width: 30px">Delete</th>
@@ -65,8 +65,8 @@
                                             <td>{{$rs->id}}</td>
                                             <td>{{$rs->name}}</td>
                                             <td>{{$rs->phone}}</td>
-                                            <td style="width: 120px">{{$rs->email}}</td>
-                                            <td style="width: 35px">{{$rs->subject}}</td>
+                                            <td>{{$rs->email}}</td>
+                                            <td>{{$rs->subject}}</td>
                                             <td>
                                                 @if($rs->status=='New')<div id="new1">{{$rs->status}}</div>
                                                 @else<div id="new2">{{$rs->status}}</div>

@@ -1,5 +1,5 @@
 @extends('layouts.homefontbase')
-@section('title','Bize Ulaşın')
+@section('title','İletişim | Mikro Yazılım')
 
 @section('head')
 @endsection
@@ -55,88 +55,40 @@
 
                 <!-- contact form -->
                 <div class="col-lg-6 mb-1-9 mb-lg-0">
-                    <form class="contact quform" action="https://fabrex.websitelayout.net/quform/contact.php" method="POST" enctype="multipart/form-data" onclick="" encoding="multipart/form-data">
-                        <div class="quform-elements">
-                            <div class="row">
+                    <form role="form" action="{{route('storemessage')}}" method="post" class="form-horizontal">
+                        @csrf
+                        <div class="col-12 col-xl-8 mb-4 mb-xl-0 pb-4">
+                            <h2 class="font-weight-bold">Contact Form </h2>
+                        </div>
+                        @include('home.message_info')
+                        <div class="form-group colum-row row">
+                            <div class="col-sm-6">
+                                <input type="text" id="name" name="name" class="form-control mb-2" placeholder="Name & Surname"
+                                       required>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="email" id="email" name="email" class="form-control mb-2" placeholder="Email"
+                                       required>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone number"
+                                       required>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject"
+                                       required>
+                            </div>
+                        </div>
 
-                                <!-- Begin Text input element -->
-                                <div class="col-md-6">
-                                    <div class="quform-element form-group quform-has-error">
-                                        <div class="quform-input">
-                                            <input class="form-control" id="name" type="text" name="name" placeholder="Your name here">
-                                            <div class="quform-errors-wrap"><div class="quform-errors quform-cf" style="display: block;"><div class="quform-error">This field is required</div></div></div></div>
-                                    </div>
-                                </div>
-                                <!-- End Text input element -->
-
-                                <!-- Begin Text input element -->
-                                <div class="col-md-6">
-                                    <div class="quform-element form-group quform-has-error">
-                                        <div class="quform-input">
-                                            <input class="form-control" id="email" type="text" name="email" placeholder="Your email here">
-                                            <div class="quform-errors-wrap"><div class="quform-errors quform-cf" style="display: block;"><div class="quform-error">This field is required</div></div></div></div>
-                                    </div>
-                                </div>
-                                <!-- End Text input element -->
-
-                                <!-- Begin Text input element -->
-                                <div class="col-md-6">
-                                    <div class="quform-element form-group quform-select-replaced quform-has-error">
-                                        <div class="quform-input">
-                                            <input class="form-control" id="subject" type="text" name="subject" placeholder="Your subject here">
-                                            <div class="quform-errors-wrap"><div class="quform-errors quform-cf" style="display: block;"><div class="quform-error">This field is required</div></div></div></div>
-                                    </div>
-                                </div>
-                                <!-- End Text input element -->
-
-                                <!-- Begin Text input element -->
-                                <div class="col-md-6">
-                                    <div class="quform-element form-group">
-                                        <div class="quform-input">
-                                            <input class="form-control" id="phone" type="text" name="phone" placeholder="Your phone here">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Text input element -->
-
-                                <!-- Begin Textarea element -->
-                                <div class="col-md-12">
-                                    <div class="quform-element form-group quform-has-error">
-                                        <div class="quform-input">
-                                            <textarea class="form-control h-100" id="message" name="message" rows="3" placeholder="Tell us a few words"></textarea>
-                                            <div class="quform-errors-wrap"><div class="quform-errors quform-cf" style="display: block;"><div class="quform-error">This field is required</div></div></div></div>
-                                    </div>
-                                </div>
-                                <!-- End Textarea element -->
-
-                                <!-- Begin Captcha element -->
-                                <div class="col-md-12">
-                                    <div class="quform-element quform-has-error">
-                                        <div class="form-group">
-                                            <div class="quform-input">
-                                                <input class="form-control" id="type_the_word" type="text" name="type_the_word" placeholder="Type the below word">
-                                                <div class="quform-errors-wrap"><div class="quform-errors quform-cf" style="display: block;"><div class="quform-error">This field is required</div></div></div></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="quform-captcha">
-                                                <div class="quform-captcha-inner">
-                                                    <img src="{{asset('assets')}}/home/quform/images/captcha/courier-new-light.png" alt="...">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Captcha element -->
-
-                                <!-- Begin Submit button -->
-                                <div class="col-md-12">
-                                    <div class="quform-submit-inner">
-                                        <button class="butn" type="submit"><span>Sumbit comment</span></button>
-                                    </div>
-                                    <div class="quform-loading-wrap text-start" style="display: none;"><span class="quform-loading"></span></div>
-                                </div>
-                                <!-- End Submit button -->
-
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                    <textarea id="message" name="message" cols="30" rows="5"
+                                              class="form-control message" placeholder="Message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <button class="butn" type="submit"><span>Send Message</span></button>
                             </div>
                         </div>
                     </form>

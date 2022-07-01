@@ -38,7 +38,7 @@
                                     <tr>
                                         <th style="width: 25px;">id</th>
                                         <th>Parent</th>
-                                        <th style="width: 100px">Title</th>
+                                        <th>Title</th>
                                         <th>Keyword</th>
                                         <th style="width: 32px">Status</th>
                                         <th style="width: 25px">Edit</th>
@@ -64,7 +64,7 @@
                                     <tr>
                                         <th style="width: 25px;">id</th>
                                         <th>Parent</th>
-                                        <th style="width: 100px">Title</th>
+                                        <th>Title</th>
                                         <th>Keyword</th>
                                         <th style="width: 32px">Status</th>
                                         <th style="width: 25px">Edit</th>

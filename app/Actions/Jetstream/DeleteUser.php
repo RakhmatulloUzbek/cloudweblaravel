@@ -32,7 +32,7 @@ class DeleteUser implements DeletesUsers
      * @param  mixed  $user
      * @return void
      */
-    public function delete($user)
+    public  function delete($user)
     {
         DB::transaction(function () use ($user) {
             $this->deleteTeams($user);

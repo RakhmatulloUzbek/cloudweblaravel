@@ -1,5 +1,5 @@
 @extends('layouts.homefontbase')
-@section('title','Hakkımızda')
+@section('title','Hakkımızda | Mikro Yazılım')
 
 @section('head')
 @endsection
@@ -28,12 +28,64 @@
     <section class="md pb-5">
 
         <div class="container">
-
+            @php
+                $settings = \App\Http\Controllers\HomeController::getsettings();
+            @endphp
             <div class="section-heading">
-                <h2>About Us</h2>
+                <h2>Hakkımızda</h2>
             </div>
 
             <div class="row">
+                <div class="col-lg-9 pe-xl-1-9 mb-1-9 mb-lg-0">
+                    <div class="section-heading">
+                        <h1>MİKRO YAZILIM </h1>
+                    </div>
+                        <article class="blog-list-simple">
+                            {!! $settings->aboutus !!}
+                        </article>
+                </div>
+                <div class="col-lg-3">
+                    <div class="side-bar">
+                        @php
+                            $recentPosts = \App\Http\Controllers\HomeController::recentpostslist();
+                        @endphp
+                        <div class="widget">
+                            <div class="widget-title">
+                                <h6>Recent Posts</h6>
+                            </div>
+                            <ul class="list-unstyled ps-0">
+                                @foreach($recentPosts as $post)
+                                    <li><a href="{{route('post_detail',['id'=>$post->id])}}">{{$post->title}}!</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @php
+                            $mainCategories = \App\Http\Controllers\HomeController::maincategorylist();
+                        @endphp
+                        <div class="widget">
+                            <div class="widget-title">
+                                <h6>Categories</h6>
+                            </div>
+                            <ul class="list-unstyled ps-0">
+                                @foreach($mainCategories as $rs)
+                                    @if(count($rs->children))
+                                        <li>
+                                            <a href="{{route('categoryservices',['id'=>$rs->id])}}">{{$rs->title}}</a>
+                                            <ul class="list-unstyled ps-0">
+                                                @include('home.categorytree2',['children'=>$rs->children])
+                                            </ul>
+                                        </li>
+                                    @else
+                                        <li>
+                                            <a href="{{route('categoryservices',['id'=>$rs->id])}}">{{$rs->title}}</a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
 
                 <!-- item-->
                 <div class="col-md-4">

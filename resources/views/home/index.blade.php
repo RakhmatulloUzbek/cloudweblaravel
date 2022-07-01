@@ -1,5 +1,6 @@
 @extends('layouts.homefontbase')
-@section('title','Ana Sayfa')
+
+@section('title','Anasayfa')
 
 @section('head')
 @endsection

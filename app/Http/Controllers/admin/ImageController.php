@@ -96,8 +96,9 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id,$pid)
+    public function destroy($pid,$id)
     {
+        //$post = Post::find($pid);
         $data= Image::find($id);
         if($data->image && Storage::disk('public')->exists($data->image)) {
             Storage::delete($data->image);

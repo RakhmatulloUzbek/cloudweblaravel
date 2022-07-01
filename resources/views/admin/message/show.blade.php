@@ -29,8 +29,6 @@
                 <div class="col-md-12">
                     <div class="card card-white">
                         <div class="card-body">
-                            <a href="{{route('admin.category.edit',['id'=>$data->id])}}" role="button" class="btn btn-danger m-b-sm">Sil</a>
-                            <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" role="button" class="btn btn-success m-b-sm">Düzenle</a>
                             <div class="table-responsive">
                                 <table id="example" class="display table" style="width: 100%;">
                                     <tr>

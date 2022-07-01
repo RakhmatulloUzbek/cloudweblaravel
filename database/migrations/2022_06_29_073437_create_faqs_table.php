@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('faqs', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('name',20);
+            $table->string('question')->nullable();
+            $table->text('answer')->nullable();
+            $table->string('status',5)->default('False')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('faqs');
     }
 };
