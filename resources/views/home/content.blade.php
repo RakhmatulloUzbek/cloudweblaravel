@@ -421,7 +421,7 @@
                         <div class="card-img"><img alt="..." src="{{Storage::url($post->image)}}">
                         </div>
                         <div class="card-body">
-                            <h3 class="display-29 mb-1"><a href="{{route('post_detail',['id'=>$post->id])}}">{{$post->title}}</a></h3>
+                            <h3 class="display-29 mb-1"><a href="{{route('data_detail',['id'=>$post->id])}}">{{$post->title}}</a></h3>
                             <span><a href="{{route('categoryservices',['id'=>$post->category->id])}}">{{$post->category->title}}</a></span>
                             <div class="card-date">
                                 {{date_format($post->created_at,"d/M/Y")}}

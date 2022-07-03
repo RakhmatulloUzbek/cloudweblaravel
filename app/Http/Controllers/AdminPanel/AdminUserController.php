@@ -1,24 +1,29 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\AdminPanel;
 
+use App\Actions\Jetstream\DeleteUser;
 use App\Http\Controllers\Controller;
-use App\Models\Message;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
-class MessageController extends Controller
+class AdminUserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     *
      */
     public function index()
     {
-        //
-        $data= Message::all();
-        return view('admin.message.index',[
-            'data'=>$data
+//        echo "user";
+//        exit();
+        $data = User::all();
+        return view('admin.users.index',[
+            'data'=> $data
         ]);
     }
 
@@ -51,14 +56,20 @@ class MessageController extends Controller
      */
     public function show($id)
     {
-        //
-        $data= Message::find($id);
-        $data->status='Read';
-        $data->save();
-        return view('admin.message.show',[
-            'data'=>$data
+        $data = User::find($id);
+        return view('admin.users.show',[
+            'data'=> $data
         ]);
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+
 
     /**
      * Show the form for editing the specified resource.
@@ -76,27 +87,27 @@ class MessageController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $data= Message::find($id);
-        $data->note=$request->input('note');
-        $data->save();
-        return redirect(route('admin.message.show',['id'=>$id]));
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
-        $data= Message::find($id);
-        $data->delete();
-        return redirect('admin/message/');
+        $user = User::find($id);
+        if ($user->profile_photo_url) {
+            Storage::delete($user->profile_photo_url);
+        }
+        $user->delete();
+        return redirect()->back();
+
     }
 }

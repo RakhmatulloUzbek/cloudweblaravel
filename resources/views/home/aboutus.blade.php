@@ -1,5 +1,5 @@
 @extends('layouts.homefontbase')
-@section('title','Hakkımızda | Mikro Yazılım')
+@section('title','Hakkımızda | Pengona Yazılım')
 
 @section('head')
 @endsection
@@ -15,7 +15,7 @@
                 <div class="col-md-12">
                     <ul class="ps-0">
                         <li><a href="home-default.html">Home</a></li>
-                        <li><a href="#!">About Us</a></li>
+                        <li><a href="#!">Hakkımızda</a></li>
                     </ul>
                 </div>
             </div>
@@ -31,14 +31,10 @@
             @php
                 $settings = \App\Http\Controllers\HomeController::getsettings();
             @endphp
-            <div class="section-heading">
-                <h2>Hakkımızda</h2>
-            </div>
-
             <div class="row">
                 <div class="col-lg-9 pe-xl-1-9 mb-1-9 mb-lg-0">
                     <div class="section-heading">
-                        <h1>MİKRO YAZILIM </h1>
+                        <h1>PENGONA YAZILIM </h1>
                     </div>
                         <article class="blog-list-simple">
                             {!! $settings->aboutus !!}
@@ -55,7 +51,7 @@
                             </div>
                             <ul class="list-unstyled ps-0">
                                 @foreach($recentPosts as $post)
-                                    <li><a href="{{route('post_detail',['id'=>$post->id])}}">{{$post->title}}!</a></li>
+                                    <li><a href="{{route('data_detail',['id'=>$post->id])}}">{{$post->title}}!</a></li>
                                 @endforeach
                             </ul>
                         </div>

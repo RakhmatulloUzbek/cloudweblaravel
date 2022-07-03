@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\admin\AdminHomeController;
-use App\Http\Controllers\admin\AdminUserController;
-use App\Http\Controllers\admin\CategoryController;
-use App\Http\Controllers\admin\FaqController;
-use App\Http\Controllers\admin\ImageController;
-use App\Http\Controllers\admin\MessageController;
-use App\Http\Controllers\admin\PostController;
-use App\Http\Controllers\admin\ServiceController;
+use App\Http\Controllers\AdminPanel\AdminHomeController;
+use App\Http\Controllers\AdminPanel\AdminUserController;
+use App\Http\Controllers\AdminPanel\CategoryController;
+use App\Http\Controllers\AdminPanel\FaqController;
+use App\Http\Controllers\AdminPanel\ImageController;
+use App\Http\Controllers\AdminPanel\MessageController;
+use App\Http\Controllers\AdminPanel\PostController;
+use App\Http\Controllers\AdminPanel\ServiceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -22,33 +22,32 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-//Route::middleware([
-//    'auth:sanctum',
-//    config('jetstream.auth_session'),
-//    'verified'
-//])->group(function () {
-//    Route::get('/dashboard', function () {
-//        return redirect()->route('dashboard');
-//    })->name('dashboard');
-//});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return redirect()->route('home');
+    })->name('dashboard');
+});
 // -------------Home Page Routes--------------------------------------------
     Route::get('/not_found', function () {
         return view('home/page_404');
     })->name('page_404');
+    Route::view('/login', 'home.page_404')->name('login');
+    Route::view('/register', 'home.page_404')->name('register');
+    Route::view('/logout', 'home.page_404')->name('logout');
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
     Route::get('/contactus', [HomeController::class, 'contactus'])->name('contactus');
     Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
-    Route::get('/register', [HomeController::class, 'register'])->name('register');
-    Route::get('/login', [HomeController::class, 'login'])->name('login');
     Route::get('/posts', [HomeController::class, 'posts'])->name('posts');
     Route::get('/categoryservices/{id}', [HomeController::class, 'categoryservices'])->name('categoryservices');
     Route::get('/services', [HomeController::class, 'services'])->name('services');
-    Route::get('/post_detail/{id}', [HomeController::class, 'post_detail'])->name('post_detail');
+    Route::get('/data_detail/{id}', [HomeController::class, 'data_detail'])->name('data_detail');
     Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
     Route::view('/loginuser', 'home.login')->name('loginuser');
     Route::get('/logoutuser', [HomeController::class, 'logout'])->name('logoutuser');
@@ -147,3 +146,4 @@ Route::middleware('auth')->group(function () {
         });
     });
 });
+

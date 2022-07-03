@@ -47,7 +47,7 @@
 
                             <div class="navbar-header navbar-header-custom">
                                 <!-- logo -->
-                                <a href="{{route('home')}}" class="navbar-brand1 logodefault"><img style="width: 160px; height: 60px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/mikrologo.svg"></a>
+                                <a href="{{route('home')}}" class="navbar-brand1 logodefault"><img style="width: 145px; height: 60px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/pengona.png"></a>
                                 <!-- end logo -->
                             </div>
 
@@ -56,12 +56,12 @@
                             <!-- menu area -->
                             <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
                                 <li class=""><span class="submenu-button"></span><a class="nav-link active" href="{{route('home')}}">Ana Sayfa</a></li>
-                                <li class=""><span class="submenu-button"></span><a class="nav-link" href="#!">Kategoriler</a>
+                                <li class=""><span class="submenu-button"></span><a class="nav-link" role="button">Kategoriler</a>
                                     <ul class="sub-menu">
                                         @foreach($mainCategories as $rs)
                                             @if(count($rs->children))
                                                 <li>
-                                                    <a href="{{route('categoryservices',['id'=>$rs->id])}}">{{$rs->title}}
+                                                    <a role="button">{{$rs->title}}
                                                         <i class="bi bi-caret-right-fill"></i></a>
                                                     <ul class="sub-menu">
                                                         @include('home.categorytree',['children'=>$rs->children])

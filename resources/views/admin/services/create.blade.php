@@ -45,7 +45,7 @@
                                             <select class="form-control select" name="category_id">
                                                 @foreach($data as $rs)
                                                     <option value="{{$rs->id}}">
-                                                        {{\App\Http\Controllers\admin\CategoryController::getParentsTree($rs,$rs->title)}}
+                                                        {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
                                                     </option>
                                                 @endforeach
                                             </select>

@@ -7,15 +7,15 @@
 
             <div class="col-lg-4 col-md-6 mt-1-9">
 
-                <img style="width: 160px; height: 85px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/mikrologo.png">
+                <img style="width: 160px; height: 90px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/pengonalogo.png">
                 <p class="mt-4 text-light-gray">Nemo enim enim voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
                 <div class="mt-4 footer-social-icons">
                     <ul class="ps-0 mb-0">
-                        <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="{{$settings->facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="{{$settings->twitter}}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="{{$settings->instagram}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="{{$settings->youtube}}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="{{$settings->linkedin}}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                     </ul>
                 </div>
 
@@ -38,7 +38,7 @@
                 @foreach($recentPosts as $post)
                     <div class="clearfix footer-recent-post mt-0">
                         <div class="footer-recent-post-thumb"><img alt="..." src="{{Storage::url($post->image)}}"></div>
-                        <div class="footer-recent-post-content"><a href="{{route('post_detail',['id'=>$post->id])}}">{{$post->title}}</a><span>{{date_format($post->created_at,"d,M,Y")}}</span></div>
+                        <div class="footer-recent-post-content"><a href="{{route('data_detail',['id'=>$post->id])}}">{{$post->title}}</a><span>{{date_format($post->created_at,"d,M,Y")}}</span></div>
                     </div>
                 @endforeach
             </div>

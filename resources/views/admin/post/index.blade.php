@@ -55,7 +55,9 @@
                                     @foreach($data as $rs)
                                         <tr>
                                             <td>{{$rs->id}}</td>
-                                            <td>{{$rs->category->title}}</td>
+                                            <td>
+                                                {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category,$rs->category->title)}}
+                                            </td>
                                             <td>{{$rs->title}}</td>
                                             <td style="width: 25px;"><a href="{{route('admin.image.index',['pid'=>$rs->id])}}" class="btn btn-outline-primary"
                                                    onclick="return !window.open(this.href,'','top=100 left=200 width=800 height=650')">

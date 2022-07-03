@@ -1,21 +1,21 @@
 @extends('layouts.adminbase')
 @section('head')
     <!-- common plugins -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css"/>
 
     <!-- datatables plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css"/>
 
     <!-- bootstrap-datepicker plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css"/>
 
     <!-- theme core css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css"/>
     @include('admin.top_scripts')
 @endsection
 @section('content')
@@ -30,7 +30,8 @@
                 <div class="col-md-12">
                     <div class="card card-white">
                         <div class="card-body">
-                            <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
+                            <form role="form" action="{{route('admin.category.store')}}" method="post"
+                                  enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-4">
                                     <label class="col-sm-2 col-form-label">Parent Category</label>
@@ -39,7 +40,7 @@
                                             <option value="0" selected="selected">Main catagory</option>
                                             @foreach($data as $rs)
                                                 <option value="{{$rs->id}}">
-                                                    {{\App\Http\Controllers\admin\CategoryController::getParentsTree($rs,$rs->title)}}
+                                                    {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -60,7 +61,8 @@
                                 <div class="row mb-4">
                                     <label for="description" class="col-sm-2 col-form-label">Description</label>
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control" name="description" placeholder="Description">
+                                        <input type="text" class="form-control" name="description"
+                                               placeholder="Description">
                                     </div>
                                 </div>
                                 <div class="row mb-4">

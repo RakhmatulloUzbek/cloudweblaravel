@@ -1,21 +1,21 @@
 @extends('layouts.adminbase')
 @section('head')
     <!-- common plugins -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css"/>
 
     <!-- datatables plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css"/>
 
     <!-- bootstrap-datepicker plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css"/>
 
     <!-- theme core css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css"/>
     @include('admin.top_scripts')
 @endsection
 @section('content')
@@ -30,7 +30,8 @@
                 <div class="col-md-12">
                     <div class="card card-white">
                         <div class="card-body">
-                            <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                            <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}"
+                                  method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="row mb-4">
@@ -39,8 +40,9 @@
                                             <select class="form-control" name="parent_id">
                                                 <option value="0" selected="selected">Main catagory</option>
                                                 @foreach($datalist as $rs)
-                                                    <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif>
-                                                        {{\App\Http\Controllers\admin\CategoryController::getParentsTree($rs,$rs->title)}}
+                                                    <option value="{{$rs->id}}"
+                                                            @if($rs->id == $data->parent_id) selected="selected" @endif>
+                                                        {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -49,25 +51,29 @@
                                     <div class="row mb-4">
                                         <label for="title" class="col-sm-2 col-form-label">Title</label>
                                         <div class="col-sm-5">
-                                            <input type="text" class="form-control" name="title" value="{{$data->title}}">
+                                            <input type="text" class="form-control" name="title"
+                                                   value="{{$data->title}}">
                                         </div>
                                     </div>
                                     <div class="row mb-4">
                                         <label for="keyword" class="col-sm-2 col-form-label">Keyword</label>
                                         <div class="col-sm-5">
-                                            <input type="text" class="form-control" name="keyword" value="{{$data->keyword}}" >
+                                            <input type="text" class="form-control" name="keyword"
+                                                   value="{{$data->keyword}}">
                                         </div>
                                     </div>
                                     <div class="row mb-4">
                                         <label for="description" class="col-sm-2 col-form-label">Description</label>
                                         <div class="col-sm-5">
-                                            <input type="text" class="form-control" name="description" value="{{$data->description}}">
+                                            <input type="text" class="form-control" name="description"
+                                                   value="{{$data->description}}">
                                         </div>
                                     </div>
                                     <div class="row mb-4">
                                         <label for="status" class="col-sm-2 col-form-label">Status</label>
                                         <div class="col-sm-5">
-                                            <select class="form-select" name="status" aria-label="Default select example">
+                                            <select class="form-select" name="status"
+                                                    aria-label="Default select example">
                                                 <option selected>{{$data->status}}</option>
                                                 <option value="True">True</option>
                                                 <option value="False">False</option>

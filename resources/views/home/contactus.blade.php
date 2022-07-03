@@ -86,6 +86,14 @@
                                               class="form-control message" placeholder="Message" required></textarea>
                             </div>
                         </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" value="true" type="checkbox" id="subcribe" name="subcribe">
+                            <label class="form-check-label" for="subcribe">Tarafıma Pengona Yazılım ve grup şirketleri tarafından reklam, pazarlama, tanıtım ve bilgilendirme amaçlı SMS, e-posta ve telefon yoluyla elektronik ileti gönderilmesi amacıyla Aydınlatma ve Açık Rıza Metni kapsamında onay/açık rıza verdiğimi beyan ediyorum.</label>
+                        </div>
+                        <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="kvkk" name="kvkk"required>
+                                <label class="form-check-label" for="kvkk"><a href="">6698 sayılı Kişisel Verilerin Korunması</a> Kanununa ait bilgilendirmeyi okudum.</label>
+                        </div>
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <button class="butn" type="submit"><span>Send Message</span></button>

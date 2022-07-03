@@ -6,10 +6,10 @@
     @if(!empty($query))
         <datalist id="mylist">
             @foreach($datalist1 as $rs)
-                <option value="{{$rs->title}}">{{$rs->category->title}}</option>
+                <option value="{{$rs->title}}"></option>
             @endforeach
             @foreach($datalist2 as $rs)
-                 <option value="{{$rs->title}}">{{$rs->category->title}}</option>
+                 <option value="{{$rs->title}}"></option>
             @endforeach
         </datalist>
     @endif

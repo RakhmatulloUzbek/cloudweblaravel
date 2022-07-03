@@ -12,7 +12,6 @@
                         <div class="text-center section-heading">
                             <h2>Giriş</h2>
                         </div>
-                        @include('home.message_info')
                        @include('auth.login')
                     </div>
                 </div>

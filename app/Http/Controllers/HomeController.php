@@ -11,6 +11,8 @@ use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use function PHPUnit\Framework\isEmpty;
 
 class HomeController extends Controller
 {
@@ -26,11 +28,15 @@ class HomeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function index()
     {
-        //$recentPosts = Post::orderBy('id', 'desc')->limit(3)->get();;
+        //$recentPosts = Post::orderBy('id', 'desc')->limit(3)->get();
+        //dd( Auth::check());
+        if(Auth::check() && !Auth::user()->email_verified_at){
+            return redirect()->route('logoutuser');
+        }
         $setting = Setting::first();
         return view('home.index',[
             'setting'=>$setting
@@ -98,12 +104,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function post_detail($id)
+    public function data_detail($id)
     {
-        $post = Post::find($id);
+        $data = Post::find($id);
         $images=DB::table('images')->where('service_id',$id)->get();
-        return view('home.post_detail',[
-            'post'=>$post,
+        return view('home.data_detail',[
+            'data'=>$data,
             'images'=>$images
         ]);
     }
@@ -113,7 +119,10 @@ class HomeController extends Controller
         if(!$data){
             $data = Service::where('title',$request->input('search'))->first();
         }
-        return redirect()->route('post_detail',['id'=>$data->id]);
+        if(!$data){
+            return redirect()->route('data_detail',['id'=>0]);
+        }
+        return redirect()->route('data_detail',['id'=>$data->id]);
     }
     /**
      * Show the form for creating a new resource.
@@ -131,13 +140,21 @@ class HomeController extends Controller
      */
     public function categoryservices($id)
     {
-        $title = DB::table('categories')->where('id','=', $id)->value('title');
+        //$title = DB::table('categories')->where('id','=', $id)->value('title');
         //$title =DB::table('categories')->select('title')->where('id','=',$id)->get();
-        $posts = Post::where('category_id','=',$id)->orderBy('id', 'desc')->get();
-        return view('home.posts',['posts'=>$posts,'title'=>$title]);
+        $category = Category::find($id);
+        $data = Post::where('category_id','=',$category->id)->orderBy('id', 'desc')->get();
+        if($data->isEmpty()){
+            $data = Service::where('category_id','=',$category->id)->orderBy('id', 'desc')->get();
+            //dd($data);
+        }
+        return view('home.posts',['posts'=>$data,'title'=>$category->title]);
+
+
     }
 
     public function storemessage(Request $request){
+        dd($request);
         $data = new Message();
         $data->name=$request->input('name');
         $data->email=$request->input('email');
@@ -218,15 +235,23 @@ class HomeController extends Controller
     public function loginusercheck(Request $request)
     {
         //dd($request);
-
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
+        //email_verified kontrol et.
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
+            if(Auth::check()){
+                $user = Auth::user();
+                if(!$user->email_verified_at){
+                    Auth::logout();
+                    $request->session()->invalidate();
+                    $request->session()->regenerateToken();
+                    return back()->withErrors(['error' => 'Before login, could you verify your email address by clicking on the link we emailed to you?',]);
+                }
+                return redirect()->intended('/');
+            }
             return redirect()->intended('/');
         }
 

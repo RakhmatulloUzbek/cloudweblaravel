@@ -1,6 +1,6 @@
 @extends('layouts.homefontbase')
 
-@section('title','Postlar')
+@section('title',$title)
 
 @section('head')
 @endsection
@@ -66,7 +66,7 @@
                                         </ul>
                                         <p>{{$post->description}}</p>
                                         <div class="text-start mt-2"><a
-                                                href="{{route('post_detail',['id'=>$post->id])}}"
+                                                href="{{route('data_detail',['id'=>$post->id])}}"
                                                 class="butn small"><span>Read More</span></a></div>
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@
                             </div>
                             <ul class="list-unstyled ps-0">
                                 @foreach($recentPosts as $post)
-                                    <li><a href="{{route('post_detail',['id'=>$post->id])}}">{{$post->title}}!</a></li>
+                                    <li><a href="{{route('data_detail',['id'=>$post->id])}}">{{$post->title}}!</a></li>
                                 @endforeach
                             </ul>
                         </div>

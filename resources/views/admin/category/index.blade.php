@@ -2,21 +2,21 @@
 
 @section('head')
     <!-- common plugins -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css"/>
 
     <!-- datatables plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css"/>
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css"/>
 
     <!-- bootstrap-datepicker plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css"/>
 
     <!-- theme core css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css" />
+    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css"/>
 @endsection
 
 @section('content')
@@ -50,13 +50,20 @@
                                     @foreach($data as $rs)
                                         <tr>
                                             <td>{{$rs->id}}</td>
-                                            <td>{{\App\Http\Controllers\admin\CategoryController::getParentsTree($rs,$rs->title)}}</td>
+                                            <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
                                             <td>{{$rs->title}}</td>
                                             <td>{{$rs->keyword}}</td>
                                             <td>{{$rs->status}}</td>
-                                            <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-outline-success" data-toggle="tooltip" title="Edit"><i class="fas fa-edit"></i></a></td>
-                                            <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" onclick="return confirm('Deleting !! Are you sure ?')" class="btn btn-outline-danger" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></a></td>
-                                            <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-outline-primary" data-toggle="tooltip" title="Show"><i class="fas fa-eye"></i></a></td>
+                                            <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}"
+                                                   class="btn btn-outline-success" data-toggle="tooltip" title="Edit"><i
+                                                            class="fas fa-edit"></i></a></td>
+                                            <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"
+                                                   onclick="return confirm('Deleting !! Are you sure ?')"
+                                                   class="btn btn-outline-danger" data-toggle="tooltip"
+                                                   title="Delete"><i class="fas fa-trash"></i></a></td>
+                                            <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}"
+                                                   class="btn btn-outline-primary" data-toggle="tooltip" title="Show"><i
+                                                            class="fas fa-eye"></i></a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>

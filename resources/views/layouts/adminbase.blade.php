@@ -10,7 +10,7 @@
     <meta name="description" content="Fabrex - Responsive Admin Dashboard Template" />
 
     <!-- title  -->
-    <title>Fabrex - Responsive Admin Dashboard Template</title>
+    <title>Yazılım</title>
 
     <!-- favicon -->
     <link rel="shortcut icon" href="{{asset('assets')}}/admin/img/logos/favicon.png">

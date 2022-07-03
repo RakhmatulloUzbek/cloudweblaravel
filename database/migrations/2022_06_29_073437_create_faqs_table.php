@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('faqs', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('question')->nullable();
+            $table->string('subject')->nullable();
             $table->text('answer')->nullable();
             $table->string('status',5)->default('False')->nullable();
             $table->timestamps();

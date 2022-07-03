@@ -16,7 +16,11 @@ class Category extends Model
 
     // One to Many
     public function services(){
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Service::class);
+    }
+    // One to Many Inverse
+    public function parent(){
+        return $this->belongsTo(Category::class, 'parent_id');
     }
 
     // One to Many
