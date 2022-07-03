@@ -154,13 +154,14 @@ class HomeController extends Controller
     }
 
     public function storemessage(Request $request){
-        dd($request);
+        //dd($request);
         $data = new Message();
         $data->name=$request->input('name');
         $data->email=$request->input('email');
         $data->phone=$request->input('phone');
         $data->subject=$request->input('subject');
         $data->message=$request->input('message');
+        $data->subcribe=$request->input('subcribe');
         $data->ip=request()->ip();
         $data->save();
 

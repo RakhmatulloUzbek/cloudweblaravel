@@ -54,6 +54,7 @@
                                         <th>Phone</th>
                                         <th>Email</th>
                                         <th>Subject</th>
+                                        <th style="width: 35px">Subcribe</th>
                                         <th style="width: 35px">Status</th>
                                         <th style="width: 30px">Delete</th>
                                         <th style="width: 30px">Show</th>
@@ -67,6 +68,7 @@
                                             <td>{{$rs->phone}}</td>
                                             <td>{{$rs->email}}</td>
                                             <td>{{$rs->subject}}</td>
+                                            <td>{{$rs->subcribe}}</td>
                                             <td>
                                                 @if($rs->status=='New')<div id="new1">{{$rs->status}}</div>
                                                 @else<div id="new2">{{$rs->status}}</div>
@@ -87,6 +89,7 @@
                                         <th>Phone</th>
                                         <th>Email</th>
                                         <th>Subject</th>
+                                        <th>Subcribe</th>
                                         <th>Status</th>
                                         <th style="width: 25px">Delete</th>
                                         <th style="width: 25px">Show</th>

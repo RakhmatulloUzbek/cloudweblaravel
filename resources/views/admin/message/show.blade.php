@@ -52,6 +52,10 @@
                                         <td>{{$data->subject}}</td>
                                     </tr>
                                     <tr>
+                                        <th>Subcribe</th>
+                                        <td>{{$data->subcribe}}</td>
+                                    </tr>
+                                    <tr>
                                         <th>Message</th>
                                         <td>
                                             {{$data->message}}

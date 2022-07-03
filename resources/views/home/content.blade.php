@@ -80,34 +80,34 @@
 
 <!-- ABOUT
 ================================================== -->
-<section class="bg-light md">
-    <div class="container">
-        <div class="row">
+{{--<section class="bg-light md">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
 
-            <div class="col-lg-5 mb-4 mb-lg-0">
-                <img src="{{asset('assets')}}/home/img/content/feature-01.jpg" alt="..." class="border-radius-5 box-shadow-primary">
-            </div>
+{{--            <div class="col-lg-5 mb-4 mb-lg-0">--}}
+{{--                <img src="{{asset('assets')}}/home/img/content/feature-01.jpg" alt="..." class="border-radius-5 box-shadow-primary">--}}
+{{--            </div>--}}
 
-            <div class="col-lg-7">
+{{--            <div class="col-lg-7">--}}
 
-                <div class="ps-lg-1-9">
-                    <h4 class="h3 mb-4">Febrex is the most creative template for your multipurpose use.</h4>
-                    <p>Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium laudantium, totam aperiam, eaque ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+{{--                <div class="ps-lg-1-9">--}}
+{{--                    <h4 class="h3 mb-4">Febrex is the most creative template for your multipurpose use.</h4>--}}
+{{--                    <p>Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium laudantium, totam aperiam, eaque ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>--}}
 
-                    <ul class="list-style-3">
-                        <li>Marketing business plan</li>
-                        <li>Advice business plan</li>
-                        <li>Strategic business plan</li>
-                        <li>Analize business plan</li>
-                        <li>Consulting business plan</li>
-                    </ul>
-                    <a class="butn primary mt-2" href="#!"><span>Tamamını Oku</span></a>
-                </div>
+{{--                    <ul class="list-style-3">--}}
+{{--                        <li>Marketing business plan</li>--}}
+{{--                        <li>Advice business plan</li>--}}
+{{--                        <li>Strategic business plan</li>--}}
+{{--                        <li>Analize business plan</li>--}}
+{{--                        <li>Consulting business plan</li>--}}
+{{--                    </ul>--}}
+{{--                    <a class="butn primary mt-2" href="#!"><span>Tamamını Oku</span></a>--}}
+{{--                </div>--}}
 
-            </div>
-        </div>
-    </div>
-</section>
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 
 <!-- PROJECT
 ================================================== -->
@@ -376,32 +376,32 @@
     </div>
 </section>
 
-<!-- TESTIMONIAL
-================================================== -->
-<section class="bg-grey md" style="background: url(img/bg/bg6.jpg)">
-    <div class="container">
-        <div class="section-heading">
-            <h2>What Our Client Say</h2>
-        </div>
-        <div class="owl-carousel owl-theme" id="testmonials-carousel">
-            <div class="testmonial-single mx-auto w-95 w-lg-65">
-                <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-                <h4 class="pt-3 pt-md-4">Alivin Corondo</h4>
-                <h6 class="mb-1-9">Networking Lead</h6>
-            </div>
-            <div class="testmonial-single mx-auto w-95 w-lg-65">
-                <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-                <h4 class="pt-3 pt-md-4">Stepha Kruse</h4>
-                <h6 class="mb-1-9">Design Lead</h6>
-            </div>
-            <div class="testmonial-single mx-auto w-95 w-lg-65">
-                <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-                <h4 class="pt-3 pt-md-4">Dunican keithly</h4>
-                <h6 class="mb-1-9">Networking Lead</h6>
-            </div>
-        </div>
-    </div>
-</section>
+{{--<!-- TESTIMONIAL--}}
+{{--================================================== -->--}}
+{{--<section class="bg-grey md" style="background: url(img/bg/bg6.jpg)">--}}
+{{--    <div class="container">--}}
+{{--        <div class="section-heading">--}}
+{{--            <h2>What Our Client Say</h2>--}}
+{{--        </div>--}}
+{{--        <div class="owl-carousel owl-theme" id="testmonials-carousel">--}}
+{{--            <div class="testmonial-single mx-auto w-95 w-lg-65">--}}
+{{--                <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>--}}
+{{--                <h4 class="pt-3 pt-md-4">Alivin Corondo</h4>--}}
+{{--                <h6 class="mb-1-9">Networking Lead</h6>--}}
+{{--            </div>--}}
+{{--            <div class="testmonial-single mx-auto w-95 w-lg-65">--}}
+{{--                <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>--}}
+{{--                <h4 class="pt-3 pt-md-4">Stepha Kruse</h4>--}}
+{{--                <h6 class="mb-1-9">Design Lead</h6>--}}
+{{--            </div>--}}
+{{--            <div class="testmonial-single mx-auto w-95 w-lg-65">--}}
+{{--                <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>--}}
+{{--                <h4 class="pt-3 pt-md-4">Dunican keithly</h4>--}}
+{{--                <h6 class="mb-1-9">Networking Lead</h6>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 
 <!-- BLOG
 ================================================== -->
