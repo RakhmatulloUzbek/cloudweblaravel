@@ -28,7 +28,7 @@ class HomeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -37,10 +37,156 @@ class HomeController extends Controller
         if(Auth::check() && !Auth::user()->email_verified_at){
             return redirect()->route('logoutuser');
         }
+        $hizmet = Category::where('title', 'Hizmetler')->value('id');
+        $hizmetler = Service::where('category_id', $hizmet)->orderBy('id', 'desc')->limit(3)->get();
+
+        $urun = Category::where('title', 'Ürünler')->value('id');
+        $urunler = Service::where('category_id', $urun)->orderBy('id', 'desc')->limit(3)->get();
+
+        $postlar = Post::orderBy('id','desc')->limit(8)->get();
         $setting = Setting::first();
         return view('home.index',[
-            'setting'=>$setting
+            'setting'=>$setting,
+            'hizmetler'=>$hizmetler,
+            'urunler'=>$urunler,
+            'postlar'=>$postlar
         ]);
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function posts()
+    {
+        $title = 'Postlar';
+        $posts = Post::orderBy('id', 'desc')->get();
+        return view('home.posts',['posts'=>$posts,'title'=>$title]);
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function data_detail($title)
+    {
+        $id = DB::table('posts')->where('title', $title)->value('id');
+        if(!$id){
+            $id = DB::table('services')->where('title', $title)->value('id');
+            $data = Service::find($id);
+            return view('home.data_detail',[
+                'data'=>$data
+            ]);
+        }
+        $data = Post::find($id);
+        return view('home.data_detail',[
+            'data'=>$data
+        ]);
+    }
+    public function getservices(Request $request)
+    {
+        $data = Post::where('title',$request->input('search'))->first();
+        if(!$data){
+            $data = Service::where('title',$request->input('search'))->first();
+        }
+        if(!$data){
+            return redirect()->route('data_detail',['title'=>'']);
+        }
+        return redirect()->route('data_detail',['title'=>$data->title]);
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function services()
+    {
+        $services = Service::all();
+        return view('home.services',['services'=>$services]);
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function categoryservices($id)
+    {
+        //$title = DB::table('categories')->where('id','=', $id)->value('title');
+        //$title =DB::table('categories')->select('title')->where('id','=',$id)->get();
+        $category = Category::find($id);
+        $data = Post::where('category_id','=',$category->id)->orderBy('id', 'desc')->get();
+        if($data->isEmpty()){
+            $data = Service::where('category_id','=',$category->id)->orderBy('id', 'desc')->get();
+            //dd($data);
+        }
+        return view('home.posts',['posts'=>$data,'title'=>$category->title]);
+
+
+    }
+
+    public function storemessage(Request $request){
+        //dd($request);
+        if($request->input('email_address')){
+            $data = new Message();
+            $data->name="Guest";
+            $data->email=$request->input('email_address');
+            $data->subcribe="True";
+            $data->ip=request()->ip();
+            $data->save();
+            return redirect()->back()->with('info','Tanks for Subrcibe!');
+
+        }
+        $data = new Message();
+        $data->name=$request->input('name');
+        $data->email=$request->input('email');
+        $data->phone=$request->input('phone');
+        $data->subject=$request->input('subject');
+        $data->message=$request->input('message');
+        $data->subcribe=$request->input('subcribe');
+        $data->ip=request()->ip();
+        $data->save();
+
+        return redirect()->route('contactus')->with('info','Your message has been sent, Thank you.!');
+    }
+    public function subcribe()
+    {
+        return view('home.subcribe');
+    }
+
+    public function loginusercheck(Request $request)
+    {
+        //dd($request);
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+        //email_verified kontrol et.
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            if(Auth::check()){
+                $user = Auth::user();
+                if(!$user->email_verified_at){
+                    Auth::logout();
+                    $request->session()->invalidate();
+                    $request->session()->regenerateToken();
+                    return back()->withErrors(['error' => 'Before login, could you verify your email address by clicking on the link we emailed to you?',]);
+                }
+                return redirect()->intended('/');
+            }
+            return redirect()->intended('/');
+        }
+
+        return back()->withErrors([
+            'error' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
+    }
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
     /**
      * Show the form for creating a new resource.
@@ -86,185 +232,5 @@ class HomeController extends Controller
     public function register()
     {
         return view('home.page_404');
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-    public function posts()
-    {
-        $title = 'Postlar';
-        $posts = Post::orderBy('id', 'desc')->get();
-        return view('home.posts',['posts'=>$posts,'title'=>$title]);
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function data_detail($id)
-    {
-        $data = Post::find($id);
-        $images=DB::table('images')->where('service_id',$id)->get();
-        return view('home.data_detail',[
-            'data'=>$data,
-            'images'=>$images
-        ]);
-    }
-    public function getservices(Request $request)
-    {
-        $data = Post::where('title',$request->input('search'))->first();
-        if(!$data){
-            $data = Service::where('title',$request->input('search'))->first();
-        }
-        if(!$data){
-            return redirect()->route('data_detail',['id'=>0]);
-        }
-        return redirect()->route('data_detail',['id'=>$data->id]);
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function services()
-    {
-        return view('home.services');
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function categoryservices($id)
-    {
-        //$title = DB::table('categories')->where('id','=', $id)->value('title');
-        //$title =DB::table('categories')->select('title')->where('id','=',$id)->get();
-        $category = Category::find($id);
-        $data = Post::where('category_id','=',$category->id)->orderBy('id', 'desc')->get();
-        if($data->isEmpty()){
-            $data = Service::where('category_id','=',$category->id)->orderBy('id', 'desc')->get();
-            //dd($data);
-        }
-        return view('home.posts',['posts'=>$data,'title'=>$category->title]);
-
-
-    }
-
-    public function storemessage(Request $request){
-        //dd($request);
-        $data = new Message();
-        $data->name=$request->input('name');
-        $data->email=$request->input('email');
-        $data->phone=$request->input('phone');
-        $data->subject=$request->input('subject');
-        $data->message=$request->input('message');
-        $data->subcribe=$request->input('subcribe');
-        $data->ip=request()->ip();
-        $data->save();
-
-        return redirect()->route('contactus')->with('info','Your message has been sent, Thank you.!');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-    public function loginusercheck(Request $request)
-    {
-        //dd($request);
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
-        //email_verified kontrol et.
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            if(Auth::check()){
-                $user = Auth::user();
-                if(!$user->email_verified_at){
-                    Auth::logout();
-                    $request->session()->invalidate();
-                    $request->session()->regenerateToken();
-                    return back()->withErrors(['error' => 'Before login, could you verify your email address by clicking on the link we emailed to you?',]);
-                }
-                return redirect()->intended('/');
-            }
-            return redirect()->intended('/');
-        }
-
-        return back()->withErrors([
-            'error' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
-    }
-    public function logout(Request $request){
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect('/');
     }
 }

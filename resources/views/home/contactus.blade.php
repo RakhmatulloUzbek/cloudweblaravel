@@ -1,5 +1,5 @@
 @extends('layouts.homefontbase')
-@section('title','İletişim | Mikro Yazılım')
+@section('title','İletişim | Pengona Yazılım')
 
 @section('head')
 @endsection

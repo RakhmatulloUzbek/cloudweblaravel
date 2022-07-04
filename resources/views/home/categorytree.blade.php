@@ -1,6 +1,6 @@
 @foreach($children as $subcategory)
     @if(count($subcategory->children))
-        <li ><a href="{{route('categoryservices',['id'=>$subcategory->id])}}"> {{$subcategory->title}}</a>
+        <li ><a role="button"> {{$subcategory->title}}</a>
             <ul class="sub-menu">
                 @include('home.categorytree',['children'=>$subcategory->children])
             </ul>

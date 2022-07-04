@@ -55,7 +55,7 @@
 
                             <!-- menu area -->
                             <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
-                                <li class=""><span class="submenu-button"></span><a class="nav-link active" href="{{route('home')}}">Ana Sayfa</a></li>
+                                <li class="corrent"><span class="submenu-button"></span><a href="{{route('home')}}">Ana Sayfa</a></li>
                                 <li class=""><span class="submenu-button"></span><a class="nav-link" role="button">Kategoriler</a>
                                     <ul class="sub-menu">
                                         @foreach($mainCategories as $rs)
@@ -75,7 +75,7 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li class=""><span class="submenu-button"></span><a class="nav-link" href="{{route('posts')}}">Ürünler</a></li>
+                                <li class=""><span class="submenu-button"></span><a class="nav-link" href="{{route('services')}}">Ürünler ve Hizmetler</a></li>
                                 <li class=""><span class="submenu-button"></span><a class="nav-link" href="{{route('aboutus')}}">Hakkımızda</a></li>
                                 <li class=""><span class="submenu-button"></span><a class="nav-link" href="{{route('contactus')}}">İletişim</a></li>
                                 <li class="has-sub"><span class="submenu-button"></span><a href="#!">Shop</a>
@@ -91,7 +91,7 @@
                                 </li>
                                 @auth
                                     <li class="mt-2"><a class="butn primary"><span class="">{{strtok(Auth::user()->name,' ')}}</span></a>
-                                        <ul class="sub-menu">
+                                        <ul class="">
                                             <li><a href="{{route('user.index')}}">Profile</a></li>
                                             <li><a href="{{route('logoutuser')}}">Logout</a></li>
                                         </ul>

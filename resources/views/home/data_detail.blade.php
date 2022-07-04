@@ -44,31 +44,8 @@
                             @if($data)
                                 <div class="post-img">
                                     <div class="mb-1-8">
-                                        <div class="owl-carousel owl-theme owl-loaded owl-drag">
-                                            <div class="owl-stage-outer">
-                                                <div class="owl-stage"
-                                                     style="transform: translate3d(-2268px, 0px, 0px); transition: all 0.5s ease 0s; width: 5292px;">
-                                                    <div class="owl-item cloned" style="width: 756px;">
-                                                        <div class="item"><img src="{{Storage::url($data->image)}}"
-                                                                               alt="..."></div>
-                                                    </div>
-                                                    @foreach($images as $image)
-                                                        <div class="owl-item" style="width: 756px;">
-                                                            <div class="item"><img
-                                                                    src="{{Storage::url($image->image)}}" alt="">
-                                                            </div>
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                            <div class="owl-nav disabled">
-                                                <button type="button" role="presentation" class="owl-prev"><span
-                                                        aria-label="Previous">‹</span></button>
-                                                <button type="button" role="presentation" class="owl-next"><span
-                                                        aria-label="Next">›</span></button>
-                                            </div>
-                                            <div class="owl-dots disabled"></div>
-                                        </div>
+                                        <div class="project-single-box-img"><img alt="..." src="{{Storage::url($data->image)}}"></div>
+
                                     </div>
                                 </div>
                                 <div class="content">
@@ -124,36 +101,21 @@
                 <!-- end blog left -->
 
                 <!-- blog right -->
-                <div class="col-lg-3">
-                    <div class="side-bar">
-                        @php
-                            $recentPosts = \App\Http\Controllers\HomeController::recentpostslist();
-                        @endphp
-                        <div class="widget">
-                            <div class="widget-title">
-                                <h6>Recent Posts</h6>
-                            </div>
-                            <ul class="list-unstyled ps-0">
-                                @foreach($recentPosts as $post)
-                                    <li><a href="{{route('data_detail',['id'=>$post->id])}}">{{$post->title}}!</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        @php
-                            $mainCategories = \App\Http\Controllers\HomeController::maincategorylist();
-                        @endphp
-                        <div class="widget">
-                            <div class="widget-title">
-                                <h6>Categories</h6>
-                            </div>
-                            <ul class="list-unstyled ps-0">
+                <div class="col-lg-3 order-2 order-lg-1">
+                    @php
+                        $mainCategories = \App\Http\Controllers\HomeController::maincategorylist();
+                    @endphp
+                    <div class="services-single-left-box">
+                        <h2 class="text-uppercase left-title mb-3 h4">Kategoriler</h2>
+                        <div class="services-single-menu bg-light mb-1-9">
+                            <ul class="mb-0 ps-0 list-unstyled">
                                 @foreach($mainCategories as $rs)
                                     @if(count($rs->children))
                                         <li>
-                                            <a href="{{route('categoryservices',['id'=>$rs->id])}}">{{$rs->title}}</a>
-                                            <ul class="list-unstyled ps-0">
-                                                @include('home.categorytree2',['children'=>$rs->children])
+                                            <a role="button">{{$rs->title}}
+                                                <i class="bi bi-caret-right-fill"></i></a>
+                                            <ul class="sub-menu">
+                                                @include('home.categorytree3',['children'=>$rs->children])
                                             </ul>
                                         </li>
                                     @else
@@ -164,9 +126,55 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <hr>
                     </div>
+                    @php
+                        $recentPosts = \App\Http\Controllers\HomeController::recentpostslist();
+                    @endphp
+                    <div class="services-single-left-box">
+                        <h2 class="text-uppercase left-title mb-3 h4">Son Haberler</h2>
+                        <div class="services-single-menu bg-light mb-1-9">
+                            <ul class="mb-0 ps-0 list-unstyled">
+                                @foreach($recentPosts as $rs)
+                                    <li><a href="#!">{{$rs->title}}</a></li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end services -->
+
+                    <!-- help -->
+                    <div class="bg-img cover-background theme-overlay border-radius-5 mb-1-9" data-overlay-dark="8"
+                         data-background="{{asset('assets')}}/home/img/bg/bg2.jpg"
+                         style="background-image: url(&quot;img/bg/bg2.jpg&quot;);">
+                        <div class="position-relative z-index-9 text-center px-1-9 py-1-9 py-lg-6">
+                            <i class="fas fa-headset display-20 dispaly-md-16 display-lg-10 text-white mb-3"></i>
+                            <h5 class="text-white font-weight-600 mb-1 h4">How can we help?</h5>
+                            <p class="text-white font-weight-500 display-30">Let’s get in touch!!</p>
+                            <div class="bg-white separator-line-horrizontal-full opacity3 mb-3"></div>
+                            <ul class="text-center p-0 m-0 list-unstyled">
+                                <li class="text-white mb-1"><i class="fa fa-phone text-white me-2"></i><a
+                                        href="tel:123456789" class="text-white">(+44) 123 456 789</a></li>
+                                <li class="text-white"><i class="fa fa-envelope-open text-white me-2"></i><a
+                                        href="mailto:mail@example.com" class="text-white">mail@example.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end help -->
+
+                    <!-- download -->
+                    <h6 class="font-weight-700 text-uppercase left-title mb-3">Downloads</h6>
+                    <ul class="downloads mb-0 ps-0 list-unstyled">
+                        <li class="mb-2 display-30"><a href="{{asset('assets')}}/home/img/content/profile.pdf"><i
+                                    class="far fa-file-pdf display-23"></i><span class="label font-weight-600">Company Profile</span></a>
+                        </li>
+                        <li><a href="{{asset('assets')}}/home/img/content/profile.pdf"><i
+                                    class="far fa-file-pdf display-23"></i><span class="label font-weight-600">Our Case Study</span></a>
+                        </li>
+                    </ul>
+                    <!-- end download -->
+
                 </div>
+
             </div>
         </div>
     </section>

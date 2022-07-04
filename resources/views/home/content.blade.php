@@ -3,78 +3,48 @@
 <section class="bg-light md">
     <div class="container">
         <div class="section-heading">
-            <h2 class="title-style2">Our Services</h2>
-            <p class="w-95 w-md-75 w-lg-55 mx-auto">Business consulting excepteur sint occaecat cupidatat consulting non proident, sunt in culpa qui officia deserunt laborum Market.</p>
+            <h2 class="title-style2"><a href="">Ürünler</a></h2>
         </div>
         <div class="row mt-n4">
-            <div class="col-lg-4 col-md-6 mt-4">
-                <div class="services-block-three">
-                    <a href="#!">
-                        <div class="pb-3">
-                            <i class="ti-ruler-pencil"></i>
-                        </div>
-                        <h3 class="h5">Branding Design</h3>
-                        <p class="mb-0">Exhaustive technology of implementing multi purpose projects is putting your project successful.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-4">
-                <div class="services-block-three">
-                    <a href="#!">
-                        <div class="pb-3">
-                            <i class="ti-layers-alt"></i>
-                        </div>
-                        <h3 class="h5">Bootstrap Framework</h3>
-                        <p class="mb-0">Exhaustive technology of implementing multi purpose projects is putting your project successful.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-4">
-                <div class="services-block-three">
-                    <a href="#!">
-                        <div class="pb-3">
-                            <i class="ti-settings"></i>
-                        </div>
-                        <h3 class="h5">Creative Ideas</h3>
-                        <p class="mb-0">Exhaustive technology of implementing multi purpose projects is putting your project successful.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-4">
-                <div class="services-block-three">
-                    <a href="#!">
-                        <div class="pb-3">
-                            <i class="ti-tablet"></i>
-                        </div>
-                        <h3 class="h5">100% Responsive Layout</h3>
-                        <p class="mb-0">Exhaustive technology of implementing multi purpose projects is putting your project successful.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-4">
-                <div class="services-block-three">
-                    <a href="#!">
-                        <div class="pb-3">
-                            <i class="ti-notepad"></i>
-                        </div>
-                        <h3 class="h5">Easy page builder</h3>
-                        <p class="mb-0">Exhaustive technology of implementing multi purpose projects is putting your project successful.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mt-4">
-                <div class="services-block-three">
-                    <a href="#!">
-                        <div class="pb-3">
-                            <i class="ti-pencil-alt"></i>
-                        </div>
-                        <h3 class="h5">Clean Modern Code</h3>
-                        <p class="mb-0">Exhaustive technology of implementing multi purpose projects is putting your project successful.</p>
-                    </a>
-                </div>
-            </div>
-        </div>
+            @foreach($urunler as $urun)
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="services-block-three justify-content-center">
+                        <a href="{{route('data_detail',['title'=>$urun->title])}}">
+                            <div class="pb-3">
+                                <div class="project-grid-img" ><img  style="height: 250px" alt="..."
+                                                                     src="{{Storage::url($urun->image)}}">
+                                </div>
+                            </div>
 
+                            <h3 class="h5">{{$urun->title}}</h3>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<section class="bg-light md pt-1">
+    <div class="container">
+        <div class="section-heading">
+            <h2 class="title-style2"><a href="{{route('services')}}">Hizmetler</a></h2>
+        </div>
+        <div class="row mt-n4">
+            @foreach($hizmetler as $hizmet)
+                <div class="col-lg-4 col-md-6 mt-4">
+                    <div class="services-block-three justify-content-center">
+                        <a href="{{route('data_detail',['title'=>$hizmet->title])}}">
+                            <div class="pb-3">
+                                <div class="project-grid-img" ><img  style="height: 250px" alt="..."
+                                                                     src="{{Storage::url($hizmet->image)}}">
+                                </div>
+                            </div>
+                            <h3 class="h5">{{$hizmet->title}}</h3>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 </section>
 
@@ -114,102 +84,58 @@
 <section class="md">
     <div class="container">
         <div class="section-heading">
-            <h2>Our Latest Projects</h2>
-            <p class="w-95 w-md-75 w-lg-55">Business consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation consequat.</p>
+            <h2>Son Haberler</h2>
         </div>
-
-        <div class="row">
-
-            <!-- links -->
-            <div class="filtering col-sm-12 text-center">
-                <span data-filter='*' class="active">All</span>
-                <span data-filter='.business'>Busginess</span>
-                <span data-filter='.finance'>Finance</span>
-                <span data-filter='.consulting'>Consulting</span>
-            </div>
-            <!-- end links -->
-
-        </div>
-
         <div class="text-center">
             <div class="row portfolio-gallery-isotope">
-                <div class="col-lg-4 col-md-6 items finance" data-src="{{asset('assets')}}/home/img/projects/pro-2.jpg" data-sub-html="<h4 class='text-white'>Investment Project #01</h4><p>Finance Plan</p>">
+                @foreach($postlar as $post)
+                    <div class="col-lg-4 col-md-6 items" data-src="{{Storage::url($post->image)}}" data-sub-html="<h4 class='text-white'>{{$post->title}}</h4><p>{{$post->category->title}}</p> <br> <a href='{{route('data_detail',['title'=>$post->title])}}' class='butn-style3'><span>More</span></a>">
                     <div class="project-grid">
-                        <div class="project-grid-img"><img alt="..." src="{{asset('assets')}}/home/img/projects/pro-2.jpg">
+                        <div class="project-grid-img"><img alt="..." src="{{Storage::url($post->image)}}">
                         </div>
                         <div class="project-grid-overlay">
                             <div class="w-100">
-                                <h4><a href="#!">Investment Project</a></h4>
-                                <p>Finance Plan</p>
+                                <h4><a href="#!">{{$post->title}}</a></h4>
+                                <p>{{$post->category->title}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 items finance" data-src="{{asset('assets')}}/home/img/projects/pro-1.jpg" data-sub-html="<h4 class='text-white'>Investment Planning #02</h4><p>Finance Plan</p>">
-                    <div class="project-grid">
-                        <div class="project-grid-img"><img alt="..." src="{{asset('assets')}}/home/img/projects/pro-1.jpg">
-                        </div>
-                        <div class="project-grid-overlay">
-                            <div class="w-100">
-                                <h4><a href="#!">Investment Planning</a></h4>
-                                <p>Finance Plan</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 items business" data-src="{{asset('assets')}}/home/img/projects/pro-3.jpg" data-sub-html="<h4 class='text-white'>Online Consulting #03</h4><p>Business Plan</p>">
-                    <div class="project-grid">
-                        <div class="project-grid-img"><img alt="..." src="{{asset('assets')}}/home/img/projects/pro-3.jpg">
-                        </div>
-                        <div class="project-grid-overlay">
-                            <div class="w-100">
-                                <h4><a href="#!">Online Consulting</a></h4>
-                                <p>Business Plan</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 items consulting" data-src="{{asset('assets')}}/home/img/projects/pro-6.jpg" data-sub-html="<h4 class='text-white'>Saving Investments #04</h4><p>Consulting Plan</p>">
-                    <div class="project-grid">
-                        <div class="project-grid-img"><img alt="..." src="{{asset('assets')}}/home/img/projects/pro-6.jpg">
-                        </div>
-                        <div class="project-grid-overlay">
-                            <div class="w-100">
-                                <h4><a href="#!">Saving Investments</a></h4>
-                                <p>Consulting Plan</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 items consulting" data-src="{{asset('assets')}}/home/img/projects/pro-5.jpg" data-sub-html="<h4 class='text-white'>Financial Analysis #05</h4><p>Consulting Plan</p>">
-                    <div class="project-grid">
-                        <div class="project-grid-img"><img alt="..." src="{{asset('assets')}}/home/img/projects/pro-5.jpg">
-                        </div>
-                        <div class="project-grid-overlay">
-                            <div class="w-100">
-                                <h4><a href="#!">Financial Analysis</a></h4>
-                                <p>Consulting Plan</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 items business" data-src="{{asset('assets')}}/home/img/projects/pro-4.jpg" data-sub-html="<h4 class='text-white'>Business Consulting #06</h4><p>Business Plan</p>">
-                    <div class="project-grid">
-                        <div class="project-grid-img"><img alt="..." src="{{asset('assets')}}/home/img/projects/pro-4.jpg">
-                        </div>
-                        <div class="project-grid-overlay">
-                            <div class="w-100">
-                                <h4><a href="#!">Business Consulting</a></h4>
-                                <p>Business Plan</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 
     </div>
 </section>
+{{--@php--}}
+{{--    $recentPosts = \App\Http\Controllers\HomeController::recentpostslist();--}}
+{{--@endphp--}}
+{{--<section class="md">--}}
+{{--    <div class="container">--}}
+{{--        <div class="section-heading">--}}
+{{--            <h2>Son Haberlerimizi Okuyun</h2>--}}
+{{--            <p class="w-95 w-md-75 w-lg-55">Business consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation consequat.</p>--}}
+{{--        </div>--}}
+{{--        <div class="row mt-n4">--}}
+{{--            @foreach($recentPosts as $post)--}}
+{{--                <div class="col-md-6 col-lg-3 mt-4">--}}
+{{--                    <article class="card card-style1">--}}
+{{--                        <div class="card-img"><img alt="..." src="{{Storage::url($post->image)}}">--}}
+{{--                        </div>--}}
+{{--                        <div class="card-body">--}}
+{{--                            <h3 class="display-29 mb-1"><a href="{{route('data_detail',['title'=>$post->title])}}">{{$post->title}}</a></h3>--}}
+{{--                            <span><a href="{{route('categoryservices',['id'=>$post->category->id])}}">{{$post->category->title}}</a></span>--}}
+{{--                            <div class="card-date">--}}
+{{--                                {{date_format($post->created_at,"d/M/Y")}}--}}
+{{--                            </div>--}}
+{{--                            <p class="m-0 card-text">{{$post->description}}</p>--}}
+{{--                        </div>--}}
+{{--                    </article>--}}
+{{--                </div>--}}
+{{--            @endforeach--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 
 <!-- COUNTER
 ================================================== -->
@@ -405,35 +331,6 @@
 
 <!-- BLOG
 ================================================== -->
-@php
-    $recentPosts = \App\Http\Controllers\HomeController::recentpostslist();
-@endphp
-<section class="md">
-    <div class="container">
-        <div class="section-heading">
-            <h2>Son Haberlerimizi Okuyun</h2>
-            <p class="w-95 w-md-75 w-lg-55">Business consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation consequat.</p>
-        </div>
-        <div class="row mt-n4">
-            @foreach($recentPosts as $post)
-                <div class="col-md-6 col-lg-3 mt-4">
-                    <article class="card card-style1">
-                        <div class="card-img"><img alt="..." src="{{Storage::url($post->image)}}">
-                        </div>
-                        <div class="card-body">
-                            <h3 class="display-29 mb-1"><a href="{{route('data_detail',['id'=>$post->id])}}">{{$post->title}}</a></h3>
-                            <span><a href="{{route('categoryservices',['id'=>$post->category->id])}}">{{$post->category->title}}</a></span>
-                            <div class="card-date">
-                                {{date_format($post->created_at,"d/M/Y")}}
-                            </div>
-                            <p class="m-0 card-text">{{$post->description}}</p>
-                        </div>
-                    </article>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section>
 
 <!-- CLIENTS
 ================================================== -->

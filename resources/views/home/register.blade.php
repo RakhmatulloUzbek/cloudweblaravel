@@ -12,7 +12,6 @@
                         <div class="section-heading">
                             <h2>Yeni Hesap Oluştur</h2>
                         </div>
-                        @include('home.message_info')
                         @include('auth.register')
                     </div>
                 </div>

@@ -38,38 +38,28 @@
                 @foreach($recentPosts as $post)
                     <div class="clearfix footer-recent-post mt-0">
                         <div class="footer-recent-post-thumb"><img alt="..." src="{{Storage::url($post->image)}}"></div>
-                        <div class="footer-recent-post-content"><a href="{{route('data_detail',['id'=>$post->id])}}">{{$post->title}}</a><span>{{date_format($post->created_at,"d,M,Y")}}</span></div>
+                        <div class="footer-recent-post-content"><a href="{{route('data_detail',['title'=>$post->title])}}">{{$post->title}}</a><span>{{date_format($post->created_at,"d,M,Y")}}</span></div>
                     </div>
                 @endforeach
             </div>
             <div class="col-lg-3 col-md-6 mt-1-9">
                 <h3 class="text-white">Newsletter</h3>
                 <p class="text-light-gray mb-3">Nemo enim enim voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-                <form class="quform newsletter-form1" action="https://fabrex.websitelayout.net/quform/newsletter-two.php" method="post" enctype="multipart/form-data" onclick="">
-
+                @include('home.message_info')
+                <form role="form" class="newsletter-form1" action="{{route('storemessage')}}" method="post">
+                    @csrf
                     <div class="quform-elements text-center">
-
                         <div class="row">
-
                             <!-- Begin Text input element -->
                             <div class="col-md-12">
                                 <div class="quform-element form-group mb-0">
                                     <div class="quform-input">
-                                        <input class="form-control" id="email_address" type="email" name="email_address" placeholder="Subscribe with us">
+                                        <input class="form-control" id="email_address" type="email" name="email_address" placeholder="Subscribe with us" required>
                                     </div>
                                 </div>
                             </div>
                             <!-- End Text input element -->
-                            <div class="col-md-12 mt-1-9">
-                                    <div class="clearfix footer-recent-post mt-0">
-                                        <div class="row">
-                                            <div style="width: 90px; height: 90px" class="mt-3"><img style="height: 35px" alt="" src="{{asset('assets')}}/home/img/logos/yerli.png"></div>
-                                            <div style="width: 100px; height: 65px" class=""><img style="height: 60px" alt="" src="{{asset('assets')}}/home/img/logos/mikrorunner1.png"></div>
-                                            <div style="width: 100px; height: 65px" class=""><img style="height: 60px" alt="" src="{{asset('assets')}}/home/img/logos/mikrojumper1.png"></div>
-                                        </div>
 
-                                    </div>
-                            </div>
                             <!-- Begin Submit button -->
                             <div class="col-md-12">
                                 <div class="quform-submit-inner">
@@ -78,12 +68,19 @@
                                 <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
                             </div>
                             <!-- End Submit button -->
-
+                        </div>
+                    </div>
+                </form>
+                <div class="col-md-12 mt-1-9">
+                    <div class="clearfix footer-recent-post mt-0">
+                        <div class="row">
+                            <div style="width: 90px; height: 90px" class="mt-3"><img style="height: 35px" alt="" src="{{asset('assets')}}/home/img/logos/yerli.png"></div>
+                            <div style="width: 100px; height: 65px" class=""><img style="height: 60px" alt="" src="{{asset('assets')}}/home/img/logos/mikrorunner1.png"></div>
+                            <div style="width: 100px; height: 65px" class=""><img style="height: 60px" alt="" src="{{asset('assets')}}/home/img/logos/mikrojumper1.png"></div>
                         </div>
 
                     </div>
-
-                </form>
+                </div>
             </div>
         </div>
 

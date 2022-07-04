@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
+            $table->string('name',50)->default('Guest');
             $table->string('email',50)->nullable();
             $table->string('phone',20)->nullable();
             $table->string('subject',100)->nullable();

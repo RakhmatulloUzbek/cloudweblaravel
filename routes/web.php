@@ -47,13 +47,14 @@ Route::middleware([
     Route::get('/posts', [HomeController::class, 'posts'])->name('posts');
     Route::get('/categoryservices/{id}', [HomeController::class, 'categoryservices'])->name('categoryservices');
     Route::get('/services', [HomeController::class, 'services'])->name('services');
-    Route::get('/data_detail/{id}', [HomeController::class, 'data_detail'])->name('data_detail');
+    Route::get('/data_detail/{title}', [HomeController::class, 'data_detail'])->name('data_detail');
     Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
     Route::view('/loginuser', 'home.login')->name('loginuser');
     Route::get('/logoutuser', [HomeController::class, 'logout'])->name('logoutuser');
     Route::view('/registeruser', 'home.register')->name('registeruser');
     Route::post('/loginusercheck', [HomeController::class, 'loginusercheck'])->name('loginusercheck');
     Route::post('/getservices', [HomeController::class, 'getservices'])->name('getservices');
+    Route::get('/subcribe', [HomeController::class, 'subcribe'])->name('subcribe');
 
 
 //// -------------Admin Page Routes--------------------------------------------
