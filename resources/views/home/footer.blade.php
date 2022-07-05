@@ -87,7 +87,7 @@
     </div>
     <div class="footer-bar">
         <div class="container">
-            <p class="mb-0">&copy; <span class="current-year"></span> Fabrex is Powered by <a href="https://www.chitrakootweb.com/" target="_blank" class="text-light-gray">Chitrakoot Web</a></p>
+            <p class="mb-0">&copy; <span class="current-year"></span> <a href="https://www.pengona.com/" target="_blank" class="text-light-gray">Pengona Yazılım</a></p>
         </div>
     </div>
 </footer>

@@ -81,30 +81,27 @@
 
 <!-- PROJECT
 ================================================== -->
-<section class="md">
+<section class="bg-light md pt-1">
     <div class="container">
         <div class="section-heading">
-            <h2>Son Haberler</h2>
+            <h2 class="title-style2"><a href="{{route('services')}}">Son Haberler</a></h2>
         </div>
-        <div class="text-center">
-            <div class="row portfolio-gallery-isotope">
-                @foreach($postlar as $post)
-                    <div class="col-lg-4 col-md-6 items" data-src="{{Storage::url($post->image)}}" data-sub-html="<h4 class='text-white'>{{$post->title}}</h4><p>{{$post->category->title}}</p> <br> <a href='{{route('data_detail',['title'=>$post->title])}}' class='butn-style3'><span>More</span></a>">
-                    <div class="project-grid">
-                        <div class="project-grid-img"><img alt="..." src="{{Storage::url($post->image)}}">
-                        </div>
-                        <div class="project-grid-overlay">
-                            <div class="w-100">
-                                <h4><a href="#!">{{$post->title}}</a></h4>
-                                <p>{{$post->category->title}}</p>
+        <div class="row mt-n4">
+            @foreach($postlar as $post)
+                <div class="col-lg-3 col-md-6 mt-4">
+                    <div class="services-block-three justify-content-center">
+                        <a href="{{route('data_detail',['title'=>$post->title])}}">
+                            <div class="pb-3">
+                                <div class="project-grid-img" ><img  style="height: 180px" alt="..."
+                                                                     src="{{Storage::url($post->image)}}">
+                                </div>
                             </div>
-                        </div>
+                            <h3 class="h5">{{$post->title}}</h3>
+                        </a>
                     </div>
                 </div>
-                @endforeach
-            </div>
+            @endforeach
         </div>
-
     </div>
 </section>
 {{--@php--}}

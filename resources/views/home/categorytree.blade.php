@@ -6,6 +6,6 @@
             </ul>
         </li>
     @else
-        <li><a href="{{route('categoryservices',['id'=>$subcategory->id])}}">{{$subcategory->title}}</a></li>
+        <li class="{{ (request()->is('categoryservices/'.$subcategory->id.'')) ? 'current' : '' }}"><a href="{{route('categoryservices',['id'=>$subcategory->id])}}">{{$subcategory->title}}</a></li>
     @endif
 @endforeach

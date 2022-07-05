@@ -2095,7 +2095,7 @@ select {
   }
 
   .sm\:max-w-2xl {
-    max-width: 42rem;
+    max-width: 80rem;
   }
 
   .sm\:flex-1 {

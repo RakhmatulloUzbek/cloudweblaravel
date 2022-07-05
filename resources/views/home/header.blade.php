@@ -55,8 +55,8 @@
 
                             <!-- menu area -->
                             <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
-                                <li class="corrent"><span class="submenu-button"></span><a href="{{route('home')}}">Ana Sayfa</a></li>
-                                <li class=""><span class="submenu-button"></span><a class="nav-link" role="button">Kategoriler</a>
+                                <li class="{{ (request()->is('/')) ? 'current' : '' }}"><a href="{{route('home')}}">Anasayfa</a></li>
+                                <li class="{{ (request()->is('categoryservices*')) ? 'current' : '' }}"><a role="button">Kategoriler</a>
                                     <ul class="sub-menu">
                                         @foreach($mainCategories as $rs)
                                             @if(count($rs->children))
@@ -68,27 +68,17 @@
                                                     </ul>
                                                 </li>
                                             @else
-                                                <li>
+                                                <li class="{{ (request()->is('categoryservices/'.$rs->id.'')) ? 'current' : '' }}">
                                                     <a href="{{route('categoryservices',['id'=>$rs->id])}}">{{$rs->title}}</a>
                                                 </li>
                                             @endif
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li class=""><span class="submenu-button"></span><a class="nav-link" href="{{route('services')}}">Ürünler ve Hizmetler</a></li>
-                                <li class=""><span class="submenu-button"></span><a class="nav-link" href="{{route('aboutus')}}">Hakkımızda</a></li>
-                                <li class=""><span class="submenu-button"></span><a class="nav-link" href="{{route('contactus')}}">İletişim</a></li>
-                                <li class="has-sub"><span class="submenu-button"></span><a href="#!">Shop</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="{{route('posts')}}">Haberler</a></li>
-                                        <li><a href="shop-product-list.html">Product List</a></li>
-                                        <li><a href="shop-product-full-three-coulmn.html">Product Three Coulmns</a></li>
-                                        <li><a href="shop-product-full-four-coulmn.html">Product Four Coulmns</a></li>
-                                        <li><a href="shop-product-detail.html">Product Detail</a></li>
-                                        <li><a href="shop-cart.html">Shop Cart</a></li>
-                                        <li><a href="shop-checkout.html">Shop Checkout</a></li>
-                                    </ul>
-                                </li>
+                                <li class="{{ (request()->is('services')) ? 'current' : '' }}"><a href="{{route('services')}}">Ürünler ve Hizmetler</a></li>
+                                <li class="{{ (request()->is('posts')) ? 'current' : '' }}"><a href="{{route('posts')}}">Haberler</a></li>
+                                <li class="{{ (request()->is('aboutus')) ? 'current' : '' }}"><a href="{{route('aboutus')}}">Hakkımızda</a></li>
+                                <li class="{{ (request()->is('contactus')) ? 'current' : '' }}"><a href="{{route('contactus')}}">İletişim</a></li>
                                 @auth
                                     <li class="mt-2"><a class="butn primary"><span class="">{{strtok(Auth::user()->name,' ')}}</span></a>
                                         <ul class="">

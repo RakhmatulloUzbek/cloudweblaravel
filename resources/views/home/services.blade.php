@@ -1,5 +1,5 @@
 @extends('layouts.homefontbase')
-@section('title','Ürünler')
+@section('title',$title)
 
 @section('head')
 @endsection
@@ -12,12 +12,12 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Blank Page</h1>
+                    <h1>{{$title}}</h1>
                 </div>
                 <div class="col-md-12">
                     <ul class="ps-0">
                         <li><a href="{{route('home')}}">Ana Sayfa</a></li>
-                        <li><a class="active">Hizmetler ve Ürünler</a></li>
+                        <li><a class="active">{{$title}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -26,51 +26,62 @@
     </section>
     <section>
         <div class="container">
-            <div class="section-heading">
-                <h2>Hizmetler ve Ürünler</h2>
-                <hr>
-            </div>
+
             @php
                 $mainCategories = \App\Http\Controllers\HomeController::maincategorylist();
             @endphp
             <div class="row">
                 <div class="col-lg-9 pe-xl-1-9 mb-1-9 mb-lg-0">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <!-- links -->
-                            <div class="filtering col-sm-12 text-center">
-                                <span data-filter="*" class="active">All</span>
-                                @foreach($mainCategories as $rs)
-                                    @if($rs->title!='Postlar' and $rs->title!='Kampanyalar')
-                                        <span data-filter=".{{$rs->title}}">{{$rs->title}}</span>
+                    <section class="bg-light md pt-1">
+                        <div class="container">
+                            <div class="section-heading">
+                                <h2 class="title-style2"><a href="{{route('services')}}">Ürünler</a></h2>
+                            </div>
+                            <div class="row mt-n4">
+                                @foreach($services as $rs)
+                                    @if($rs->category->title === 'Ürünler')
+                                    <div class="col-lg-4 col-md-6 mt-4">
+                                        <div class="services-block-three justify-content-center">
+                                            <a href="{{route('data_detail',['title'=>$rs->title])}}">
+                                                <div class="pb-3">
+                                                    <div class="project-grid-img" ><img  style="height: 200px" alt="..."
+                                                                                         src="{{Storage::url($rs->image)}}">
+                                                    </div>
+                                                </div>
+                                                <h3 class="h5">{{$rs->title}}</h3>
+                                            </a>
+                                        </div>
+                                    </div>
                                     @endif
                                 @endforeach
                             </div>
-                            <!-- end links -->
                         </div>
-                        <div class="text-center">
-                            <div class="row portfolio-gallery-isotope" style="position: relative; height: 686.5px;">
-                                @foreach($services as $service)
-                                    <div class="col-lg-4 col-md-6 items {{$service->category->title}}"
-                                         data-src="{{Storage::url($service->image)}}"
-                                         data-sub-html="<h4 class='text-white'>{{$service->title}}</h4><p>{{$service->category->title}}</p><a href='{{route('data_detail',['title'=>$service->title])}}' class='butn-style3'><span>More</span></a>" style="position: absolute; left: 0px; top: 0px;">
-                                        <div class="project-grid">
-                                            <div class="project-grid-img"><img alt="..."
-                                                                               src="{{Storage::url($service->image)}}">
-                                            </div>
-                                            <div class="project-grid-overlay">
-                                                <div class="w-100">
-                                                    <h4><a href="">{{$service->title}}</a></h4>
-                                                    <p>{{$service->category->title}}</p>
-                                                </div>
+                    </section>
+                    <section class="bg-light md pt-1">
+                        <div class="container">
+                            <div class="section-heading">
+                                <h2 class="title-style2"><a href="{{route('services')}}">Hizmetler</a></h2>
+                            </div>
+                            <div class="row mt-n4">
+                                @foreach($services as $rs)
+                                    @if($rs->category->title === 'Hizmetler')
+                                        <div class="col-lg-4 col-md-6 mt-4">
+                                            <div class="services-block-three justify-content-center">
+                                                <a href="{{route('data_detail',['title'=>$rs->title])}}">
+                                                    <div class="pb-3">
+                                                        <div class="project-grid-img" ><img  style="height: 200px" alt="..."
+                                                                                             src="{{Storage::url($rs->image)}}">
+                                                        </div>
+                                                    </div>
+                                                    <h3 class="h5">{{$rs->title}}</h3>
+                                                </a>
                                             </div>
                                         </div>
-                                    </div>
-
+                                    @endif
                                 @endforeach
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
 {{--                <div class="bd-example mb-2">--}}
 {{--                </div>--}}
@@ -118,8 +129,8 @@
                          style="background-image: url(&quot;img/bg/bg2.jpg&quot;);">
                         <div class="position-relative z-index-9 text-center px-1-9 py-1-9 py-lg-6">
                             <i class="fas fa-headset display-20 dispaly-md-16 display-lg-10 text-white mb-3"></i>
-                            <h5 class="text-white font-weight-600 mb-1 h4">How can we help?</h5>
-                            <p class="text-white font-weight-500 display-30">Let’s get in touch!!</p>
+                            <h5 class="text-white font-weight-600 mb-1 h4">Nasıl yardımcı olabiliriz?</h5>
+                            <p class="text-white font-weight-500 display-30">İletişime geçin!!</p>
                             <div class="bg-white separator-line-horrizontal-full opacity3 mb-3"></div>
                             <ul class="text-center p-0 m-0 list-unstyled">
                                 <li class="text-white mb-1"><i class="fa fa-phone text-white me-2"></i><a
@@ -130,19 +141,6 @@
                         </div>
                     </div>
                     <!-- end help -->
-
-                    <!-- download -->
-                    <h6 class="font-weight-700 text-uppercase left-title mb-3">Downloads</h6>
-                    <ul class="downloads mb-0 ps-0 list-unstyled">
-                        <li class="mb-2 display-30"><a href="{{asset('assets')}}/home/img/content/profile.pdf"><i
-                                    class="far fa-file-pdf display-23"></i><span class="label font-weight-600">Company Profile</span></a>
-                        </li>
-                        <li><a href="{{asset('assets')}}/home/img/content/profile.pdf"><i
-                                    class="far fa-file-pdf display-23"></i><span class="label font-weight-600">Our Case Study</span></a>
-                        </li>
-                    </ul>
-                    <!-- end download -->
-
                 </div>
 
             </div>

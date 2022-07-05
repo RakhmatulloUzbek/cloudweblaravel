@@ -8,6 +8,7 @@ use App\Models\Message;
 use App\Models\Post;
 use App\Models\Service;
 use App\Models\Setting;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -35,7 +36,8 @@ class HomeController extends Controller
         //$recentPosts = Post::orderBy('id', 'desc')->limit(3)->get();
         //dd( Auth::check());
         if(Auth::check() && !Auth::user()->email_verified_at){
-            return redirect()->route('logoutuser');
+            $user = Auth::user();
+            $user->delete();
         }
         $hizmet = Category::where('title', 'Hizmetler')->value('id');
         $hizmetler = Service::where('category_id', $hizmet)->orderBy('id', 'desc')->limit(3)->get();
@@ -98,12 +100,13 @@ class HomeController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function services()
     {
+        $title = "Ürünler ve Hizmetler";
         $services = Service::all();
-        return view('home.services',['services'=>$services]);
+        return view('home.services',['services'=>$services,'title'=>$title]);
     }
     /**
      * Show the form for creating a new resource.
@@ -134,7 +137,7 @@ class HomeController extends Controller
             $data->subcribe="True";
             $data->ip=request()->ip();
             $data->save();
-            return redirect()->back()->with('info','Tanks for Subrcibe!');
+            return redirect()->back()->with('info','Abone olduğunuz için Teşekkürler!');
 
         }
         $data = new Message();
@@ -147,7 +150,7 @@ class HomeController extends Controller
         $data->ip=request()->ip();
         $data->save();
 
-        return redirect()->route('contactus')->with('info','Your message has been sent, Thank you.!');
+        return redirect()->route('contactus')->with('info','Mesajınız gönderildi.Teşekkürler.!');
     }
     public function subcribe()
     {
@@ -164,21 +167,11 @@ class HomeController extends Controller
         //email_verified kontrol et.
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            if(Auth::check()){
-                $user = Auth::user();
-                if(!$user->email_verified_at){
-                    Auth::logout();
-                    $request->session()->invalidate();
-                    $request->session()->regenerateToken();
-                    return back()->withErrors(['error' => 'Before login, could you verify your email address by clicking on the link we emailed to you?',]);
-                }
-                return redirect()->intended('/');
-            }
             return redirect()->intended('/');
         }
 
         return back()->withErrors([
-            'error' => 'The provided credentials do not match our records.',
+            'error' => 'Sağlanan kimlik bilgileri kayıtlarımızla eşleşmiyor.',
         ])->onlyInput('email');
     }
     public function logout(Request $request){
