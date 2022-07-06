@@ -1,14 +1,11 @@
 <footer>
-    @php
-        $recentPosts = \App\Http\Controllers\HomeController::recentpostslist();
-    @endphp
     <div class="container">
         <div class="row mt-n1-9">
 
             <div class="col-lg-4 col-md-6 mt-1-9">
 
                 <img style="width: 160px; height: 90px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/pengonalogo.png">
-                <p class="mt-4 text-light-gray">Nemo enim enim voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+                <a href="{{route('aboutus')}}"><p class="mt-4 text-light-gray">{!! Str::words($settings->aboutus, 18,'...') !!}</p></a>
                 <div class="mt-4 footer-social-icons">
                     <ul class="ps-0 mb-0">
                         <li><a href="{{$settings->facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
@@ -20,33 +17,34 @@
                 </div>
 
             </div>
-
+            @php
+                $serviceList = \App\Http\Controllers\HomeController::servicelist();
+            @endphp
             <div class="col-lg-2 col-md-6 mt-1-9">
-                <h3 class="text-white">Quick Links</h3>
+                <h3 class="text-white">Hızlı Linkler</h3>
                 <ul class="footer-list ps-0">
-                    <li><a href="#!">Financial Planning</a></li>
-                    <li><a href="#!">Software &amp; Research</a></li>
-                    <li><a href="#!">Market Research</a></li>
-                    <li><a href="#!">Sales Services</a></li>
-                    <li><a href="#!">Healthcare Services</a></li>
-                    <li><a href="#!">Market Analysis</a></li>
+                    @foreach($serviceList as $rs)
+                        <li><a href="{{route('data_detail',['title'=>$rs->title])}}">{{$rs->title}}</a></li>
+                    @endforeach
                 </ul>
             </div>
-
+            @php
+                $recentPosts = \App\Http\Controllers\HomeController::recentpostslist();
+            @endphp
             <div class="col-lg-3 col-md-6 mt-1-9">
-                <h3 class="text-white">Recent Posts</h3>
+                <h3 class="text-white">Son Haberler</h3>
                 @foreach($recentPosts as $post)
                     <div class="clearfix footer-recent-post mt-0">
                         <div class="footer-recent-post-thumb"><img alt="..." src="{{Storage::url($post->image)}}"></div>
-                        <div class="footer-recent-post-content"><a href="{{route('data_detail',['title'=>$post->title])}}">{{$post->title}}</a><span>{{date_format($post->created_at,"d,M,Y")}}</span></div>
+                        <div class="footer-recent-post-content"><a href="{{route('data_detail',['title'=>$post->title])}}">{{$post->title}}</a><span>{{date_format($post->created_at,"d/M/Y")}}</span></div>
                     </div>
                 @endforeach
             </div>
             <div class="col-lg-3 col-md-6 mt-1-9">
                 <h3 class="text-white">Newsletter</h3>
-                <p class="text-light-gray mb-3">Nemo enim enim voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+                <p class="text-light-gray mb-3">Yeniliklerden haberdar olmak için bize abone olun.</p>
                 @include('home.message_info')
-                <form role="form" class="newsletter-form1" action="{{route('storemessage')}}" method="post">
+                <form role="form" class="newsletter-form1" action="{{route('subcribe')}}" method="post">
                     @csrf
                     <div class="quform-elements text-center">
                         <div class="row">

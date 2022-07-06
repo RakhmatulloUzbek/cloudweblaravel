@@ -1,16 +1,16 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a href="{{route('home')}}" class="navbar-brand1 logodefault"><img style="width: 200px; height: 100px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/pengona.png"></a>
         </x-slot>
 
         <div x-data="{ recovery: false }">
             <div class="mb-4 text-sm text-gray-600" x-show="! recovery">
-                {{ __('Please confirm access to your account by entering the authentication code provided by your authenticator application.') }}
+                {{ __('Lütfen kimlik doğrulama uygulamanız tarafından sağlanan kimlik doğrulama kodunu girerek hesabınıza erişimi onaylayın.') }}
             </div>
 
             <div class="mb-4 text-sm text-gray-600" x-show="recovery">
-                {{ __('Please confirm access to your account by entering one of your emergency recovery codes.') }}
+                {{ __('Lütfen acil durum kurtarma kodlarınızdan birini girerek hesabınıza erişimi onaylayın.') }}
             </div>
 
             <x-jet-validation-errors class="mb-4" />

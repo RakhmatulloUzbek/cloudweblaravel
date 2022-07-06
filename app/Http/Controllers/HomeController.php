@@ -8,6 +8,7 @@ use App\Models\Message;
 use App\Models\Post;
 use App\Models\Service;
 use App\Models\Setting;
+use App\Models\Subcribe;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,9 @@ class HomeController extends Controller
     }
     public static function recentpostslist(){
         return  Post::orderBy('id', 'desc')->limit(4)->get();
+    }
+    public static function servicelist(){
+        return  Service::orderBy('id', 'desc')->get();
     }
     public static function getsettings(){
         return  Setting::first();
@@ -130,15 +134,15 @@ class HomeController extends Controller
 
     public function storemessage(Request $request){
         //dd($request);
-        if($request->input('email_address')){
-            $data = new Message();
-            $data->name="Guest";
-            $data->email=$request->input('email_address');
-            $data->subcribe="True";
-            $data->ip=request()->ip();
-            $data->save();
-            return redirect()->back()->with('info','Abone olduğunuz için Teşekkürler!');
-
+        if($request->input('subcribe')){
+            $subcribes = Subcribe::where('email','=',$request->input('email'))->first();
+            if(!$subcribes){
+                $data = new Subcribe();
+                $data->name=$request->input('name');
+                $data->email=$request->input('email');
+                $data->phone=$request->input('phone');
+                $data->save();
+            }
         }
         $data = new Message();
         $data->name=$request->input('name');
@@ -152,9 +156,21 @@ class HomeController extends Controller
 
         return redirect()->route('contactus')->with('info','Mesajınız gönderildi.Teşekkürler.!');
     }
-    public function subcribe()
+    public function subcribe(Request $request)
     {
-        return view('home.subcribe');
+        $subcribes = Subcribe::where('email','=',$request->input('email_address'))->first();
+        if($subcribes)
+            return redirect()->back()->with('error','Zaten bu mail kayıtlı!');
+
+        $data = new Subcribe();
+        if(Auth::check()){
+            $data->name=Auth::user()->name;
+            if(Auth::user()->phone)
+                $data->phone=Auth::user()->phone;
+        }
+        $data->email=$request->input('email_address');
+        $data->save();
+        return redirect()->back()->with('info','Teşekkürler.!');
     }
 
     public function loginusercheck(Request $request)

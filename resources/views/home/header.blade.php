@@ -88,7 +88,7 @@
                                     </li>
                                 @endauth
                                 @guest
-                                    <li class="mt-2"><a class="butn primary" href="{{route('loginuser')}}"><span class="submenu-button">Login</span></a></li>
+                                    <li class="mt-2"><a class="butn primary" href="{{route('loginuser')}}"><span class="submenu-button">Giriş</span></a></li>
                                 @endguest
                             </ul>
                             <!-- end menu area -->

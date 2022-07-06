@@ -16,7 +16,7 @@
             <div class="navbar-header">
                 <div class="logo-sm">
                     <a href="javascript:void(0)" id="sidebar-toggle-button"><i class="fa fa-bars"></i></a>
-                    <a class="logo-box" href="index.html"><span>Fabrex</span></a>
+                    <a class="logo-box" href="index.html"><span>Pengona Admin</span></a>
                 </div>
                 <button type="button" class="navbar-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <i class="fa fa-angle-down"></i>
@@ -29,17 +29,13 @@
                 <ul class="nav navbar-nav">
                     <li><a href="javascript:void(0)" id="collapsed-sidebar-toggle-button"><i class="fa fa-bars"></i></a></li>
                     <li><a href="javascript:void(0)" id="toggle-fullscreen"><i class="fa fa-expand"></i></a></li>
-                    <li><a href="javascript:void(0)" id="search-button"><i class="fa fa-search"></i></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" type="button" aria-expanded="false"><img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" class="rounded-circle"></a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{route('admin.profile')}}">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Calendar</a></li>
-                            <li><a class="dropdown-item" href="#"><span class="badge float-end bg-danger">42</span>Messages</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
                             <li><a class="dropdown-item" href="{{route('logoutuser')}}">Log Out</a></li>
                         </ul>
                     </li>

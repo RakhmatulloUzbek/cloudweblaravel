@@ -2,7 +2,7 @@
     <span class="input-group-addon cursor-pointer">
         <button class="search-form_submit fas fa-search text-white" type="submit"></button>
     </span>
-    <input wire:model="search" type="text" class="search-form_input form-control" name="search" autocomplete="off" list="mylist" placeholder="Type & hit enter...">
+    <input wire:model="search" type="text" class="search-form_input form-control" name="search" autocomplete="off" list="mylist" placeholder="Yaz & Enter tuşuna bas...">
     @if(!empty($query))
         <datalist id="mylist">
             @foreach($datalist1 as $rs)

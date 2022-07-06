@@ -14,8 +14,8 @@
                 </div>
                 <div class="col-md-12">
                     <ul class="ps-0">
-                        <li><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="#!">Bize Ulaşın</a></li>
+                        <li><a href="{{route('home')}}">Anasayfa</a></li>
+                        <li><a class="active">Bize Ulaşın</a></li>
                     </ul>
                 </div>
             </div>
@@ -25,7 +25,7 @@
     <section>
         <div class="container">
             <div class="text-center section-heading">
-                <h2>Let's talk about your business</h2>
+                <h2>Hadi işiniz hakkında konuşalım.!</h2>
             </div>
             <!-- contact detail -->
             <div class="row mb-1-9 mb-lg-6 mt-n1-9">

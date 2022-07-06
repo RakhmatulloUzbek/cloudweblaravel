@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('subcribes', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('name')->nullable()->default('Guest');
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->timestamps();

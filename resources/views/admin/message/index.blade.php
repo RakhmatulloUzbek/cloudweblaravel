@@ -1,33 +1,17 @@
 @extends('layouts.adminbase')
 
 @section('head')
-    <!-- common plugins -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css" />
-
-    <!-- datatables plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css" />
-
-    <!-- bootstrap-datepicker plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css" />
-
-    <!-- theme core css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css" />
     <style>
         #new1 {
             text-align: center;
             background-color: yellow;
-            width: 35px;
+            width: 60px;
             box-shadow: 1px 1px 2px yellow, 0 0 15px yellow, 0 0 15px yellow, 0 0 5px yellow;
         }
         #new2 {
             text-align: center;
             background-color: springgreen;
-            width: 35px;
+            width: 60px;
             box-shadow: 1px 1px 2px springgreen, 0 0 15px springgreen, 0 0 15px springgreen, 0 0 5px springgreen;
         }
     </style>
@@ -37,7 +21,9 @@
     <!-- start page inner -->
     <div class="page-inner">
         <div class="page-title">
-            <h3 class="breadcrumb-header">Messages</h3>
+            <h3 class="breadcrumb-header">Mesajlar</h3><br>
+            <a href="{{route('admin.index')}}" role="button">Anasafya</a> >
+            <a class="disabled" style="text-decoration-line: none">Mesajlar</a>
         </div>
         <!-- start page main wrapper -->
         <div id="main-wrapper">
@@ -55,7 +41,7 @@
                                         <th>Email</th>
                                         <th>Subject</th>
                                         <th style="width: 35px">Subcribe</th>
-                                        <th style="width: 35px">Status</th>
+                                        <th style="width: 60px">Status</th>
                                         <th style="width: 30px">Delete</th>
                                         <th style="width: 30px">Show</th>
                                     </tr>
@@ -70,13 +56,13 @@
                                             <td>{{$rs->subject}}</td>
                                             <td>{{$rs->subcribe}}</td>
                                             <td>
-                                                @if($rs->status=='New')<div id="new1">{{$rs->status}}</div>
+                                                @if($rs->status=='Yeni')<div id="new1">{{$rs->status}}</div>
                                                 @else<div id="new2">{{$rs->status}}</div>
                                                 @endif
                                             </td>
                                             <td><a href="{{route('admin.message.destroy',['id'=>$rs->id])}}" onclick="return confirm('Deleting !! Are you sure ?')" class="btn btn-outline-danger" data-toggle="tooltip" title="Delete"><i class="fas fa-trash"></i></a></td>
                                             <td>
-                                                <a href="{{route('admin.message.show',['id'=>$rs->id])}}" class="btn btn-outline-primary" onclick="return !window.open(this.href,'','top=50 left=100 width=730 height=900')" data-toggle="tooltip" title="Show"><i class="fas fa-eye"></i></i>
+                                                <a href="{{route('admin.message.show',['id'=>$rs->id])}}" class="btn btn-outline-primary" onclick="return !window.open(this.href,'','top=50 left=100 width=950 height=730')" data-toggle="tooltip" title="Show"><i class="fas fa-eye"></i></i>
                                                 </a>
                                             </td>
                                         </tr>

@@ -11,8 +11,8 @@
                     <div class="services-block-three justify-content-center">
                         <a href="{{route('data_detail',['title'=>$urun->title])}}">
                             <div class="pb-3">
-                                <div class="project-grid-img" ><img  style="height: 250px" alt="..."
-                                                                     src="{{Storage::url($urun->image)}}">
+                                <div class="project-grid-img"><img style="height: 250px" alt="..."
+                                                                   src="{{Storage::url($urun->image)}}">
                                 </div>
                             </div>
 
@@ -35,8 +35,8 @@
                     <div class="services-block-three justify-content-center">
                         <a href="{{route('data_detail',['title'=>$hizmet->title])}}">
                             <div class="pb-3">
-                                <div class="project-grid-img" ><img  style="height: 250px" alt="..."
-                                                                     src="{{Storage::url($hizmet->image)}}">
+                                <div class="project-grid-img"><img style="height: 250px" alt="..."
+                                                                   src="{{Storage::url($hizmet->image)}}">
                                 </div>
                             </div>
                             <h3 class="h5">{{$hizmet->title}}</h3>
@@ -79,31 +79,39 @@
 {{--    </div>--}}
 {{--</section>--}}
 
-<!-- PROJECT
-================================================== -->
-<section class="bg-light md pt-1">
+<section class="md">
     <div class="container">
         <div class="section-heading">
-            <h2 class="title-style2"><a href="{{route('services')}}">Son Haberler</a></h2>
+            <h2>Son Haberler</h2>
         </div>
-        <div class="row mt-n4">
-            @foreach($postlar as $post)
-                <div class="col-lg-3 col-md-6 mt-4">
-                    <div class="services-block-three justify-content-center">
-                        <a href="{{route('data_detail',['title'=>$post->title])}}">
-                            <div class="pb-3">
-                                <div class="project-grid-img" ><img  style="height: 180px" alt="..."
-                                                                     src="{{Storage::url($post->image)}}">
+        <div class="text-center">
+            <div class="row">
+                @foreach($postlar as $post)
+                    <div class="col-lg-3 col-md-6 items">
+                        <div class="project-grid">
+                            <div class="project-grid-img"><img alt="..." src="{{Storage::url($post->image)}}">
+                            </div>
+                            <div class="project-grid-overlay">
+                                <div class="w-100">
+                                    <h4><a href="{{route('data_detail',['title'=>$post->title])}}">{{$post->title}}</a></h4>
+                                    <p>Pengona Yazılım {{date_format($post->created_at,"d/M/Y")}}</p>
                                 </div>
                             </div>
-                            <h3 class="h5">{{$post->title}}</h3>
-                        </a>
+                        </div>
+                        <div class="project-grid">
+                            <h6>{{$post->category->title}}</h6>
+                            <p class="card-text">{{ Str::words($post->description, 8,'...')}}.</p>
+                            <a href="{{route('data_detail',['title'=>$post->title])}}" class="butn small"><span>Tamamını oku..</span></a>
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
+
     </div>
 </section>
+
+
 {{--@php--}}
 {{--    $recentPosts = \App\Http\Controllers\HomeController::recentpostslist();--}}
 {{--@endphp--}}
@@ -187,7 +195,8 @@
             <div class="col-md-6 col-lg-3 mt-1-9 text-center">
                 <div class="team-style1">
                     <div class="team-member-img">
-                        <img class="{{asset('assets')}}/home/img-responsive" src="{{asset('assets')}}/home/img/team/teammember-01.jpg" alt="...">
+                        <img class="{{asset('assets')}}/home/img-responsive"
+                             src="{{asset('assets')}}/home/img/team/teammember-01.jpg" alt="...">
                     </div>
                     <div class="text-center mt-4 mb-3 pb-3 border-bottom">
                         <div class="text-extra-dark-gray font-weight-600 text-uppercase alt-font">Jamara Karle</div>
@@ -215,7 +224,8 @@
             <div class="col-md-6 col-lg-3 mt-1-9 text-center">
                 <div class="team-style1">
                     <div class="team-member-img">
-                        <img class="{{asset('assets')}}/home/img-responsive" src="{{asset('assets')}}/home/img/team/teammember-02.jpg" alt="...">
+                        <img class="{{asset('assets')}}/home/img-responsive"
+                             src="{{asset('assets')}}/home/img/team/teammember-02.jpg" alt="...">
                     </div>
                     <div class="text-center mt-4 mb-3 pb-3 border-bottom">
                         <div class="text-extra-dark-gray font-weight-600 text-uppercase alt-font">Keir Prestonly</div>
@@ -243,7 +253,8 @@
             <div class="col-md-6 col-lg-3 mt-1-9 text-center">
                 <div class="team-style1">
                     <div class="team-member-img">
-                        <img class="{{asset('assets')}}/home/img-responsive" src="{{asset('assets')}}/home/img/team/teammember-03.jpg" alt="...">
+                        <img class="{{asset('assets')}}/home/img-responsive"
+                             src="{{asset('assets')}}/home/img/team/teammember-03.jpg" alt="...">
                     </div>
                     <div class="text-center mt-4 mb-3 pb-3 border-bottom">
                         <div class="text-extra-dark-gray font-weight-600 text-uppercase alt-font">Finley Walkeror</div>
@@ -271,7 +282,8 @@
             <div class="col-md-6 col-lg-3 mt-1-9 text-center">
                 <div class="team-style1">
                     <div class="team-member-img">
-                        <img class="{{asset('assets')}}/home/img-responsive" src="{{asset('assets')}}/home/img/team/teammember-04.jpg" alt="...">
+                        <img class="{{asset('assets')}}/home/img-responsive"
+                             src="{{asset('assets')}}/home/img/team/teammember-04.jpg" alt="...">
                     </div>
                     <div class="text-center mt-4 mb-3 pb-3 border-bottom">
                         <div class="text-extra-dark-gray font-weight-600 text-uppercase alt-font">Niamah Hower</div>

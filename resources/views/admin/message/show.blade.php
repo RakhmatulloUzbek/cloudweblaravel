@@ -1,29 +1,15 @@
 @extends('layouts.windowadminbase')
 
 @section('head')
-    <!-- common plugins -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css" />
-
-    <!-- datatables plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css" />
-
-    <!-- bootstrap-datepicker plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css" />
-
-    <!-- theme core css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css" />
-    @include('admin.top_scripts')
 @endsection
 
 @section('content')
     <!-- start page inner -->
     <div class="page-inner">
         <!-- start page main wrapper -->
+        <div class="page-title">
+            <h3 class="breadcrumb-header">{{$data->subject}}</h3>
+        </div>
         <div id="main-wrapper">
             <div class="row">
                 <div class="col-md-12">
@@ -88,7 +74,7 @@
                                                 </textarea>
                                                 <div class="row nb-3  ml-3 responsive">
                                                     <div class="col-sm-4 m-2">
-                                                        <button type="submit" class="btn btn-primary">Update Note</button>
+                                                        <button type="submit" class="btn btn-primary">Notu güncelle</button>
                                                     </div>
                                                 </div>
                                             </form>

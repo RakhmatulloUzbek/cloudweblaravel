@@ -1,3 +1,3 @@
-<div class="page-footer">
-    <p>Copyright &copy; <span class="current-year"></span> Fabrex All rights reserved.</p>
+<div class="container" style="flex: auto; text-align: center; justify-content: center">
+    <p>Copyright &copy; <span class="current-year"></span> Pengona Yazılım</p>
 </div>

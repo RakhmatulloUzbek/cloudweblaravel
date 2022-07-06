@@ -2,7 +2,7 @@
         ================================================== -->
 <div class="page-sidebar">
     <a class="logo-box" href="index.html">
-        <span>Fabrex</span>
+        <span>Pengona Admin</span>
         <i class="icon-radio_button_unchecked" id="fixed-sidebar-toggle-button"></i>
         <i class="icon-close" id="sidebar-toggle-button-close"></i>
     </a>
@@ -10,28 +10,28 @@
         <div class="page-sidebar-menu">
             <ul class="accordion-menu">
                 <li class="{{ (request()->is('admin')) ? 'active' : '' }}">
-                    <a href="{{route('admin.index')}}" :active="request()->routeIs('admin.index')">
-                        <i class="menu-icon icon-home4"></i><span>Home</span>
+                    <a href="{{route('admin.index')}}">
+                        <i class="menu-icon icon-home4"></i><span>Anasayfa</span>
                     </a>
                 </li>
                 <li class="{{ (request()->is('admin/category*')) ? 'active' : '' }}">
-                    <a href="{{route('admin.category.index')}}" :active="request()->routeIs('category')">
-                        <i class="fas fa-layer-group menu-icon"></i><span>Category</span>
+                    <a href="{{route('admin.category.index')}}">
+                        <i class="fas fa-layer-group menu-icon"></i><span>Katigoriler</span>
                     </a>
                 </li>
                 <li class="{{ (request()->is('admin/post*')) ? 'active' : '' }}">
                     <a href="{{route('admin.post.index')}}">
-                        <i class="fas fa-blog menu-icon"></i><span>Posts</span>
+                        <i class="fas fa-blog menu-icon"></i><span>Postlar</span>
                     </a>
                 </li>
                 <li class="{{ (request()->is('admin/services*')) ? 'active' : '' }}">
                     <a href="{{route('admin.services.index')}}">
-                        <i class="fas fa-file-alt menu-icon"></i></i><span>Services</span>
+                        <i class="fas fa-file-alt menu-icon"></i><span>Ürünler ve Hizmetler</span>
                     </a>
                 </li>
                 <li class="{{ (request()->is('admin/message*')) ? 'active' : '' }}">
                     <a href="{{route('admin.message.index')}}">
-                        <i class="fas fa-envelope menu-icon"></i></i><span>Messages</span>
+                        <i class="fas fa-envelope menu-icon"></i><span>Mesajlar</span>
                     </a>
                 </li>
                 <li class="">
@@ -48,13 +48,18 @@
                 </li>
                 <li class="{{ (request()->is('admin/users*')) ? 'active' : '' }}">
                     <a href="{{route('admin.users.index')}}">
-                        <i class="fas fa-users menu-icon"></i></i><span>Users</span>
+                        <i class="fas fa-users menu-icon"></i><span>Kullanıcılar</span>
+                    </a>
+                </li>
+                <li class="{{ (request()->is('admin/users*')) ? 'active' : '' }}">
+                    <a href="{{route('admin.users.index')}}">
+                        <i class="fas fa-users menu-icon"></i><span>Aboneciler</span>
                     </a>
                 </li>
                 <li class="menu-divider"></li>
                 <li class="{{ (request()->is('admin/setting')) ? 'active' : '' }}">
                     <a href="{{route('admin.setting')}}">
-                        <i class="far fa-sun menu-icon"></i></i><span>Settings</span>
+                        <i class="far fa-sun menu-icon"></i><span>Ayarlar</span>
                     </a>
                 </li>
             </ul>

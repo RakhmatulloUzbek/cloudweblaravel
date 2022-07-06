@@ -10,12 +10,12 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <h1>About Us</h1>
+                    <h1>Hakkımızda</h1>
                 </div>
                 <div class="col-md-12">
                     <ul class="ps-0">
-                        <li><a href="home-default.html">Home</a></li>
-                        <li><a href="#!">Hakkımızda</a></li>
+                        <li><a href="{{route('home')}}">Anasayfa</a></li>
+                        <li><a class="active">Hakkımızda</a></li>
                     </ul>
                 </div>
             </div>

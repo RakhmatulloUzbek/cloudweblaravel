@@ -17,9 +17,6 @@
 
     <!-- favicon -->
     <link rel="shortcut icon" href="{{Storage::url($settings->icon)}}">
-    <link rel="apple-touch-icon" href="{{asset('assets')}}/home/img/logos/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('assets')}}/home/img/logos/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('assets')}}/home/img/logos/apple-touch-icon-114x114.png">
 
     <!-- plugins -->
     <link rel="stylesheet" href="{{asset('assets')}}/home/css/plugins.css">

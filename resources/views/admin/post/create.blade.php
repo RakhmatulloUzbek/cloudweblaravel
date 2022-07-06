@@ -2,38 +2,23 @@
 
 @section('head')
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-    <!-- common plugins -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css"/>
-
-    <!-- datatables plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css"/>
-
-    <!-- bootstrap-datepicker plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css"/>
-
-    <!-- theme core css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css"/>
 @endsection
 
 @section('content')
     <!-- start page inner -->
     <div class="page-inner">
         <div class="page-title">
-            <h3 class="breadcrumb-header">Data Tables</h3>
+            <h3 class="breadcrumb-header">Yeni post</h3><br>
+            <a href="{{route('admin.index')}}" role="button">Anasafya</a> >
+            <a href="{{route('admin.post.index')}}" role="button">Postlar</a> >
+            <a class="disabled" style="text-decoration-line: none">Yeni post</a>
+
         </div>
         <!-- start page main wrapper -->
         <div id="main-wrapper">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-white">
-                        <div class="card-heading clearfix">
-                            <h4 class="card-title">Basic example</h4>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <form role="form" action="{{route('admin.post.store')}}" method="post"

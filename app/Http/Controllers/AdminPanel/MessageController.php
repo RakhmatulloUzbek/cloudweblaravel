@@ -53,7 +53,7 @@ class MessageController extends Controller
     {
         //
         $data= Message::find($id);
-        $data->status='Read';
+        $data->status='Okundu';
         $data->save();
         return view('admin.message.show',[
             'data'=>$data

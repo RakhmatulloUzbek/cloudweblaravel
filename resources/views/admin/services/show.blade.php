@@ -1,29 +1,16 @@
 @extends('layouts.adminbase')
 
 @section('head')
-    <!-- common plugins -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css" />
-
-    <!-- datatables plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css" />
-
-    <!-- bootstrap-datepicker plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css" />
-
-    <!-- theme core css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css" />
 @endsection
 
 @section('content')
     <!-- start page inner -->
     <div class="page-inner">
         <div class="page-title">
-            <h3 class="breadcrumb-header">Show page</h3>
+            <h3 class="breadcrumb-header">{{$data->title}}</h3><br>
+            <a href="{{route('admin.index')}}" role="button">Anasafya</a> >
+            <a href="{{route('admin.services.index')}}" role="button">Ürünler ve Hizmetler</a> >
+            <a class="disabled" style="text-decoration-line: none">{{$data->title}}</a>
         </div>
         <!-- start page main wrapper -->
         <div id="main-wrapper">
@@ -34,7 +21,7 @@
                             <h4 class="card-title">Detail of {{$data->title}} </h4>
                         </div>
                         <div class="card-body">
-                            <a href="{{route('admin.services.edit',['id'=>$data->id])}}" role="button" class="btn btn-success m-b-sm">Düzenle</a>
+                            <a href="{{route('admin.services.edit',['id'=>$data->id])}}" role="button" class="btn btn-primary m-b-sm">Düzenle</a>
                             <a href="{{route('admin.services.destroy',['id'=>$data->id])}}" role="button" class="btn btn-danger m-b-sm">Sil</a>
                         </div>
                         <div class="row">
@@ -111,37 +98,9 @@
             <!-- Row -->
         </div>
         <!-- end page main wrapper -->
-        <div class="page-footer">
-            <p>Copyright &copy; <span class="current-year"></span> Fabrex All rights reserved.</p>
-        </div>
+        @include('admin.footer')
     </div>
     <!-- end page inner -->
 @endsection
 @section('foot')
-    <!-- jQuery -->
-    <script src="{{asset('assets')}}/admin/plugins/jquery/jquery-3.1.0.min.js"></script>
-
-    <!-- bootstrap -->
-    <script src="{{asset('assets')}}/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- slimscroll -->
-    <script src="{{asset('assets')}}/admin/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-
-    <!-- uniform -->
-    <script src="{{asset('assets')}}/admin/plugins/uniform/js/jquery.uniform.standalone.js"></script>
-
-    <!-- switchery -->
-    <script src="{{asset('assets')}}/admin/plugins/switchery/switchery.min.js"></script>
-
-    <!-- datatables -->
-    <script src="{{asset('assets')}}/admin/plugins/datatables/js/jquery.datatables.min.js"></script>
-
-    <!-- datepicker -->
-    <script src="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-
-    <!-- table-data -->
-    <script src="{{asset('assets')}}/admin/js/pages/table-data.js"></script>
-
-    <!-- theme core scripts -->
-    <script src="{{asset('assets')}}/admin/js/main.js"></script>
 @endsection

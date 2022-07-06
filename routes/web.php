@@ -54,7 +54,10 @@ Route::middleware([
     Route::view('/registeruser', 'home.register')->name('registeruser');
     Route::post('/loginusercheck', [HomeController::class, 'loginusercheck'])->name('loginusercheck');
     Route::post('/getservices', [HomeController::class, 'getservices'])->name('getservices');
-    Route::get('/subcribe', [HomeController::class, 'subcribe'])->name('subcribe');
+    Route::post('/subcribe', [HomeController::class, 'subcribe'])->name('subcribe');
+
+Route::view('/docs', 'home.docs.index')->name('docs');
+
 
 
 //// -------------Admin Page Routes--------------------------------------------

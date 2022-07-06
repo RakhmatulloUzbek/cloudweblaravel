@@ -2,38 +2,22 @@
 
 @section('head')
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-    <!-- common plugins -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css"/>
-
-    <!-- datatables plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css"/>
-
-    <!-- bootstrap-datepicker plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css"/>
-
-    <!-- theme core css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css"/>
 @endsection
 
 @section('content')
     <!-- start page inner -->
     <div class="page-inner">
         <div class="page-title">
-            <h3 class="breadcrumb-header">Data Tables</h3>
+            <h3 class="breadcrumb-header">Yeni Ürün yada Hizmet</h3><br>
+            <a href="{{route('admin.index')}}" role="button">Anasafya</a> >
+            <a href="{{route('admin.services.index')}}" role="button">Ürünler ve Hizmetler</a> >
+            <a class="disabled" style="text-decoration-line: none">Yeni Ürün yada Hizmet</a>
         </div>
         <!-- start page main wrapper -->
         <div id="main-wrapper">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-white">
-                        <div class="card-heading clearfix">
-                            <h4 class="card-title">Add Service</h4>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <form role="form" action="{{route('admin.services.store')}}" method="post"
@@ -108,7 +92,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-danger">Save</button>
+                                    <button type="submit" class="btn btn-primary">Kaydet</button> <a href="{{route('admin.services.index')}}" class="btn btn-danger">İptal</a>
                                 </form>
                             </div>
                         </div>
@@ -118,9 +102,7 @@
             <!-- Row -->
         </div>
         <!-- end page main wrapper -->
-        <div class="page-footer">
-            <p>Copyright &copy; <span class="current-year"></span> Fabrex All rights reserved.</p>
-        </div>
+       @include('admin.footer')
     </div>
     <!-- end page inner -->
 @endsection
@@ -131,30 +113,4 @@
             $('.textarea').summernote()
         })
     </script>
-    <!-- jQuery -->
-    <script src="{{asset('assets')}}/admin/plugins/jquery/jquery-3.1.0.min.js"></script>
-
-    <!-- bootstrap -->
-    <script src="{{asset('assets')}}/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- slimscroll -->
-    <script src="{{asset('assets')}}/admin/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-
-    <!-- uniform -->
-    <script src="{{asset('assets')}}/admin/plugins/uniform/js/jquery.uniform.standalone.js"></script>
-
-    <!-- switchery -->
-    <script src="{{asset('assets')}}/admin/plugins/switchery/switchery.min.js"></script>
-
-    <!-- datatables -->
-    <script src="{{asset('assets')}}/admin/plugins/datatables/js/jquery.datatables.min.js"></script>
-
-    <!-- datepicker -->
-    <script src="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-
-    <!-- table-data -->
-    <script src="{{asset('assets')}}/admin/js/pages/table-data.js"></script>
-
-    <!-- theme core scripts -->
-    <script src="{{asset('assets')}}/admin/js/main.js"></script>
 @endsection
