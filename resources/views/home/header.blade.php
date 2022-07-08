@@ -13,7 +13,7 @@
                 <div class="col-md-6 d-none d-md-block responsive" style=" border-right: 3px solid #c5c0c0; height: 30px;">
                     <ul class="top-social-icon ps-0">
                         <li><a href="{{route('maintenance')}}">Partners</a></li>
-                        <li><a href="{{route('maintenance')}}">Docs</a></li>
+                        <li><a href="{{route('docs')}}">Docs</a></li>
                         <li><a href="{{route('maintenance')}}">Support</a></li>
                         <li><a href="{{route('maintenance')}}">Sales</a></li>
                         <li><a href="{{route('maintenance')}}">Careers</a></li>
@@ -80,8 +80,8 @@
                                 <li class="{{ (request()->is('aboutus')) ? 'current' : '' }}"><a href="{{route('aboutus')}}">Hakkımızda</a></li>
                                 <li class="{{ (request()->is('contactus')) ? 'current' : '' }}"><a href="{{route('contactus')}}">İletişim</a></li>
                                 @auth
-                                    <li class="mt-2"><a class="butn primary"><span class="">{{strtok(Auth::user()->name,' ')}}</span></a>
-                                        <ul class="">
+                                    <li class="mb-2"><a><button class="btn btn-danger pb-2">{{strtok(Auth::user()->name,' ')}}</button></a>
+                                        <ul class="sub-menu">
                                             <li><a href="{{route('user.index')}}">Profile</a></li>
                                             <li><a href="{{route('logoutuser')}}">Logout</a></li>
                                         </ul>
