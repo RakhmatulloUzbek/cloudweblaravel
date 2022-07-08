@@ -7,12 +7,6 @@
 @section('content')
     <!-- start page inner -->
     <div class="page-inner">
-        <div class="page-title">
-            <h3 class="breadcrumb-header">Yeni Ürün yada Hizmet</h3><br>
-            <a href="{{route('admin.index')}}" role="button">Anasafya</a> >
-            <a href="{{route('admin.services.index')}}" role="button">Ürünler ve Hizmetler</a> >
-            <a class="disabled" style="text-decoration-line: none">Yeni Ürün yada Hizmet</a>
-        </div>
         <!-- start page main wrapper -->
         <div id="main-wrapper">
             <div class="row">
@@ -92,7 +86,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Kaydet</button> <a href="{{route('admin.services.index')}}" class="btn btn-danger">İptal</a>
+                                    <button type="submit" class="btn btn-primary">Kaydet</button> <a href="{{redirect()->back()->getTargetUrl()}}" class="btn btn-danger">İptal</a>
                                 </form>
                             </div>
                         </div>

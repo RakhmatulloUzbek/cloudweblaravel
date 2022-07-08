@@ -7,9 +7,9 @@
     <!-- start page inner -->
     <div class="page-inner">
         <div class="page-title">
-            <h3 class="breadcrumb-header">Postlar</h3><br>
+            <h3 class="breadcrumb-header">Hizmetler</h3><br>
             <a href="{{route('admin.index')}}" role="button">Anasafya</a> >
-            <a class="disabled" style="text-decoration-line: none">Postlar</a>
+            <a class="disabled" style="text-decoration-line: none">Hizmetler</a>
         </div>
         <!-- start page main wrapper -->
         <div id="main-wrapper">
@@ -17,7 +17,7 @@
                 <div class="col-md-12">
                     <div class="card card-white">
                         <div class="card-body">
-                            <a href="{{route('admin.post.create')}}" role="button" class="btn btn-primary m-b-sm">Ekle</a>
+                            <a href="{{route('admin.services.create')}}" role="button" class="btn btn-primary m-b-sm">Ekle</a>
                             <div class="table-responsive">
                                 <table id="example" class="display table" style="width: 100%;">
                                     <thead>
@@ -33,22 +33,20 @@
                                     </thead>
                                     <tbody>
                                     @foreach($data as $rs)
-                                        @if($rs->category->title != 'Kampanyalar')
+                                        @if($rs->category->title == 'Hizmetler')
                                             <tr>
                                                 <td>{{$rs->id}}</td>
-                                                <td>
-                                                    {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category,$rs->category->title)}}
-                                                </td>
+                                                <td>{{$rs->category->title}}</td>
                                                 <td>{{$rs->title}}</td>
                                                 <td>{{$rs->status}}</td>
-                                                <td><a href="{{route('admin.post.edit',['id'=>$rs->id])}}"
+                                                <td><a href="{{route('admin.services.edit',['id'=>$rs->id])}}"
                                                        class="btn btn-outline-success" data-toggle="tooltip"
                                                        title="Edit"><i class="fas fa-edit"></i></a></td>
-                                                <td><a href="{{route('admin.post.destroy',['id'=>$rs->id])}}"
+                                                <td><a href="{{route('admin.services.destroy',['id'=>$rs->id])}}"
                                                        onclick="return confirm('Deleting !! Are you sure ?')"
                                                        class="btn btn-outline-danger" data-toggle="tooltip"
                                                        title="Delete"><i class="fas fa-trash"></i></a></td>
-                                                <td><a href="{{route('admin.post.show',['id'=>$rs->id])}}"
+                                                <td><a href="{{route('admin.services.show',['id'=>$rs->id])}}"
                                                        class="btn btn-outline-primary" data-toggle="tooltip"
                                                        title="Show"><i class="fas fa-eye"></i></a></td>
                                             </tr>

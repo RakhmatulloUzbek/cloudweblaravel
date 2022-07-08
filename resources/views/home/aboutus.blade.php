@@ -87,8 +87,9 @@
                          style="background-image: url(&quot;img/bg/bg2.jpg&quot;);">
                         <div class="position-relative z-index-9 text-center px-1-9 py-1-9 py-lg-6">
                             <i class="fas fa-headset display-20 dispaly-md-16 display-lg-10 text-white mb-3"></i>
-                            <h5 class="text-white font-weight-600 mb-1 h4">How can we help?</h5>
-                            <p class="text-white font-weight-500 display-30">Let’s get in touch!!</p>
+                            <h5 class="text-white font-weight-600 mb-1 h4">
+                                Nasıl yardımcı olabiliriz?</h5>
+                            <p class="text-white font-weight-500 display-30">İletişime geçin!!</p>
                             <div class="bg-white separator-line-horrizontal-full opacity3 mb-3"></div>
                             <ul class="text-center p-0 m-0 list-unstyled">
                                 <li class="text-white mb-1"><i class="fa fa-phone text-white me-2"></i><a
@@ -99,7 +100,6 @@
                         </div>
                     </div>
                     <!-- end help -->
-
                 </div>
 
             </div>

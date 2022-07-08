@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
@@ -10,11 +11,14 @@ class FaqController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $data= Faq::all();
+        return view('admin.faq.index',[
+            'data'=>$data
+        ]);
     }
 
     /**
@@ -24,7 +28,10 @@ class FaqController extends Controller
      */
     public function create()
     {
-        //
+        $data= Faq::all();
+        return view('admin.faq.create',[
+            'data'=>$data
+        ]);
     }
 
     /**
@@ -35,7 +42,13 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=new Faq();
+        $data->subject=$request->subject;
+        $data->question=$request->question;
+        $data->answer=$request->answer;
+        $data->status=$request->status;
+        $data->save();
+        return redirect('admin/faq');
     }
 
     /**
@@ -46,18 +59,24 @@ class FaqController extends Controller
      */
     public function show($id)
     {
-        //
+        $data= Faq::find($id);
+        return view('admin.faq.show',[
+            'data'=>$data
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($id)
     {
-        //
+        $data= Faq::find($id);
+        return view('admin.faq.edit',[
+            'data'=>$data
+        ]);
     }
 
     /**
@@ -65,11 +84,17 @@ class FaqController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        $data= Faq::find($id);
+        $data->subject=$request->subject;
+        $data->question=$request->question;
+        $data->answer=$request->answer;
+        $data->status=$request->status;
+        $data->save();
+        return redirect('admin/faq');
     }
 
     /**
@@ -80,6 +105,8 @@ class FaqController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data= Faq::find($id);
+        $data->delete();
+        return redirect('admin/faq');
     }
 }

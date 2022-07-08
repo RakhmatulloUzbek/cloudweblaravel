@@ -6,12 +6,6 @@
 @section('content')
     <!-- start page inner -->
     <div class="page-inner">
-        <div class="page-title">
-            <h3 class="breadcrumb-header">{{$data->title}}</h3><br>
-            <a href="{{route('admin.index')}}" role="button">Anasafya</a> >
-            <a href="{{route('admin.services.index')}}" role="button">Ürünler ve Hizmetler</a> >
-            <a class="disabled" style="text-decoration-line: none">{{$data->title}}</a>
-        </div>
         <!-- start page main wrapper -->
         <div id="main-wrapper">
             <div class="row">
@@ -23,6 +17,7 @@
                         <div class="card-body">
                             <a href="{{route('admin.services.edit',['id'=>$data->id])}}" role="button" class="btn btn-primary m-b-sm">Düzenle</a>
                             <a href="{{route('admin.services.destroy',['id'=>$data->id])}}" role="button" class="btn btn-danger m-b-sm">Sil</a>
+                            <a href="{{redirect()->back()->getTargetUrl()}}" role="button" class="btn btn-success m-b-sm">Geri</a>
                         </div>
                         <div class="row">
                             <aside class="col-md-4">

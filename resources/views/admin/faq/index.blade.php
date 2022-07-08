@@ -1,22 +1,7 @@
 @extends('layouts.adminbase')
 
 @section('head')
-    <!-- common plugins -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css"/>
 
-    <!-- datatables plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css"/>
-
-    <!-- bootstrap-datepicker plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css"/>
-
-    <!-- theme core css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css"/>
 @endsection
 
 @section('content')
@@ -31,15 +16,15 @@
                 <div class="col-md-12">
                     <div class="card card-white">
                         <div class="card-body">
-                            <a href="{{route('admin.category.create')}}" role="button" class="btn btn-primary m-b-sm">Ekle</a>
+                            <a href="{{route('admin.faq.create')}}" role="button" class="btn btn-primary m-b-sm">Ekle</a>
                             <div class="table-responsive">
                                 <table id="example" class="display table" style="width: 100%;">
                                     <thead>
                                     <tr>
                                         <th style="width: 25px;">id</th>
-                                        <th>Parent</th>
-                                        <th style="width: 100px">Title</th>
-                                        <th>Keyword</th>
+                                        <th>Subject</th>
+                                        <th>Question</th>
+                                        <th>Answer</th>
                                         <th style="width: 32px">Status</th>
                                         <th style="width: 25px">Edit</th>
                                         <th style="width: 25px">Delete</th>
@@ -50,18 +35,18 @@
                                     @foreach($data as $rs)
                                         <tr>
                                             <td>{{$rs->id}}</td>
-                                            <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
-                                            <td>{{$rs->title}}</td>
-                                            <td>{{$rs->keyword}}</td>
+                                            <td>{{$rs->subject}}</td>
+                                            <td>{{$rs->question}}</td>
+                                            <td>{!! Str::limit($rs->answer, 50,'...') !!}</td>
                                             <td>{{$rs->status}}</td>
-                                            <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}"
+                                            <td><a href="{{route('admin.faq.edit',['id'=>$rs->id])}}"
                                                    class="btn btn-outline-success" data-toggle="tooltip" title="Edit"><i
                                                             class="fas fa-edit"></i></a></td>
-                                            <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"
+                                            <td><a href="{{route('admin.faq.destroy',['id'=>$rs->id])}}"
                                                    onclick="return confirm('Deleting !! Are you sure ?')"
                                                    class="btn btn-outline-danger" data-toggle="tooltip"
                                                    title="Delete"><i class="fas fa-trash"></i></a></td>
-                                            <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}"
+                                            <td><a href="{{route('admin.faq.show',['id'=>$rs->id])}}"
                                                    class="btn btn-outline-primary" data-toggle="tooltip" title="Show"><i
                                                             class="fas fa-eye"></i></a></td>
                                         </tr>
@@ -70,9 +55,9 @@
                                     <tfoot>
                                     <tr>
                                         <th style="width: 25px;">id</th>
-                                        <th>Parent</th>
-                                        <th style="width: 100px">Title</th>
-                                        <th>Keyword</th>
+                                        <th>Subject</th>
+                                        <th>Question</th>
+                                        <th>Answer</th>
                                         <th style="width: 32px">Status</th>
                                         <th style="width: 25px">Edit</th>
                                         <th style="width: 25px">Delete</th>

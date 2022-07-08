@@ -44,7 +44,7 @@
                                         <div class="services-block-three justify-content-center">
                                             <a href="{{route('data_detail',['title'=>$rs->title])}}">
                                                 <div class="pb-3">
-                                                    <div class="project-grid-img" ><img  style="height: 200px" alt="..."
+                                                    <div class="project-grid-img" ><img  style="height: 150px" alt="..."
                                                                                          src="{{Storage::url($rs->image)}}">
                                                     </div>
                                                 </div>
@@ -69,7 +69,7 @@
                                             <div class="services-block-three justify-content-center">
                                                 <a href="{{route('data_detail',['title'=>$rs->title])}}">
                                                     <div class="pb-3">
-                                                        <div class="project-grid-img" ><img  style="height: 200px" alt="..."
+                                                        <div class="project-grid-img" ><img  style="height: 150px" alt="..."
                                                                                              src="{{Storage::url($rs->image)}}">
                                                         </div>
                                                     </div>

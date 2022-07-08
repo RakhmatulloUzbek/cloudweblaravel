@@ -5,13 +5,13 @@
     @php
         $settings = \App\Http\Controllers\HomeController::getsettings();
     @endphp
-    <!-- metas -->
+        <!-- metas -->
     <meta charset="utf-8">
-    <meta name="author" content="Chitrakoot Web" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Chitrakoot Web"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="keywords" content="{{$settings->keywords}}" />
-    <meta name="description" content="{{$settings->description}}" />
+    <meta name="keywords" content="{{$settings->keywords}}"/>
+    <meta name="description" content="{{$settings->description}}"/>
     <!-- title  -->
     <title>@yield('title')</title>
 
@@ -49,7 +49,7 @@
 ================================================== -->
 <div class="main-wrapper">
     @include('home.header')
-    @include('home.docs.sidebar')
+    @include('home.docs.sidebar2.blade.php')
 
     @yield('content')
 

@@ -12,11 +12,11 @@
                 </div>
                 <div class="col-md-6 d-none d-md-block responsive" style=" border-right: 3px solid #c5c0c0; height: 30px;">
                     <ul class="top-social-icon ps-0">
-                        <li><a href="#!">Partners</a></li>
-                        <li><a href="#!">Docs</a></li>
-                        <li><a href="#!">Support</a></li>
-                        <li><a href="#!">Sales</a></li>
-                        <li><a href="#!">Careers</a></li>
+                        <li><a href="{{route('maintenance')}}">Partners</a></li>
+                        <li><a href="{{route('maintenance')}}">Docs</a></li>
+                        <li><a href="{{route('maintenance')}}">Support</a></li>
+                        <li><a href="{{route('maintenance')}}">Sales</a></li>
+                        <li><a href="{{route('maintenance')}}">Careers</a></li>
                     </ul>
                 </div>
             </div>

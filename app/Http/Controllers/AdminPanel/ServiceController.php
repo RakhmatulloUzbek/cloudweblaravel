@@ -25,6 +25,30 @@ class ServiceController extends Controller
             'data' => $data
         ]);
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function urunler()
+    {
+        $data = Service::all();
+        return view('admin.services.urunler', [
+            'data' => $data
+        ]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function hizmetler()
+    {
+        $data = Service::all();
+        return view('admin.services.hizmetler', [
+            'data' => $data
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.

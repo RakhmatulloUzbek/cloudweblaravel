@@ -94,13 +94,13 @@
                             <div class="project-grid-overlay">
                                 <div class="w-100">
                                     <h4><a href="{{route('data_detail',['title'=>$post->title])}}">{{$post->title}}</a></h4>
-                                    <p>Pengona Yazılım {{date_format($post->created_at,"d/M/Y")}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="project-grid">
                             <h6>{{$post->category->title}}</h6>
-                            <p class="card-text">{{ Str::words($post->description, 8,'...')}}.</p>
+                            <p class="card-text">{{ Str::words($post->description, 9,'...')}}.</p>
+                            <p>Pengona Yazılım {{date_format($post->created_at,"d/M/Y")}}</p>
                             <a href="{{route('data_detail',['title'=>$post->title])}}" class="butn small"><span>Tamamını oku..</span></a>
                         </div>
                     </div>

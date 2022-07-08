@@ -7,9 +7,9 @@
     <!-- start page inner -->
     <div class="page-inner">
         <div class="page-title">
-            <h3 class="breadcrumb-header">Postlar</h3><br>
+            <h3 class="breadcrumb-header">Kampanyalar</h3><br>
             <a href="{{route('admin.index')}}" role="button">Anasafya</a> >
-            <a class="disabled" style="text-decoration-line: none">Postlar</a>
+            <a class="disabled" style="text-decoration-line: none">Kampanyalar</a>
         </div>
         <!-- start page main wrapper -->
         <div id="main-wrapper">
@@ -33,7 +33,7 @@
                                     </thead>
                                     <tbody>
                                     @foreach($data as $rs)
-                                        @if($rs->category->title != 'Kampanyalar')
+                                        @if($rs->category->title == 'Kampanyalar')
                                             <tr>
                                                 <td>{{$rs->id}}</td>
                                                 <td>

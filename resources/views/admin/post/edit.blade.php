@@ -6,12 +6,6 @@
 
     <!-- start page inner -->
     <div class="page-inner">
-        <div class="page-title">
-            <h3 class="breadcrumb-header">Güncelleme</h3><br>
-            <a href="{{route('admin.index')}}" role="button">Anasafya</a> >
-            <a href="{{route('admin.post.index')}}" role="button">Postlar</a> >
-            <a class="disabled" style="text-decoration-line: none">{{$data->title}}</a>
-        </div>
         <!-- start page main wrapper -->
         <div id="main-wrapper">
             <div class="row">
@@ -96,7 +90,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Güncelle</button> <a href="{{route('admin.post.index')}}" class="btn btn-danger">İptal</a>
+                                    <button type="submit" class="btn btn-primary">Güncelle</button> <a href="{{redirect()->back()->getTargetUrl()}}" class="btn btn-danger">İptal</a>
                                 </div>
                             </form>
                         </div>

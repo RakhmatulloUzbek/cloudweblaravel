@@ -19,19 +19,34 @@
                         <i class="fas fa-layer-group menu-icon"></i><span>Katigoriler</span>
                     </a>
                 </li>
-                <li class="{{ (request()->is('admin/post*')) ? 'active' : '' }}">
+                <li class="{{ (request()->is('admin/post')) ? 'active' : '' }}">
                     <a href="{{route('admin.post.index')}}">
                         <i class="fas fa-blog menu-icon"></i><span>Postlar</span>
                     </a>
                 </li>
-                <li class="{{ (request()->is('admin/services*')) ? 'active' : '' }}">
-                    <a href="{{route('admin.services.index')}}">
-                        <i class="fas fa-file-alt menu-icon"></i><span>Ürünler ve Hizmetler</span>
+                <li class="{{ (request()->is('admin/post/kampanyalar')) ? 'active' : '' }}">
+                    <a href="{{route('admin.post.kampanyalar')}}">
+                        <i class="fas fa-bullhorn menu-icon"></i><span>Kampanyalar</span>
+                    </a>
+                </li>
+                <li class="{{ (request()->is('admin/services/urunler*')) ? 'active' : '' }}">
+                    <a href="{{route('admin.services.urunler')}}">
+                        <i class="fas fa-archive menu-icon"></i><span>Ürünler</span>
+                    </a>
+                </li>
+                <li class="{{ (request()->is('admin/services/hizmetler*')) ? 'active' : '' }}">
+                    <a href="{{route('admin.services.hizmetler')}}">
+                        <i class="fas fa-handshake menu-icon"></i><span>Hizmetler</span>
                     </a>
                 </li>
                 <li class="{{ (request()->is('admin/message*')) ? 'active' : '' }}">
                     <a href="{{route('admin.message.index')}}">
                         <i class="fas fa-envelope menu-icon"></i><span>Mesajlar</span>
+                    </a>
+                </li>
+                <li class="{{ (request()->is('admin/faq*')) ? 'active' : '' }}">
+                    <a href="{{route('admin.faq.index')}}">
+                        <i class="fas fa-question menu-icon"></i><span>Faq</span>
                     </a>
                 </li>
                 <li class="">
@@ -48,11 +63,11 @@
                 </li>
                 <li class="{{ (request()->is('admin/users*')) ? 'active' : '' }}">
                     <a href="{{route('admin.users.index')}}">
-                        <i class="fas fa-users menu-icon"></i><span>Kullanıcılar</span>
+                        <i class="fas fa-user-friends menu-icon"></i><span>Kullanıcılar</span>
                     </a>
                 </li>
-                <li class="{{ (request()->is('admin/users*')) ? 'active' : '' }}">
-                    <a href="{{route('admin.users.index')}}">
+                <li class="{{ (request()->is('admin/subscribers*')) ? 'active' : '' }}">
+                    <a href="{{route('admin.subscribers.index')}}">
                         <i class="fas fa-users menu-icon"></i><span>Aboneciler</span>
                     </a>
                 </li>

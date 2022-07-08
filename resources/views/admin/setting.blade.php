@@ -4,7 +4,6 @@
 
 
 @section('head')
-    @include('admin.top_scripts')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
@@ -171,8 +170,8 @@
                                             </div>
                                             <div id="about" class="container tab-pane fade"><br>
                                                 <div class="row mb-3">
-                                                    <label for="about" class="col-sm-2 col-form-label">About</label>
-                                                    <div class="col-sm-8">
+                                                    <label for="about" class="col-lg-2 col-sm-2 col-form-label">About</label>
+                                                    <div class="col-lg-10 col-sm-8">
                                 <textarea name="aboutus" id="abouttext" class="form-control">
                                         {{$data->aboutus}}
                                 </textarea>
@@ -251,5 +250,4 @@
             $('.textarea').summernote()
         })
     </script>
-    @include('admin.foot_scripts')
 @endsection

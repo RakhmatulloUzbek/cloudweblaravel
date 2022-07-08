@@ -1,22 +1,6 @@
 @extends('layouts.adminbase')
 @section('head')
-    <!-- common plugins -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/font-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/icomoon/style.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/uniform/css/default.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/switchery/switchery.min.css"/>
-
-    <!-- datatables plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables.min.css"/>
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/datatables/css/jquery.datatables_themeroller.css"/>
-
-    <!-- bootstrap-datepicker plugin -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/css/datepicker.css"/>
-
-    <!-- theme core css -->
-    <link rel="stylesheet" href="{{asset('assets')}}/admin/css/styles.css"/>
-    @include('admin.top_scripts')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
 @section('content')
     <!-- start page inner -->
@@ -30,58 +14,53 @@
                 <div class="col-md-12">
                     <div class="card card-white">
                         <div class="card-body">
-                            <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}"
-                                  method="post" enctype="multipart/form-data">
+                            <form role="form" action="{{route('admin.faq.update',['id'=>$data->id])}}" method="post">
                                 @csrf
-                                <div class="card-body">
-                                    <div class="row mb-4">
-                                        <label class="col-sm-2 col-form-label">Parent</label>
-                                        <div class="col-lg-8 col-sm-5">
-                                            <select class="form-control" name="parent_id">
-                                                <option value="0" selected="selected">Main catagory</option>
-                                                @foreach($datalist as $rs)
-                                                    <option value="{{$rs->id}}"
-                                                            @if($rs->id == $data->parent_id) selected="selected" @endif>
-                                                        {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                <div class="row mb-3">
+                                    <label for="subject" class="col-sm-2 col-form-label">Subject</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" name="subject"
+                                               value="{{$data->subject}}">
                                     </div>
-                                    <div class="row mb-4">
-                                        <label for="title" class="col-sm-2 col-form-label">Title</label>
-                                        <div class="col-lg-8 col-sm-5">
-                                            <input type="text" class="form-control" name="title"
-                                                   value="{{$data->title}}">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <label for="keyword" class="col-sm-2 col-form-label">Keyword</label>
-                                        <div class="col-lg-8 col-sm-5">
-                                            <input type="text" class="form-control" name="keyword"
-                                                   value="{{$data->keyword}}">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <label for="description" class="col-sm-2 col-form-label">Description</label>
-                                        <div class="col-lg-8 col-sm-5">
-                                            <input type="text" class="form-control" name="description"
-                                                   value="{{$data->description}}">
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <label for="status" class="col-sm-2 col-form-label">Status</label>
-                                        <div class="col-lg-8 col-sm-5">
-                                            <select class="form-select" name="status"
-                                                    aria-label="Default select example">
-                                                <option selected>{{$data->status}}</option>
-                                                <option value="True">True</option>
-                                                <option value="False">False</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-danger">Update</button>
                                 </div>
+                                <div class="row mb-3">
+                                    <label for="question" class="col-sm-2 col-form-label">Question</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" name="question"
+                                               value="{{$data->question}}">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="answer" class="col-sm-2 col-form-label">Answer</label>
+                                    <div class="col-sm-8">
+                                        <textarea name="answer" id="answer" class="form-control">
+
+                                            {{ $data->answer }}
+
+                                        </textarea>
+                                        <script>
+                                            ClassicEditor
+                                                .create(document.querySelector('#answer'))
+                                                .then(editor => {
+                                                    console.log(editor);
+                                                })
+                                                .catch(error => {
+                                                    console.error(error);
+                                                });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="status" class="col-sm-2 col-form-label">Status</label>
+                                    <div class="col-sm-5">
+                                        <select class="form-select" name="status" aria-label="Default select example">
+                                            <option selected>{{$data->status}}</option>
+                                            <option value="True">True</option>
+                                            <option value="False">False</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Kaydet</button> <a href="{{route('admin.faq.index')}}" role="button" class="btn btn-danger">İptal</a>
                             </form>
                         </div>
                     </div>
@@ -90,38 +69,16 @@
             <!-- Row -->
         </div>
         <!-- end page main wrapper -->
-        <div class="page-footer">
-            <p>Copyright &copy; <span class="current-year"></span> Fabrex All rights reserved.</p>
-        </div>
+        @include('admin.footer')
     </div>
     <!-- end page inner -->
 @endsection
 @section('foot')
-    <!-- jQuery -->
-    <script src="{{asset('assets')}}/admin/plugins/jquery/jquery-3.1.0.min.js"></script>
-
-    <!-- bootstrap -->
-    <script src="{{asset('assets')}}/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- slimscroll -->
-    <script src="{{asset('assets')}}/admin/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-
-    <!-- uniform -->
-    <script src="{{asset('assets')}}/admin/plugins/uniform/js/jquery.uniform.standalone.js"></script>
-
-    <!-- switchery -->
-    <script src="{{asset('assets')}}/admin/plugins/switchery/switchery.min.js"></script>
-
-    <!-- datatables -->
-    <script src="{{asset('assets')}}/admin/plugins/datatables/js/jquery.datatables.min.js"></script>
-
-    <!-- datepicker -->
-    <script src="{{asset('assets')}}/admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-
-    <!-- table-data -->
-    <script src="{{asset('assets')}}/admin/js/pages/table-data.js"></script>
-
-    <!-- theme core scripts -->
-    <script src="{{asset('assets')}}/admin/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(function () {
+            $('.textarea').summernote()
+        })
+    </script>
 @endsection
 

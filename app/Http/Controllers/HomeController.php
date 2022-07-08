@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Subcribe;
+use App\Models\Subscriber;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -135,9 +136,9 @@ class HomeController extends Controller
     public function storemessage(Request $request){
         //dd($request);
         if($request->input('subcribe')){
-            $subcribes = Subcribe::where('email','=',$request->input('email'))->first();
+            $subcribes = Subscriber::where('email','=',$request->input('email'))->first();
             if(!$subcribes){
-                $data = new Subcribe();
+                $data = new Subscriber();
                 $data->name=$request->input('name');
                 $data->email=$request->input('email');
                 $data->phone=$request->input('phone');
@@ -158,11 +159,11 @@ class HomeController extends Controller
     }
     public function subcribe(Request $request)
     {
-        $subcribes = Subcribe::where('email','=',$request->input('email_address'))->first();
-        if($subcribes)
+        $subscribers = Subscriber::where('email','=',$request->input('email_address'))->first();
+        if($subscribers)
             return redirect()->back()->with('error','Zaten bu mail kayıtlı!');
 
-        $data = new Subcribe();
+        $data = new Subscriber();
         if(Auth::check()){
             $data->name=Auth::user()->name;
             if(Auth::user()->phone)

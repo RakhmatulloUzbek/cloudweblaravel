@@ -34,6 +34,7 @@
 
     <!-- theme core css -->
     <link href="{{asset('assets')}}/home/css/styles.css" rel="stylesheet">
+    @yield('head')
 
 </head>
 
@@ -57,11 +58,13 @@
 </div>
 
 
+
 <!-- SCROLL TO TOP
 ================================================== -->
 <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
 
 <!-- all js include start -->
+@yield('foot')
 
 <!-- jQuery -->
 <script src="{{asset('assets')}}/home/js/jquery.min.js"></script>

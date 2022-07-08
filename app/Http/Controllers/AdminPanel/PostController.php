@@ -22,6 +22,18 @@ class PostController extends Controller
             'data' => $data
         ]);
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function kampanyalar()
+    {
+        $data = Post::all();
+        return view('admin.post.kampanyalar', [
+            'data' => $data
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.

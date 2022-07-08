@@ -24,6 +24,7 @@
                         <div class="card-body">
                             <a href="{{route('admin.category.edit',['id'=>$data->id])}}" role="button" class="btn btn-primary m-b-sm">Düzenle</a>
                             <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" role="button" class="btn btn-danger m-b-sm">Sil</a>
+                            <a href="{{redirect()->back()->getTargetUrl()}}" role="button" class="btn btn-success m-b-sm">Geri</a>
                             <div class="table-responsive">
                                 <table id="example" class="display table" style="width: 100%;">
                                     <tr>
