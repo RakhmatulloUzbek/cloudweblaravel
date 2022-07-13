@@ -47,7 +47,7 @@
 
                             <div class="navbar-header navbar-header-custom p-0">
                                 <!-- logo -->
-                                <a href="{{route('home')}}" class="navbar-brand1 logodefault"><img style="width: 145px; height: 65px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/pengona.png"></a>
+                                <a href="{{route('home')}}" class="navbar-brand1 logodefault"><img style="width: 135px; height: 70px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/pengona.png"></a>
                                 <!-- end logo -->
                             </div>
 

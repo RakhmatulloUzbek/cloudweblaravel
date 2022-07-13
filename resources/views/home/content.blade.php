@@ -99,7 +99,7 @@
                         </div>
                         <div class="project-grid">
                             <h6>{{$post->category->title}}</h6>
-                            <p class="card-text">{{ Str::words($post->description, 9,'...')}}.</p>
+                            <p class="card-text">{{ Str::words($post->description, 7,'...')}}.</p>
                             <p>Pengona Yazılım {{date_format($post->created_at,"d/M/Y")}}</p>
                             <a href="{{route('data_detail',['title'=>$post->title])}}" class="butn small"><span>Tamamını oku..</span></a>
                         </div>

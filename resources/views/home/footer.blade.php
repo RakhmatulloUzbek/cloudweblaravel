@@ -4,7 +4,7 @@
 
             <div class="col-lg-4 col-md-6 mt-1-9">
 
-                <img style="width: 160px; height: 90px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/pengonalogo.png">
+                <img style="width: 160px; height: 90px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/pengonafoot.png">
                 <a href="{{route('aboutus')}}"><p class="mt-4 text-light-gray">{!! Str::words($settings->aboutus, 18,'...') !!}</p></a>
                 <div class="mt-4 footer-social-icons">
                     <ul class="ps-0 mb-0">
