@@ -45,9 +45,9 @@
                     <div class="menu_area alt-font">
                         <nav class="navbar navbar-expand-lg navbar-light p-0 current">
 
-                            <div class="navbar-header navbar-header-custom">
+                            <div class="navbar-header navbar-header-custom p-0">
                                 <!-- logo -->
-                                <a href="{{route('home')}}" class="navbar-brand1 logodefault"><img style="width: 145px; height: 60px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/pengona.png"></a>
+                                <a href="{{route('home')}}" class="navbar-brand1 logodefault"><img style="width: 145px; height: 65px"alt="footer-logo" src="{{asset('assets')}}/home/img/logos/pengona.png"></a>
                                 <!-- end logo -->
                             </div>
 
