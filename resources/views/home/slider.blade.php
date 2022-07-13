@@ -47,8 +47,8 @@
                      data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                      data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="2800"
                      data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                     style="z-index: 5; white-space: nowrap; line-height: 22px;"><a href="#!"
-                                                                                    class="butn primary"><span>Daha fazla</span></a>
+                     style="z-index: 5; white-space: nowrap; line-height: 22px;">
+{{--                    <a href="#!" class="butn primary"><span>Daha fazla</span></a>--}}
                 </div>
             </li>
             <li data-transition="parallaxtoright">
@@ -94,8 +94,8 @@
                      data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                      data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="2800"
                      data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                     style="z-index: 5; white-space: nowrap; line-height: 22px;"><a href="#!"
-                                                                                    class="butn primary"><span>Daha fazla</span></a>
+                     style="z-index: 5; white-space: nowrap; line-height: 22px;">
+{{--                    <a href="#!"class="butn primary"><span>Daha fazla</span></a>--}}
                 </div>
             </li>
             <li data-transition="parallaxtoright">
@@ -142,8 +142,8 @@
                      data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
                      data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="2800"
                      data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                     style="z-index: 5; white-space: nowrap; line-height: 22px;"><a href="#!"
-                                                                                    class="butn primary"><span>Daha fazla</span></a>
+                     style="z-index: 5; white-space: nowrap; line-height: 22px;">
+{{--                    <a href="#!" class="butn primary"><span>Daha fazla</span></a>--}}
                 </div>
             </li>
         </ul>

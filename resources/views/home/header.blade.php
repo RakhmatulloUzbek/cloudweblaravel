@@ -80,7 +80,7 @@
                                 <li class="{{ (request()->is('aboutus')) ? 'current' : '' }}"><a href="{{route('aboutus')}}">Hakkımızda</a></li>
                                 <li class="{{ (request()->is('contactus')) ? 'current' : '' }}"><a href="{{route('contactus')}}">İletişim</a></li>
                                 @auth
-                                    <li class="mb-2"><a><button class="btn btn-danger pb-2">{{strtok(Auth::user()->name,' ')}}</button></a>
+                                    <li class="mb-2"><a><button class="btn btn-danger">{{strtok(Auth::user()->name,' ')}}</button></a>
                                         <ul class="sub-menu">
                                             <li><a href="{{route('user.index')}}">Profile</a></li>
                                             <li><a href="{{route('logoutuser')}}">Logout</a></li>
@@ -88,7 +88,7 @@
                                     </li>
                                 @endauth
                                 @guest
-                                    <li class="mt-2"><a class="butn primary" href="{{route('loginuser')}}"><span class="submenu-button">Giriş</span></a></li>
+                                    <li class="mt-2"><a class="butn medium primary" href="{{route('loginuser')}}"><span class="submenu-button">Giriş</span></a></li>
                                 @endguest
                             </ul>
                             <!-- end menu area -->
