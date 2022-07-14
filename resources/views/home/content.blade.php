@@ -99,8 +99,7 @@
                         </div>
                         <div class="project-grid">
                             <h6>{{$post->category->title}}</h6>
-                            <p class="card-text">{{ Str::words($post->description, 7,'...')}}.</p>
-                            <p>Pengona Yazılım {{date_format($post->created_at,"d/M/Y")}}</p>
+                            <p class="card-text">{{ Str::words($post->description, 5,'...')}}.</p>
                             <a href="{{route('data_detail',['title'=>$post->title])}}" class="butn small"><span>Tamamını oku..</span></a>
                         </div>
                     </div>
@@ -149,7 +148,7 @@
         <div class="row align-items-center">
             <div class="col-lg-5">
                 <div class="section-heading left white">
-                    <h4 class="text-white h3 mb-0">Get to know us better !</h4>
+                    <h4 class="text-white h3 mb-0">Bizi daha iyi tanıyın!</h4>
                 </div>
             </div>
             <div class="col-lg-7">
@@ -158,21 +157,21 @@
                         <div class="counter-box">
                             <h4 class="countup text-white d-block">1530</h4>
                             <div class="separator-line-horrizontal-medium-light3 bg-white my-3 opacity5 mx-auto"></div>
-                            <p class="lead font-weight-600 text-white m-0 text-center">Happy Clients</p>
+                            <p class="lead font-weight-600 text-white m-0 text-center">Mutlu Müşteriler</p>
                         </div>
                     </div>
                     <div class="col-sm-4 mt-4">
                         <div class="counter-box">
                             <h4 class="countup text-white d-block">1010</h4>
                             <div class="separator-line-horrizontal-medium-light3 bg-white my-3 opacity5 mx-auto"></div>
-                            <p class="lead font-weight-600 text-white m-0 text-center">Projects Finished</p>
+                            <p class="lead font-weight-600 text-white m-0 text-center">Biten Projeler</p>
                         </div>
                     </div>
                     <div class="col-sm-4 mt-4">
                         <div class="counter-box">
                             <h4 class="countup text-white d-block">590</h4>
                             <div class="separator-line-horrizontal-medium-light3 bg-white my-3 opacity5 mx-auto"></div>
-                            <p class="lead font-weight-600 text-white m-0 text-center">Award Winner</p>
+                            <p class="lead font-weight-600 text-white m-0 text-center">Ödül Kazanan</p>
                         </div>
 
                     </div>
@@ -187,7 +186,7 @@
 <section class="md">
     <div class="container">
         <div class="section-heading">
-            <h2>Our Expert Minds</h2>
+            <h2>Ekibimiz</h2>
         </div>
         <div class="row mt-n1-9">
 

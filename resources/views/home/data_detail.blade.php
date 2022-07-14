@@ -8,27 +8,34 @@
              data-background="{{asset('assets')}}/home/img/bg/bg5.jpg"
              style="background-image: url(&quot;img/bg/bg5.jpg&quot;);">
         <div class="container">
-
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>{{$data->title}}</h1>
-                </div>
-                <div class="col-md-12">
-                    <ul class="ps-0">
-                        @if($data)
+            @if($data)
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>{{$data->title}}</h1>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="ps-0">
                             <li><a href="{{route('home')}}">Ana Sayfa</a></li>
                             <li>
                                 <a href="{{route('categoryservices',['id'=>$data->category->id])}}">{{$data->category->title}}</a>
                             </li>
                             <li><a class="active">{{$data->title}}</a></li>
-                        @else
+                        </ul>
+                    </div>
+                </div>
+            @else
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Veri Bulunamadı</h1>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="ps-0">
                             <li><a href="{{route('home')}}">Ana Sayfa</a></li>
                             <li><a class="active">Veri Bulunamadı</a></li>
-                        @endif
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-
+            @endif
         </div>
     </section>
 

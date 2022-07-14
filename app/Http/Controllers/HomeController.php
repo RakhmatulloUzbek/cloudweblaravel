@@ -81,9 +81,14 @@ class HomeController extends Controller
         $id = DB::table('posts')->where('title', $title)->value('id');
         if(!$id){
             $id = DB::table('services')->where('title', $title)->value('id');
+            if(!$id) {
+                return view('home.data_detail', [
+                    'data' => null
+                ]);
+            }
             $data = Service::find($id);
-            return view('home.data_detail',[
-                'data'=>$data
+            return view('home.data_detail', [
+                'data' => $data
             ]);
         }
         $data = Post::find($id);
@@ -95,10 +100,12 @@ class HomeController extends Controller
     {
         $data = Post::where('title',$request->input('search'))->first();
         if(!$data){
+            //dd($data);
             $data = Service::where('title',$request->input('search'))->first();
-        }
-        if(!$data){
-            return redirect()->route('data_detail',['title'=>'']);
+            //dd($data);
+            if(!$data){
+                return redirect()->route('data_detail',['title'=>'null']);
+            }
         }
         return redirect()->route('data_detail',['title'=>$data->title]);
     }
